@@ -1,0 +1,17 @@
+Lokalne testowanie App Clip
+===========================
+
+W Xcode:
+
+1. Scheme: KlikMenuClip
+2. Product → Scheme → Edit Scheme… → Run → Arguments
+3. Dodaj Environment Variable:
+
+   Name:  _XCAppClipURL
+   Value: https://app.klikmenu.pl/menu/bistro-klik
+
+4. Uruchom App Clip na symulatorze lub urządzeniu.
+
+Możesz też otworzyć ten sam URL lokalnie przez onOpenURL (np. z Safari / deep link testowy).
+
+Nie konfiguruj produkcyjnego App Clip Experience w App Store Connect w tym kroku.

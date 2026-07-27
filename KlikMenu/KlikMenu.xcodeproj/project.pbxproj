@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		2A1D8A5B3017A06B00E956B9 /* openapi.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D8A5A3017A06B00E956B9 /* openapi.json */; };
 		2A8258933010F221003FB5CC /* KlikMenuClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 2A8258713010F21F003FB5CC /* KlikMenuClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A9C10103017C00100E956B9 /* KlikMenuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; };
+		2A9C10113017C00100E956B9 /* KlikMenuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; };
+		2A9C10123017C00100E956B9 /* KlikMenuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; };
+		2A9C10133017C00100E956B9 /* KlikMenuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; };
+		2A9C10303017C00100E956B9 /* KlikMenuCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2A9C10313017C00100E956B9 /* KlikMenuCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,34 @@
 			remoteGlobalIDString = 2A8258703010F21F003FB5CC;
 			remoteInfo = KlikMenuClip;
 		};
+		2A9C10203017C00100E956B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A82583B3010F1A4003FB5CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A9C10013017C00100E956B9;
+			remoteInfo = KlikMenuCore;
+		};
+		2A9C10213017C00100E956B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A82583B3010F1A4003FB5CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A9C10013017C00100E956B9;
+			remoteInfo = KlikMenuCore;
+		};
+		2A9C10243017C00100E956B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A82583B3010F1A4003FB5CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A9C10013017C00100E956B9;
+			remoteInfo = KlikMenuCore;
+		};
+		2A9C10253017C00100E956B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A82583B3010F1A4003FB5CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A9C10013017C00100E956B9;
+			remoteInfo = KlikMenuCore;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +95,28 @@
 			name = "Embed App Clips";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A9C10323017C00100E956B9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2A9C10303017C00100E956B9 /* KlikMenuCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9C10333017C00100E956B9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2A9C10313017C00100E956B9 /* KlikMenuCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +127,7 @@
 		2A8258713010F21F003FB5CC /* KlikMenuClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KlikMenuClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A82587F3010F221003FB5CC /* KlikMenuClipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlikMenuClipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8258893010F221003FB5CC /* KlikMenuClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlikMenuClipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A9C10023017C00100E956B9 /* KlikMenuCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KlikMenuCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -117,6 +174,11 @@
 			path = KlikMenuClipUITests;
 			sourceTree = "<group>";
 		};
+		2A9C10063017C00100E956B9 /* Packages/KlikMenuCore/Sources/KlikMenuCore */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Packages/KlikMenuCore/Sources/KlikMenuCore;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9C10103017C00100E956B9 /* KlikMenuCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9C10123017C00100E956B9 /* KlikMenuCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9C10113017C00100E956B9 /* KlikMenuCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,10 +217,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9C10133017C00100E956B9 /* KlikMenuCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2A8258863010F221003FB5CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9C10043017C00100E956B9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -175,6 +248,7 @@
 				2A8258723010F21F003FB5CC /* KlikMenuClip */,
 				2A8258823010F221003FB5CC /* KlikMenuClipTests */,
 				2A82588C3010F221003FB5CC /* KlikMenuClipUITests */,
+				2A9C10063017C00100E956B9 /* Packages/KlikMenuCore/Sources/KlikMenuCore */,
 				2A8258443010F1A4003FB5CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -188,6 +262,7 @@
 				2A8258713010F21F003FB5CC /* KlikMenuClip.app */,
 				2A82587F3010F221003FB5CC /* KlikMenuClipTests.xctest */,
 				2A8258893010F221003FB5CC /* KlikMenuClipUITests.xctest */,
+				2A9C10023017C00100E956B9 /* KlikMenuCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,12 +277,14 @@
 				2A82583F3010F1A4003FB5CC /* Sources */,
 				2A8258403010F1A4003FB5CC /* Frameworks */,
 				2A8258413010F1A4003FB5CC /* Resources */,
+				2A9C10323017C00100E956B9 /* Embed Frameworks */,
 				2A8258983010F221003FB5CC /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				2A8258923010F221003FB5CC /* PBXTargetDependency */,
+				2A9C10223017C00100E956B9 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				2A8258453010F1A4003FB5CC /* KlikMenu */,
@@ -231,6 +308,7 @@
 			);
 			dependencies = (
 				2A8258523010F1A7003FB5CC /* PBXTargetDependency */,
+				2A9C10263017C00100E956B9 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				2A8258533010F1A7003FB5CC /* KlikMenuTests */,
@@ -272,10 +350,12 @@
 				2A82586D3010F21F003FB5CC /* Sources */,
 				2A82586E3010F21F003FB5CC /* Frameworks */,
 				2A82586F3010F21F003FB5CC /* Resources */,
+				2A9C10333017C00100E956B9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2A9C10233017C00100E956B9 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				2A8258723010F21F003FB5CC /* KlikMenuClip */,
@@ -299,6 +379,7 @@
 			);
 			dependencies = (
 				2A8258813010F221003FB5CC /* PBXTargetDependency */,
+				2A9C10273017C00100E956B9 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				2A8258823010F221003FB5CC /* KlikMenuClipTests */,
@@ -333,6 +414,28 @@
 			productReference = 2A8258893010F221003FB5CC /* KlikMenuClipUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		2A9C10013017C00100E956B9 /* KlikMenuCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A9C10073017C00100E956B9 /* Build configuration list for PBXNativeTarget "KlikMenuCore" */;
+			buildPhases = (
+				2A9C10033017C00100E956B9 /* Sources */,
+				2A9C10043017C00100E956B9 /* Frameworks */,
+				2A9C10053017C00100E956B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2A9C10063017C00100E956B9 /* Packages/KlikMenuCore/Sources/KlikMenuCore */,
+			);
+			name = KlikMenuCore;
+			packageProductDependencies = (
+			);
+			productName = KlikMenuCore;
+			productReference = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -365,6 +468,9 @@
 						CreatedOnToolsVersion = 26.4.1;
 						TestTargetID = 2A8258703010F21F003FB5CC;
 					};
+					2A9C10013017C00100E956B9 = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 2A82583E3010F1A4003FB5CC /* Build configuration list for PBXProject "KlikMenu" */;
@@ -387,6 +493,7 @@
 				2A8258703010F21F003FB5CC /* KlikMenuClip */,
 				2A82587E3010F221003FB5CC /* KlikMenuClipTests */,
 				2A8258883010F221003FB5CC /* KlikMenuClipUITests */,
+				2A9C10013017C00100E956B9 /* KlikMenuCore */,
 			);
 		};
 /* End PBXProject section */
@@ -429,6 +536,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2A8258873010F221003FB5CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9C10053017C00100E956B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -480,6 +594,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A9C10033017C00100E956B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -507,6 +628,26 @@
 			isa = PBXTargetDependency;
 			target = 2A8258703010F21F003FB5CC /* KlikMenuClip */;
 			targetProxy = 2A8258913010F221003FB5CC /* PBXContainerItemProxy */;
+		};
+		2A9C10223017C00100E956B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A9C10013017C00100E956B9 /* KlikMenuCore */;
+			targetProxy = 2A9C10203017C00100E956B9 /* PBXContainerItemProxy */;
+		};
+		2A9C10233017C00100E956B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A9C10013017C00100E956B9 /* KlikMenuCore */;
+			targetProxy = 2A9C10213017C00100E956B9 /* PBXContainerItemProxy */;
+		};
+		2A9C10263017C00100E956B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A9C10013017C00100E956B9 /* KlikMenuCore */;
+			targetProxy = 2A9C10243017C00100E956B9 /* PBXContainerItemProxy */;
+		};
+		2A9C10273017C00100E956B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A9C10013017C00100E956B9 /* KlikMenuCore */;
+			targetProxy = 2A9C10253017C00100E956B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -570,6 +711,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -627,6 +769,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -642,6 +785,7 @@
 				DEVELOPMENT_TEAM = 9AKL82KSN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "KlikMenu używa kamery do skanowania kodów QR z linkami do menu restauracji.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -674,6 +818,7 @@
 				DEVELOPMENT_TEAM = 9AKL82KSN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "KlikMenu używa kamery do skanowania kodów QR z linkami do menu restauracji.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -934,6 +1079,84 @@
 			};
 			name = Release;
 		};
+		2A9C10083017C00100E956B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9AKL82KSN5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = pl.klikmenu.KlikMenuCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2A9C10093017C00100E956B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9AKL82KSN5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = pl.klikmenu.KlikMenuCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -996,6 +1219,15 @@
 			buildConfigurations = (
 				2A82589D3010F221003FB5CC /* Debug */,
 				2A82589E3010F221003FB5CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A9C10073017C00100E956B9 /* Build configuration list for PBXNativeTarget "KlikMenuCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A9C10083017C00100E956B9 /* Debug */,
+				2A9C10093017C00100E956B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
