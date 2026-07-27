@@ -5,9 +5,9 @@ public struct RestaurantMenuView: View {
     private let slug: String
     @State private var viewModel: RestaurantMenuViewModel
     @State private var showSearch = false
-    @State private var showFeedback = false
-    /// Dynamic Island / notch inset; start at 59 so the first frame is already below the island.
-    @State private var topSafeAreaInset: CGFloat = 59
+    @State private var presentedFeedbackConfig: FeedbackConfig?
+    /// Dynamic Island / notch inset; start with fallback so the first frame is already below the island.
+    @State private var topSafeAreaInset = LayoutMetrics.fallbackTopSafeAreaInset
 
     public init(slug: String, viewModel: RestaurantMenuViewModel? = nil) {
         self.slug = slug
@@ -23,16 +23,21 @@ public struct RestaurantMenuView: View {
             case .empty:
                 EmptyMenuView()
             case .notFound:
-                MenuErrorView(message: "Nie znaleziono restauracji.") {
-                    Task { await viewModel.retry() }
-                }
+                MenuErrorView(message: "Nie znaleziono restauracji.", retry: retry)
             case .error(let message):
-                MenuErrorView(message: message) {
-                    Task { await viewModel.retry() }
-                }
+                MenuErrorView(message: message, retry: retry)
             case .loaded:
                 if let menu = viewModel.menu {
-                    loadedContent(menu: menu, viewModel: viewModel)
+                    RestaurantMenuLoadedView(
+                        menu: menu,
+                        slug: slug,
+                        showFeedback: viewModel.showFeedbackButton,
+                        feedbackConfig: viewModel.feedbackConfig,
+                        topSafeAreaInset: topSafeAreaInset,
+                        showSearch: $showSearch,
+                        presentedFeedbackConfig: $presentedFeedbackConfig,
+                        makeFeedbackViewModel: viewModel.makeFeedbackViewModel
+                    )
                 }
             }
         }
@@ -49,76 +54,66 @@ public struct RestaurantMenuView: View {
         }
     }
 
-    @ViewBuilder
-    private func loadedContent(
-        menu: RestaurantMenu,
-        viewModel: RestaurantMenuViewModel
-    ) -> some View {
+    private func retry() {
+        Task { await viewModel.retry() }
+    }
+}
+
+private struct RestaurantMenuLoadedView: View {
+    let menu: RestaurantMenu
+    let slug: String
+    let showFeedback: Bool
+    let feedbackConfig: FeedbackConfig?
+    let topSafeAreaInset: CGFloat
+    @Binding var showSearch: Bool
+    @Binding var presentedFeedbackConfig: FeedbackConfig?
+    let makeFeedbackViewModel: () -> FeedbackViewModel
+
+    var body: some View {
         ZStack(alignment: .bottomTrailing) {
             ScrollView {
-                LazyVStack(alignment: .leading, spacing: 0, pinnedViews: []) {
+                LazyVStack(alignment: .leading, spacing: 0) {
                     MenuHeroView(
                         menu: menu,
-                        showFeedback: viewModel.showFeedbackButton,
-                        onFeedback: { showFeedback = true },
+                        showFeedback: showFeedback,
+                        onFeedback: openFeedback,
                         topSafeAreaInset: topSafeAreaInset
                     )
 
-                    LazyVStack(alignment: .leading, spacing: 18) {
-                        ForEach(menu.categories) { category in
-                            MenuCategorySectionView(category: category, currency: menu.currency)
-                        }
+                    ForEach(Array(menu.categories.enumerated()), id: \.element.id) { index, category in
+                        MenuCategorySectionView(category: category, currency: menu.currency)
+                            .padding(.horizontal, 16)
+                            // Match previous group padding(top: 12) + offset(y: -24).
+                            .padding(.top, index == 0 ? -12 : 18)
                     }
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 96)
-                    .padding(.top, 12)
-                    .offset(y: -24)
                 }
+                .padding(.bottom, 96)
             }
             .scrollIndicators(.hidden)
             .ignoresSafeArea(edges: .top)
             .safeAreaPadding(.bottom, 8)
 
-            MenuSearchFloatingButton {
-                showSearch = true
-            }
-            .padding(.trailing, 16)
-            .safeAreaPadding(.bottom, 16)
-            .accessibilityLabel("Przeglądaj i wyszukaj menu")
-            .accessibilityHint("Otwiera natywne wyszukiwanie i filtry")
+            MenuSearchFloatingButton(action: openSearch)
+                .padding(.trailing, 16)
+                .safeAreaPadding(.bottom, 16)
         }
         .sheet(isPresented: $showSearch) {
             MenuSearchSheet(menu: menu)
         }
-        .sheet(isPresented: $showFeedback) {
-            if let config = viewModel.feedbackConfig {
-                ServiceFeedbackSheet(
-                    slug: slug,
-                    config: config,
-                    viewModel: viewModel.makeFeedbackViewModel()
-                )
-            }
+        .sheet(item: $presentedFeedbackConfig) { config in
+            ServiceFeedbackSheet(
+                slug: slug,
+                config: config,
+                viewModel: makeFeedbackViewModel()
+            )
         }
     }
-}
 
-private struct MenuSearchFloatingButton: View {
-    let action: () -> Void
+    private func openSearch() {
+        showSearch = true
+    }
 
-    var body: some View {
-        Button(action: action) {
-            Image(systemName: "magnifyingglass")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(Color.klikHeroText)
-                .frame(width: 60, height: 60)
-                .background(Color.klikAccent, in: Circle())
-                .overlay(
-                    Circle()
-                        .stroke(Color.klikHeroText, lineWidth: 2)
-                )
-                .shadow(color: Color.black.opacity(0.22), radius: 12, y: 6)
-        }
-        .buttonStyle(.plain)
-        .frame(minWidth: 44, minHeight: 44)
+    private func openFeedback() {
+        presentedFeedbackConfig = feedbackConfig
     }
 }

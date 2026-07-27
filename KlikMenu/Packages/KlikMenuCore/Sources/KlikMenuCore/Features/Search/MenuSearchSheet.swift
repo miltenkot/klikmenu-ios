@@ -47,25 +47,25 @@ public struct MenuSearchSheet: View {
                     }
                 }
 
-                Section {
-                    if results.isEmpty {
+                if results.isEmpty {
+                    Section("Wyniki: \(resultCount)") {
                         ContentUnavailableView(
                             "Brak wyników",
                             systemImage: "magnifyingglass",
                             description: Text("Spróbuj zmienić frazę lub filtry.")
                         )
                         .listRowBackground(Color.clear)
-                    } else {
-                        ForEach(results) { group in
-                            Section(group.category.name) {
-                                ForEach(group.items) { entry in
-                                    SearchResultRow(item: entry.item, currency: menu.currency)
-                                }
+                    }
+                } else {
+                    ForEach(results) { group in
+                        Section {
+                            ForEach(group.items) { entry in
+                                SearchResultRow(item: entry.item, currency: menu.currency)
                             }
+                        } header: {
+                            Text("\(group.category.name) · \(group.items.count)")
                         }
                     }
-                } header: {
-                    Text("Wyniki: \(resultCount)")
                 }
             }
             .navigationTitle("Szukaj w menu")
@@ -79,13 +79,14 @@ public struct MenuSearchSheet: View {
             )
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Gotowe") { dismiss() }
+                    Button("Gotowe", action: dismiss.callAsFunction)
                         .frame(minHeight: 44)
                 }
             }
             .onChange(of: filters.categoryID) { _, _ in
                 filters.subcategoryID = nil
             }
+            .accessibilityLabel("Wyniki wyszukiwania: \(resultCount)")
         }
         .presentationDetents([.large])
     }
@@ -100,7 +101,7 @@ private struct SearchResultRow: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(item.name)
                     .font(.body.weight(.semibold))
-                if let dietary = item.dietaryType.searchLabel {
+                if let dietary = item.dietaryType.displayLabel {
                     Text(dietary)
                         .font(.caption)
                         .foregroundStyle(Color.klikAccent)
@@ -112,15 +113,5 @@ private struct SearchResultRow: View {
                 .monospacedDigit()
         }
         .accessibilityElement(children: .combine)
-    }
-}
-
-extension DietaryType {
-    fileprivate var searchLabel: String? {
-        switch self {
-        case .none: nil
-        case .vegetarian: "Wegetariańskie"
-        case .vegan: "Wegańskie"
-        }
     }
 }

@@ -121,9 +121,13 @@ public struct ServiceFeedbackSheet: View {
             }
 
             Section("Komentarz (opcjonalnie)") {
-                TextEditor(text: $model.comment)
-                    .frame(minHeight: 100)
-                    .accessibilityLabel("Komentarz do opinii")
+                TextField(
+                    "Dodaj komentarz",
+                    text: $model.comment,
+                    axis: .vertical
+                )
+                .lineLimit(5...)
+                .accessibilityLabel("Komentarz do opinii")
                 Text("\(model.comment.count)/1000")
                     .font(.caption)
                     .foregroundStyle(.secondary)

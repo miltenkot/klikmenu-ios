@@ -11,22 +11,23 @@ struct WindowSafeAreaTopReader: UIViewRepresentable {
         let view = SafeAreaTopObservingView()
         view.isUserInteractionEnabled = false
         view.onInsetChange = { inset in
-            let resolved = inset > 0 ? inset : 59
-            if abs(topInset - resolved) > 0.5 {
-                topInset = resolved
-            }
+            Self.apply(inset: inset, to: $topInset)
         }
         return view
     }
 
     func updateUIView(_ uiView: SafeAreaTopObservingView, context: Context) {
         uiView.onInsetChange = { inset in
-            let resolved = inset > 0 ? inset : 59
-            if abs(topInset - resolved) > 0.5 {
-                topInset = resolved
-            }
+            Self.apply(inset: inset, to: $topInset)
         }
         uiView.reportInset()
+    }
+
+    private static func apply(inset: CGFloat, to topInset: Binding<CGFloat>) {
+        let resolved = inset > 0 ? inset : LayoutMetrics.fallbackTopSafeAreaInset
+        if abs(topInset.wrappedValue - resolved) > 0.5 {
+            topInset.wrappedValue = resolved
+        }
     }
 }
 
@@ -45,9 +46,7 @@ final class SafeAreaTopObservingView: UIView {
 
     func reportInset() {
         let inset = window?.safeAreaInsets.top ?? safeAreaInsets.top
-        DispatchQueue.main.async { [onInsetChange] in
-            onInsetChange?(inset)
-        }
+        onInsetChange?(inset)
     }
 }
 #else
@@ -57,11 +56,6 @@ struct WindowSafeAreaTopReader: View {
     var body: some View {
         Color.clear
             .accessibilityHidden(true)
-            .onAppear {
-                if topInset <= 0 {
-                    topInset = 0
-                }
-            }
     }
 }
 #endif

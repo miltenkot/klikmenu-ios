@@ -27,7 +27,7 @@ public struct MenuItemCardView: View {
                             .foregroundStyle(Color.klikText)
                             .fixedSize(horizontal: false, vertical: true)
 
-                        if let dietaryLabel = item.dietaryType.label {
+                        if let dietaryLabel = item.dietaryType.displayLabel {
                             Text(dietaryLabel)
                                 .font(.caption.weight(.bold))
                                 .padding(.horizontal, 10)
@@ -82,15 +82,5 @@ public struct MenuItemCardView: View {
          + Text(value)
             .font(.footnote)
             .foregroundStyle(Color.klikMuted))
-    }
-}
-
-extension DietaryType {
-    fileprivate var label: String? {
-        switch self {
-        case .none: nil
-        case .vegetarian: "Wegetariańskie"
-        case .vegan: "Wegańskie"
-        }
     }
 }

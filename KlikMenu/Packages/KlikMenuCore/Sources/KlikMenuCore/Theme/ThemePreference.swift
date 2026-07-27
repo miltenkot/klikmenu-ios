@@ -5,11 +5,29 @@ public enum ThemePreference: String, CaseIterable, Sendable {
     case light
     case dark
 
+    public static let storageKey = "klikmenu-theme"
+
     public var colorScheme: ColorScheme? {
         switch self {
         case .system: nil
         case .light: .light
         case .dark: .dark
+        }
+    }
+
+    public var label: String {
+        switch self {
+        case .system: "Systemowy"
+        case .light: "Jasny"
+        case .dark: "Ciemny"
+        }
+    }
+
+    var iconName: String {
+        switch self {
+        case .system: "circle.lefthalf.filled"
+        case .light: "sun.max"
+        case .dark: "moon"
         }
     }
 }

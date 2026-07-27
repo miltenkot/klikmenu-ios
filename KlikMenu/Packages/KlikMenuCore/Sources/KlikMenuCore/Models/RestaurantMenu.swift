@@ -64,6 +64,12 @@ public struct MenuCategory: Sendable, Equatable, Identifiable {
         self.items = items
         self.subcategories = subcategories
     }
+
+    /// Items listed on the category itself, excluding those already shown under a subcategory.
+    public var directItems: [MenuItem] {
+        let subcategoryItemIDs = Set(subcategories.flatMap { $0.items.map(\.id) })
+        return items.filter { !subcategoryItemIDs.contains($0.id) }
+    }
 }
 
 public struct MenuSubcategory: Sendable, Equatable, Identifiable {

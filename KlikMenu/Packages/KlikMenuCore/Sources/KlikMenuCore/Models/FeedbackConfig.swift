@@ -1,6 +1,8 @@
 import Foundation
 
-public struct FeedbackConfig: Sendable, Equatable {
+public struct FeedbackConfig: Sendable, Equatable, Identifiable {
+    public var id: String { "\(restaurantName)-\(waiters.map(\.id).joined(separator: ","))" }
+
     public let enabled: Bool
     public let restaurantName: String
     public let waiters: [PublicWaiter]

@@ -33,6 +33,7 @@ public final class RestaurantMenuViewModel {
         self.slug = slug
         state = .loading
         menu = nil
+        feedbackConfig = nil
 
         let task = Task { await performLoad(slug: slug) }
         loadTask = task

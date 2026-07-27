@@ -20,23 +20,31 @@ public struct MenuHeroView: View {
 
     public var body: some View {
         ZStack(alignment: .topLeading) {
-            heroBackground
-            heroOverlay
-            heroContent
+            MenuHeroBackground(heroImageURL: menu.heroImageURL)
+            MenuHeroOverlay(showsGradient: menu.heroImageURL != nil)
+            MenuHeroContent(
+                menu: menu,
+                showFeedback: showFeedback,
+                onFeedback: onFeedback,
+                topSafeAreaInset: topSafeAreaInset
+            )
         }
         .frame(maxWidth: .infinity)
         .frame(minHeight: 300)
         .clipped()
         .accessibilityElement(children: .contain)
     }
+}
 
-    @ViewBuilder
-    private var heroBackground: some View {
+private struct MenuHeroBackground: View {
+    let heroImageURL: URL?
+
+    var body: some View {
         Group {
-            if menu.heroImageURL != nil {
+            if heroImageURL != nil {
                 Color.clear
                     .overlay {
-                        RemoteImageView(url: menu.heroImageURL)
+                        RemoteImageView(url: heroImageURL)
                     }
                     .clipped()
             } else {
@@ -46,10 +54,13 @@ public struct MenuHeroView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .clipped()
     }
+}
 
-    @ViewBuilder
-    private var heroOverlay: some View {
-        if menu.heroImageURL != nil {
+private struct MenuHeroOverlay: View {
+    let showsGradient: Bool
+
+    var body: some View {
+        if showsGradient {
             LinearGradient(
                 colors: [
                     Color.black.opacity(0.72),
@@ -63,10 +74,17 @@ public struct MenuHeroView: View {
             Color.clear
         }
     }
+}
 
-    private var heroContent: some View {
+private struct MenuHeroContent: View {
+    let menu: RestaurantMenu
+    let showFeedback: Bool
+    let onFeedback: () -> Void
+    let topSafeAreaInset: CGFloat
+
+    var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            topBar
+            MenuHeroTopBar(showFeedback: showFeedback, onFeedback: onFeedback)
 
             Text(menu.name)
                 .font(.system(.largeTitle, design: .serif).weight(.bold))
@@ -75,6 +93,7 @@ public struct MenuHeroView: View {
                 .minimumScaleFactor(0.7)
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityAddTraits(.isHeader)
 
             if let description = menu.description {
                 Text(description)
@@ -87,21 +106,29 @@ public struct MenuHeroView: View {
             }
         }
         // ScrollView uses ignoresSafeArea(.top), so inset must be applied manually.
-        .padding(.top, (topSafeAreaInset > 0 ? topSafeAreaInset : 59) + 10)
+        .padding(
+            .top,
+            (topSafeAreaInset > 0 ? topSafeAreaInset : LayoutMetrics.fallbackTopSafeAreaInset) + 10
+        )
         .padding(.horizontal, 16)
         .padding(.bottom, 52)
         .frame(maxWidth: .infinity, alignment: .topLeading)
     }
+}
 
-    private var topBar: some View {
+private struct MenuHeroTopBar: View {
+    let showFeedback: Bool
+    let onFeedback: () -> Void
+
+    var body: some View {
         HStack(alignment: .center, spacing: 8) {
             Text("KLIKMENU")
                 .font(.caption.weight(.bold))
                 .tracking(2.2)
                 .foregroundStyle(Color.klikAccent)
-                .accessibilityAddTraits(.isHeader)
                 .lineLimit(1)
                 .layoutPriority(1)
+                .accessibilityLabel("KlikMenu")
 
             Spacer(minLength: 8)
 
@@ -123,38 +150,5 @@ public struct MenuHeroView: View {
             .layoutPriority(2)
         }
         .frame(maxWidth: .infinity)
-    }
-}
-
-struct FeedbackActionButton: View {
-    var compact: Bool = false
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack(spacing: 8) {
-                Image(systemName: "star.fill")
-                    .foregroundStyle(Color(red: 183 / 255, green: 121 / 255, blue: 0))
-                    .accessibilityHidden(true)
-
-                if !compact {
-                    Text("Oceń obsługę")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(Color.klikText)
-                        .lineLimit(1)
-                }
-            }
-            .padding(.horizontal, compact ? 0 : 14)
-            .frame(width: compact ? 44 : nil, height: 44)
-            .background(Color.klikSurface, in: Capsule())
-            .overlay(
-                Capsule()
-                    .stroke(Color.klikBorder, lineWidth: 1)
-            )
-            .shadow(color: Color.black.opacity(0.12), radius: 10, y: 4)
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel("Oceń obsługę")
-        .accessibilityHint("Otwiera formularz oceny obsługi")
     }
 }

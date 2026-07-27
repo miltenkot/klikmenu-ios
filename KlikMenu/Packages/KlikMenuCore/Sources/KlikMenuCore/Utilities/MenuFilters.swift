@@ -41,22 +41,17 @@ public struct FilteredMenuCategory: Sendable, Equatable, Identifiable {
 public func normalizeMenuSearch(_ value: String) -> String {
     value
         .lowercased(with: Locale(identifier: "pl_PL"))
-        .replacingOccurrences(of: "ł", with: "l")
+        .replacing("ł", with: "l")
         .folding(options: .diacriticInsensitive, locale: Locale(identifier: "pl_PL"))
         .trimmingCharacters(in: .whitespacesAndNewlines)
 }
 
 public func categorySearchItems(_ category: MenuCategory) -> [FilteredMenuItem] {
     var seen = Set<String>()
-    let subcategoryItemIDs = Set(
-        category.subcategories.flatMap { $0.items.map(\.id) }
-    )
 
-    let direct = category.items
-        .filter { !subcategoryItemIDs.contains($0.id) }
-        .map {
-            FilteredMenuItem(item: $0, subcategoryID: nil, subcategoryName: nil)
-        }
+    let direct = category.directItems.map {
+        FilteredMenuItem(item: $0, subcategoryID: nil, subcategoryName: nil)
+    }
 
     let nested = category.subcategories.flatMap { subcategory in
         subcategory.items.map {
@@ -92,7 +87,7 @@ public func filterMenuCategories(
             }
 
             if !query.isEmpty,
-                !normalizeMenuSearch(entry.item.name).contains(query)
+                !normalizeMenuSearch(entry.item.name).localizedStandardContains(query)
             {
                 return false
             }
