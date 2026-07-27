@@ -48,4 +48,14 @@ struct RestaurantMenuURLParserTests {
     func rejectsInvalidURLs(_ urlString: String) {
         #expect(RestaurantMenuURLParser.parse(urlString) == nil)
     }
+
+    @Test func invocationAcceptsBareSlug() {
+        let route = RestaurantMenuInvocation.route(from: "bistro-klik")
+        #expect(route == RestaurantMenuRoute(slug: "bistro-klik"))
+    }
+
+    @Test func invocationRejectsForeignURL() {
+        let route = RestaurantMenuInvocation.route(from: "https://example.com/menu/bistro-klik")
+        #expect(route == nil)
+    }
 }

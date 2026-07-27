@@ -11,28 +11,31 @@ struct ContentView: View {
     @State private var scannerResetID = UUID()
 
     var body: some View {
-        NavigationStack {
-            Group {
-                if let route {
-                    RestaurantMenuView(slug: route.slug)
-                        .toolbar {
-                            ToolbarItem(placement: .topBarLeading) {
-                                Button("Skanuj ponownie") {
-                                    self.route = nil
-                                    lastRejectedCode = nil
-                                    scannerResetID = UUID()
-                                }
-                                .frame(minHeight: 44)
-                            }
-                        }
-                } else {
-                    scannerScreen
-                }
+        ZStack(alignment: .bottomLeading) {
+            RestaurantMenuSessionView(
+                route: $route,
+                handlesSystemInvocation: true
+            ) {
+                scannerScreen
             }
-        }
-        .klikMenuPreferredColorScheme()
-        .task {
-            await requestCameraAccess()
+
+            if route != nil {
+                Button {
+                    route = nil
+                    lastRejectedCode = nil
+                    scannerResetID = UUID()
+                } label: {
+                    Label("Skanuj ponownie", systemImage: "qrcode.viewfinder")
+                        .font(.subheadline.weight(.semibold))
+                        .padding(.horizontal, 14)
+                        .frame(height: 44)
+                        .background(.ultraThinMaterial, in: Capsule())
+                }
+                .buttonStyle(.plain)
+                .padding(.leading, 16)
+                .safeAreaPadding(.bottom, 16)
+                .accessibilityHint("Wróć do skanera kodów QR")
+            }
         }
     }
 
@@ -93,6 +96,9 @@ struct ContentView: View {
             .padding()
         }
         .accessibilityElement(children: .contain)
+        .task {
+            await requestCameraAccess()
+        }
     }
 
     #if DEBUG
@@ -118,12 +124,7 @@ struct ContentView: View {
     }
 
     private func openDebugInput() {
-        let trimmed = debugInput.trimmingCharacters(in: .whitespacesAndNewlines)
-        if let parsed = RestaurantMenuURLParser.parse(trimmed) {
-            route = parsed
-            return
-        }
-        if let parsed = RestaurantMenuURLParser.parse("https://app.klikmenu.pl/menu/\(trimmed)") {
+        if let parsed = RestaurantMenuInvocation.route(from: debugInput) {
             route = parsed
         }
     }
@@ -135,7 +136,7 @@ struct ContentView: View {
             return
         }
 
-        if let parsed = RestaurantMenuURLParser.parse(code) {
+        if let parsed = RestaurantMenuInvocation.route(from: code) {
             route = parsed
         } else {
             lastRejectedCode = code

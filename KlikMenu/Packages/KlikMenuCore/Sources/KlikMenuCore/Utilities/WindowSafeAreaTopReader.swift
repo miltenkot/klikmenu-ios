@@ -1,4 +1,6 @@
 import SwiftUI
+
+#if canImport(UIKit)
 import UIKit
 
 /// Reports the key window's top safe-area inset (Dynamic Island / notch / status bar).
@@ -48,3 +50,18 @@ final class SafeAreaTopObservingView: UIView {
         }
     }
 }
+#else
+struct WindowSafeAreaTopReader: View {
+    @Binding var topInset: CGFloat
+
+    var body: some View {
+        Color.clear
+            .accessibilityHidden(true)
+            .onAppear {
+                if topInset <= 0 {
+                    topInset = 0
+                }
+            }
+    }
+}
+#endif
