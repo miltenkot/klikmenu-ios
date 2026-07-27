@@ -10,7 +10,7 @@ public struct MenuLoadingView: View {
             ZStack(alignment: .topLeading) {
                 Color.klikHero
                 VStack(alignment: .leading, spacing: 16) {
-                    Text("KLIKMENU")
+                    Text("KLIKMENU", bundle: #bundle)
                         .font(.caption.weight(.bold))
                         .tracking(2)
                         .foregroundStyle(Color.klikHeroMuted)
@@ -22,10 +22,10 @@ public struct MenuLoadingView: View {
                                 .accessibilityHidden(true)
                         }
                         VStack(alignment: .leading, spacing: 6) {
-                            Text("Ładujemy menu…")
+                            Text("Ładujemy menu…", bundle: #bundle)
                                 .font(.system(.largeTitle, design: .serif).weight(.bold))
                                 .foregroundStyle(Color.klikHeroText)
-                            Text("Przygotowujemy kartę dań restauracji.")
+                            Text("Przygotowujemy kartę dań restauracji.", bundle: #bundle)
                                 .foregroundStyle(Color.klikHeroMuted)
                         }
                     }
@@ -58,15 +58,15 @@ public struct MenuLoadingView: View {
             }
             .padding(24)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.klikSurface)
+            .background { Color.klikSurface }
             .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
             .padding(.horizontal, 16)
             .offset(y: -24)
 
             Spacer()
         }
-        .background(Color.klikPageBackground.ignoresSafeArea())
+        .background { Color.klikPageBackground.ignoresSafeArea() }
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Ładujemy menu")
+        .accessibilityLabel(Text("Ładujemy menu…", bundle: #bundle))
     }
 }

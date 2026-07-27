@@ -7,7 +7,7 @@ struct MenuSubcategorySectionView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Divider()
-                .overlay(Color.klikBorder)
+                .overlay { Color.klikBorder }
                 .padding(.top, 16)
 
             VStack(alignment: .leading, spacing: 4) {
@@ -22,9 +22,9 @@ struct MenuSubcategorySectionView: View {
             }
             .padding(.vertical, 12)
 
-            ForEach(Array(subcategory.items.enumerated()), id: \.element.id) { index, item in
-                if index > 0 {
-                    Divider().overlay(Color.klikBorder.opacity(0.85))
+            ForEach(subcategory.items) { item in
+                if item.id != subcategory.items.first?.id {
+                    Divider().overlay { Color.klikBorder.opacity(0.85) }
                 }
                 MenuItemCardView(item: item, currency: currency)
             }

@@ -4,11 +4,11 @@ import Observation
 @MainActor
 @Observable
 public final class FeedbackViewModel {
-    public enum State: Equatable, Sendable {
+    public enum State: Sendable {
         case idle
         case submitting
         case success
-        case error(String)
+        case error(LocalizedStringResource)
     }
 
     public var selectedWaiterID: String?
@@ -51,6 +51,19 @@ public final class FeedbackViewModel {
             state = .error(error.userFacingMessage)
         } catch {
             state = .error(APIError.network.userFacingMessage)
+        }
+    }
+}
+
+extension FeedbackViewModel.State: Equatable {
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        switch (lhs, rhs) {
+        case (.idle, .idle), (.submitting, .submitting), (.success, .success):
+            true
+        case (.error(let lhsMessage), .error(let rhsMessage)):
+            String(localized: lhsMessage) == String(localized: rhsMessage)
+        default:
+            false
         }
     }
 }

@@ -4,12 +4,12 @@ import Observation
 @MainActor
 @Observable
 public final class RestaurantMenuViewModel {
-    public enum State: Equatable, Sendable {
+    public enum State: Sendable {
         case loading
         case loaded
         case empty
         case notFound
-        case error(String)
+        case error(LocalizedStringResource)
     }
 
     public private(set) var state: State = .loading
@@ -77,6 +77,19 @@ public final class RestaurantMenuViewModel {
             return try await api.fetchFeedbackConfig(slug: slug)
         } catch {
             return nil
+        }
+    }
+}
+
+extension RestaurantMenuViewModel.State: Equatable {
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        switch (lhs, rhs) {
+        case (.loading, .loading), (.loaded, .loaded), (.empty, .empty), (.notFound, .notFound):
+            true
+        case (.error(let lhsMessage), .error(let rhsMessage)):
+            String(localized: lhsMessage) == String(localized: rhsMessage)
+        default:
+            false
         }
     }
 }

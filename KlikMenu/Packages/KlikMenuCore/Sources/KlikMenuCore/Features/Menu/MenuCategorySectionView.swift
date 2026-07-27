@@ -25,9 +25,9 @@ public struct MenuCategorySectionView: View {
             .padding(.bottom, 12)
 
             VStack(alignment: .leading, spacing: 0) {
-                ForEach(Array(category.directItems.enumerated()), id: \.element.id) { index, item in
-                    if index > 0 {
-                        Divider().overlay(Color.klikBorder.opacity(0.85))
+                ForEach(category.directItems) { item in
+                    if item.id != category.directItems.first?.id {
+                        Divider().overlay { Color.klikBorder.opacity(0.85) }
                     }
                     MenuItemCardView(item: item, currency: currency)
                 }
@@ -40,10 +40,10 @@ public struct MenuCategorySectionView: View {
         .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.klikSurface, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-        .overlay(
+        .overlay {
             RoundedRectangle(cornerRadius: 22, style: .continuous)
                 .stroke(Color.klikBorder, lineWidth: 1)
-        )
+        }
         .shadow(color: Color.black.opacity(0.06), radius: 18, y: 8)
         .accessibilityElement(children: .contain)
     }

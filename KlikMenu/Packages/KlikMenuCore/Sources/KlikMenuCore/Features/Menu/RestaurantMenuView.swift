@@ -5,7 +5,7 @@ public struct RestaurantMenuView: View {
     private let slug: String
     @State private var viewModel: RestaurantMenuViewModel
     @State private var showSearch = false
-    @State private var presentedFeedbackConfig: FeedbackConfig?
+    @State private var presentedFeedback: FeedbackPresentation?
     /// Dynamic Island / notch inset; start with fallback so the first frame is already below the island.
     @State private var topSafeAreaInset = LayoutMetrics.fallbackTopSafeAreaInset
 
@@ -23,25 +23,25 @@ public struct RestaurantMenuView: View {
             case .empty:
                 EmptyMenuView()
             case .notFound:
-                MenuErrorView(message: "Nie znaleziono restauracji.", retry: retry)
+                MenuErrorView(
+                    message: LocalizedStringResource("Nie znaleziono restauracji.", bundle: #bundle),
+                    retry: retry
+                )
             case .error(let message):
                 MenuErrorView(message: message, retry: retry)
             case .loaded:
                 if let menu = viewModel.menu {
                     RestaurantMenuLoadedView(
                         menu: menu,
-                        slug: slug,
                         showFeedback: viewModel.showFeedbackButton,
-                        feedbackConfig: viewModel.feedbackConfig,
                         topSafeAreaInset: topSafeAreaInset,
                         showSearch: $showSearch,
-                        presentedFeedbackConfig: $presentedFeedbackConfig,
-                        makeFeedbackViewModel: viewModel.makeFeedbackViewModel
+                        onFeedback: openFeedback
                     )
                 }
             }
         }
-        .background(Color.klikPageBackground.ignoresSafeArea())
+        .background { Color.klikPageBackground.ignoresSafeArea() }
         .background {
             WindowSafeAreaTopReader(topInset: $topSafeAreaInset)
                 .frame(width: 0, height: 0)
@@ -49,6 +49,18 @@ public struct RestaurantMenuView: View {
                 .accessibilityHidden(true)
         }
         .klikMenuPreferredColorScheme()
+        .sheet(isPresented: $showSearch) {
+            if let menu = viewModel.menu {
+                MenuSearchSheet(menu: menu)
+            }
+        }
+        .sheet(item: $presentedFeedback) { presentation in
+            ServiceFeedbackSheet(
+                slug: slug,
+                config: presentation.config,
+                viewModel: presentation.viewModel
+            )
+        }
         .task(id: slug) {
             await viewModel.load(slug: slug)
         }
@@ -57,17 +69,28 @@ public struct RestaurantMenuView: View {
     private func retry() {
         Task { await viewModel.retry() }
     }
+
+    private func openFeedback() {
+        guard let config = viewModel.feedbackConfig else { return }
+        presentedFeedback = FeedbackPresentation(
+            config: config,
+            viewModel: viewModel.makeFeedbackViewModel()
+        )
+    }
+}
+
+private struct FeedbackPresentation: Identifiable {
+    var id: String { config.id }
+    let config: FeedbackConfig
+    let viewModel: FeedbackViewModel
 }
 
 private struct RestaurantMenuLoadedView: View {
     let menu: RestaurantMenu
-    let slug: String
     let showFeedback: Bool
-    let feedbackConfig: FeedbackConfig?
     let topSafeAreaInset: CGFloat
     @Binding var showSearch: Bool
-    @Binding var presentedFeedbackConfig: FeedbackConfig?
-    let makeFeedbackViewModel: () -> FeedbackViewModel
+    let onFeedback: () -> Void
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -76,15 +99,15 @@ private struct RestaurantMenuLoadedView: View {
                     MenuHeroView(
                         menu: menu,
                         showFeedback: showFeedback,
-                        onFeedback: openFeedback,
+                        onFeedback: onFeedback,
                         topSafeAreaInset: topSafeAreaInset
                     )
 
-                    ForEach(Array(menu.categories.enumerated()), id: \.element.id) { index, category in
+                    ForEach(menu.categories) { category in
                         MenuCategorySectionView(category: category, currency: menu.currency)
                             .padding(.horizontal, 16)
                             // Match previous group padding(top: 12) + offset(y: -24).
-                            .padding(.top, index == 0 ? -12 : 18)
+                            .padding(.top, category.id == menu.categories.first?.id ? -12 : 18)
                     }
                 }
                 .padding(.bottom, 96)
@@ -97,23 +120,9 @@ private struct RestaurantMenuLoadedView: View {
                 .padding(.trailing, 16)
                 .safeAreaPadding(.bottom, 16)
         }
-        .sheet(isPresented: $showSearch) {
-            MenuSearchSheet(menu: menu)
-        }
-        .sheet(item: $presentedFeedbackConfig) { config in
-            ServiceFeedbackSheet(
-                slug: slug,
-                config: config,
-                viewModel: makeFeedbackViewModel()
-            )
-        }
     }
 
     private func openSearch() {
         showSearch = true
-    }
-
-    private func openFeedback() {
-        presentedFeedbackConfig = feedbackConfig
     }
 }

@@ -4,13 +4,10 @@ public struct MenuSearchSheet: View {
     public let menu: RestaurantMenu
     @Environment(\.dismiss) private var dismiss
     @State private var filters = MenuFilters()
+    @State private var results: [FilteredMenuCategory] = []
 
     public init(menu: RestaurantMenu) {
         self.menu = menu
-    }
-
-    private var results: [FilteredMenuCategory] {
-        filterMenuCategories(menu.categories, filters: filters)
     }
 
     private var resultCount: Int {
@@ -20,41 +17,55 @@ public struct MenuSearchSheet: View {
     public var body: some View {
         NavigationStack {
             List {
-                Section("Filtry") {
-                    Picker("Dieta", selection: $filters.dietaryType) {
-                        Text("Wszystkie").tag(DietaryFilter.all)
-                        Text("Wegetariańskie").tag(DietaryFilter.vegetarian)
-                        Text("Wegańskie").tag(DietaryFilter.vegan)
+                Section {
+                    Picker(selection: $filters.dietaryType) {
+                        Text("Wszystkie", bundle: #bundle).tag(DietaryFilter.all)
+                        Text("Wegetariańskie", bundle: #bundle).tag(DietaryFilter.vegetarian)
+                        Text("Wegańskie", bundle: #bundle).tag(DietaryFilter.vegan)
+                    } label: {
+                        Text("Dieta", bundle: #bundle)
                     }
-                    .accessibilityLabel("Filtr dietetyczny")
+                    .accessibilityLabel(Text("Filtr dietetyczny", bundle: #bundle))
 
-                    Picker("Kategoria", selection: $filters.categoryID) {
-                        Text("Wszystkie").tag(Optional<String>.none)
+                    Picker(selection: $filters.categoryID) {
+                        Text("Wszystkie", bundle: #bundle).tag(Optional<String>.none)
                         ForEach(menu.categories) { category in
                             Text(category.name).tag(Optional(category.id))
                         }
+                    } label: {
+                        Text("Kategoria", bundle: #bundle)
                     }
 
                     if let category = menu.categories.first(where: { $0.id == filters.categoryID }),
                         !category.subcategories.isEmpty
                     {
-                        Picker("Subkategoria", selection: $filters.subcategoryID) {
-                            Text("Wszystkie").tag(Optional<String>.none)
+                        Picker(selection: $filters.subcategoryID) {
+                            Text("Wszystkie", bundle: #bundle).tag(Optional<String>.none)
                             ForEach(category.subcategories) { subcategory in
                                 Text(subcategory.name).tag(Optional(subcategory.id))
                             }
+                        } label: {
+                            Text("Subkategoria", bundle: #bundle)
                         }
                     }
+                } header: {
+                    Text("Filtry", bundle: #bundle)
                 }
 
                 if results.isEmpty {
-                    Section("Wyniki: \(resultCount)") {
-                        ContentUnavailableView(
-                            "Brak wyników",
-                            systemImage: "magnifyingglass",
-                            description: Text("Spróbuj zmienić frazę lub filtry.")
-                        )
+                    Section {
+                        ContentUnavailableView {
+                            Label {
+                                Text("Brak wyników", bundle: #bundle)
+                            } icon: {
+                                Image(systemName: "magnifyingglass")
+                            }
+                        } description: {
+                            Text("Spróbuj zmienić frazę lub filtry.", bundle: #bundle)
+                        }
                         .listRowBackground(Color.clear)
+                    } header: {
+                        Text("Wyniki: \(resultCount)", bundle: #bundle)
                     }
                 } else {
                     ForEach(results) { group in
@@ -63,32 +74,47 @@ public struct MenuSearchSheet: View {
                                 SearchResultRow(item: entry.item, currency: menu.currency)
                             }
                         } header: {
-                            Text("\(group.category.name) · \(group.items.count)")
+                            Text("\(group.category.name) · \(group.items.count)", bundle: #bundle)
                         }
                     }
                 }
             }
-            .navigationTitle("Szukaj w menu")
+            .navigationTitle(Text("Szukaj w menu", bundle: #bundle))
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
+            #if os(iOS)
             .searchable(
                 text: $filters.query,
                 placement: .navigationBarDrawer(displayMode: .always),
-                prompt: "Szukaj po nazwie dania"
+                prompt: Text("Szukaj po nazwie dania", bundle: #bundle)
             )
+            #else
+            .searchable(
+                text: $filters.query,
+                prompt: Text("Szukaj po nazwie dania", bundle: #bundle)
+            )
+            #endif
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Gotowe", action: dismiss.callAsFunction)
+                    Button(LocalizedStringResource("Gotowe", bundle: #bundle), action: dismiss.callAsFunction)
                         .frame(minHeight: 44)
                 }
+            }
+            .onAppear(perform: refreshResults)
+            .onChange(of: filters) { _, _ in
+                refreshResults()
             }
             .onChange(of: filters.categoryID) { _, _ in
                 filters.subcategoryID = nil
             }
-            .accessibilityLabel("Wyniki wyszukiwania: \(resultCount)")
+            .accessibilityLabel(Text("Wyniki wyszukiwania: \(resultCount)", bundle: #bundle))
         }
         .presentationDetents([.large])
+    }
+
+    private func refreshResults() {
+        results = filterMenuCategories(menu.categories, filters: filters)
     }
 }
 
@@ -108,10 +134,19 @@ private struct SearchResultRow: View {
                 }
             }
             Spacer()
-            Text(PriceFormatter.string(price: item.price, currency: currency))
+            priceText
                 .font(.subheadline.weight(.medium))
                 .monospacedDigit()
         }
         .accessibilityElement(children: .combine)
+    }
+
+    @ViewBuilder
+    private var priceText: some View {
+        if let value = Decimal(string: item.price, locale: Locale(identifier: "en_US_POSIX")) {
+            Text(value, format: .currency(code: currency).locale(Locale(identifier: "pl_PL")))
+        } else {
+            Text(verbatim: "\(item.price) \(currency)")
+        }
     }
 }

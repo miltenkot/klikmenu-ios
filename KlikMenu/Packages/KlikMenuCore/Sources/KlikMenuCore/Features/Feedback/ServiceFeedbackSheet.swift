@@ -19,50 +19,28 @@ public struct ServiceFeedbackSheet: View {
             Group {
                 switch model.state {
                 case .success:
-                    thankYouView
+                    FeedbackThankYouView(onDismiss: dismiss.callAsFunction)
                 default:
                     formView(model: model)
                 }
             }
-            .navigationTitle("Oceń obsługę")
+            .navigationTitle(Text("Oceń obsługę", bundle: #bundle))
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Zamknij") { dismiss() }
+                    Button(LocalizedStringResource("Zamknij", bundle: #bundle)) { dismiss() }
                         .frame(minHeight: 44)
                 }
             }
         }
     }
 
-    private var thankYouView: some View {
-        VStack(spacing: 18) {
-            Image(systemName: "heart.fill")
-                .font(.system(size: 44))
-                .foregroundStyle(Color.klikAccent)
-                .accessibilityHidden(true)
-            Text("Dziękujemy!")
-                .font(.system(.title, design: .serif).weight(.bold))
-            Text("Twoja opinia została wysłana.")
-                .foregroundStyle(Color.klikMuted)
-                .multilineTextAlignment(.center)
-            Button("Zamknij") { dismiss() }
-                .buttonStyle(.borderedProminent)
-                .tint(Color.klikAccent)
-                .frame(minHeight: 44)
-        }
-        .padding(24)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.klikPageBackground.ignoresSafeArea())
-        .accessibilityElement(children: .combine)
-    }
-
     private func formView(model: FeedbackViewModel) -> some View {
         @Bindable var model = model
         return Form {
-            Section("Wybierz kelnera") {
+            Section {
                 ForEach(config.waiters) { waiter in
                     Button {
                         model.selectedWaiterID = waiter.id
@@ -75,21 +53,23 @@ public struct ServiceFeedbackSheet: View {
                             if model.selectedWaiterID == waiter.id {
                                 Image(systemName: "checkmark.circle.fill")
                                     .foregroundStyle(Color.klikAccent)
-                                    .accessibilityLabel("Wybrany")
+                                    .accessibilityLabel(Text("Wybrany", bundle: #bundle))
                             }
                         }
                         .contentShape(Rectangle())
                         .frame(minHeight: 44)
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel("Kelner \(waiter.name)")
+                    .accessibilityLabel(Text("Kelner \(waiter.name)", bundle: #bundle))
                     .accessibilityAddTraits(
                         model.selectedWaiterID == waiter.id ? .isSelected : []
                     )
                 }
+            } header: {
+                Text("Wybierz kelnera", bundle: #bundle)
             }
 
-            Section("Ocena") {
+            Section {
                 HStack(spacing: 4) {
                     ForEach(1...5, id: \.self) { star in
                         Button {
@@ -102,12 +82,12 @@ public struct ServiceFeedbackSheet: View {
                                 .contentShape(Rectangle())
                         }
                         .buttonStyle(.borderless)
-                        .accessibilityLabel("\(star) z 5 gwiazdek")
+                        .accessibilityLabel(Text("\(star) z 5 gwiazdek", bundle: #bundle))
                         .accessibilityAddTraits(star == model.rating ? .isSelected : [])
                         .accessibilityHint(
                             model.rating == star
-                                ? "Dwukrotnie stuknij, aby wyczyścić ocenę"
-                                : "Ustaw ocenę na \(star)"
+                                ? Text("Dwukrotnie stuknij, aby wyczyścić ocenę", bundle: #bundle)
+                                : Text("Ustaw ocenę na \(star)", bundle: #bundle)
                         )
                     }
                     Spacer(minLength: 0)
@@ -115,30 +95,38 @@ public struct ServiceFeedbackSheet: View {
                 .accessibilityElement(children: .contain)
                 .accessibilityLabel(
                     model.rating > 0
-                        ? "Ocena \(model.rating) z 5 gwiazdek"
-                        : "Brak oceny"
+                        ? Text("Ocena \(model.rating) z 5 gwiazdek", bundle: #bundle)
+                        : Text("Brak oceny", bundle: #bundle)
                 )
+            } header: {
+                Text("Ocena", bundle: #bundle)
             }
 
-            Section("Komentarz (opcjonalnie)") {
+            Section {
                 TextField(
-                    "Dodaj komentarz",
                     text: $model.comment,
+                    prompt: Text("Dodaj komentarz", bundle: #bundle),
                     axis: .vertical
-                )
+                ) {
+                    Text("Dodaj komentarz", bundle: #bundle)
+                }
                 .lineLimit(5...)
-                .accessibilityLabel("Komentarz do opinii")
-                Text("\(model.comment.count)/1000")
+                .accessibilityLabel(Text("Komentarz do opinii", bundle: #bundle))
+                Text(verbatim: "\(model.comment.count)/1000")
                     .font(.caption)
                     .foregroundStyle(.secondary)
-                    .accessibilityLabel("\(model.comment.count) z 1000 znaków")
+                    .accessibilityLabel(Text("\(model.comment.count) z 1000 znaków", bundle: #bundle))
+            } header: {
+                Text("Komentarz (opcjonalnie)", bundle: #bundle)
             }
 
             if case .error(let message) = model.state {
                 Section {
                     Text(message)
                         .foregroundStyle(.red)
-                        .accessibilityLabel("Błąd: \(message)")
+                        .accessibilityLabel(
+                            Text("Błąd: \(String(localized: message))", bundle: #bundle)
+                        )
                 }
             }
 
@@ -150,7 +138,7 @@ public struct ServiceFeedbackSheet: View {
                         ProgressView()
                             .frame(maxWidth: .infinity)
                     } else {
-                        Text("Wyślij opinię")
+                        Text("Wyślij opinię", bundle: #bundle)
                             .frame(maxWidth: .infinity)
                     }
                 }
@@ -177,5 +165,31 @@ public struct ServiceFeedbackSheet: View {
                 }
                 .accessibilityHidden(true)
         }
+    }
+}
+
+struct FeedbackThankYouView: View {
+    let onDismiss: () -> Void
+
+    var body: some View {
+        VStack(spacing: 18) {
+            Image(systemName: "heart.fill")
+                .font(.system(size: 44))
+                .foregroundStyle(Color.klikAccent)
+                .accessibilityHidden(true)
+            Text("Dziękujemy!", bundle: #bundle)
+                .font(.system(.title, design: .serif).weight(.bold))
+            Text("Twoja opinia została wysłana.", bundle: #bundle)
+                .foregroundStyle(Color.klikMuted)
+                .multilineTextAlignment(.center)
+            Button(LocalizedStringResource("Zamknij", bundle: #bundle), action: onDismiss)
+                .buttonStyle(.borderedProminent)
+                .tint(Color.klikAccent)
+                .frame(minHeight: 44)
+        }
+        .padding(24)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background { Color.klikPageBackground.ignoresSafeArea() }
+        .accessibilityElement(children: .combine)
     }
 }

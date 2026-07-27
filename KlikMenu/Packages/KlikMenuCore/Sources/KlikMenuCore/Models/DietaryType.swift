@@ -5,11 +5,11 @@ public enum DietaryType: String, Codable, Sendable, Equatable, CaseIterable {
     case vegetarian = "VEGETARIAN"
     case vegan = "VEGAN"
 
-    public var displayLabel: String? {
+    public var displayLabel: LocalizedStringResource? {
         switch self {
         case .none: nil
-        case .vegetarian: "Wegetariańskie"
-        case .vegan: "Wegańskie"
+        case .vegetarian: LocalizedStringResource("Wegetariańskie", bundle: #bundle)
+        case .vegan: LocalizedStringResource("Wegańskie", bundle: #bundle)
         }
     }
 }

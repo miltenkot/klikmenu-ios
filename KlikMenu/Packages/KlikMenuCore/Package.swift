@@ -3,6 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "KlikMenuCore",
+    defaultLocalization: "pl",
     platforms: [
         .iOS(.v18),
         .macOS(.v14)
@@ -15,7 +16,10 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "KlikMenuCore"
+            name: "KlikMenuCore",
+            resources: [
+                .process("Resources")
+            ]
         ),
         .testTarget(
             name: "KlikMenuCoreTests",

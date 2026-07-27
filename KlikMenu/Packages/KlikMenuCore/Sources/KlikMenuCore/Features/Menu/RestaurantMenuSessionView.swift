@@ -4,7 +4,7 @@ import SwiftUI
 /// Once a route is set, both targets render the same `RestaurantMenuView`.
 public struct RestaurantMenuSessionView<Idle: View>: View {
     @Binding private var route: RestaurantMenuRoute?
-    @State private var invalidURLMessage: String?
+    @State private var invalidURLMessage: LocalizedStringResource?
 
     private let initialURL: URL?
     private let handlesSystemInvocation: Bool
@@ -27,11 +27,15 @@ public struct RestaurantMenuSessionView<Idle: View>: View {
             if let route {
                 RestaurantMenuView(slug: route.slug)
             } else if let invalidURLMessage {
-                ContentUnavailableView(
-                    "Nieprawidłowy link",
-                    systemImage: "link",
-                    description: Text(invalidURLMessage)
-                )
+                ContentUnavailableView {
+                    Label {
+                        Text("Nieprawidłowy link", bundle: #bundle)
+                    } icon: {
+                        Image(systemName: "link")
+                    }
+                } description: {
+                    Text(invalidURLMessage)
+                }
                 .padding()
             } else {
                 idle

@@ -7,24 +7,41 @@ public enum APIError: Error, Equatable, Sendable {
     case notFound
     case http(statusCode: Int, message: String, code: String?)
 
-    public var userFacingMessage: String {
+    public var userFacingMessage: LocalizedStringResource {
         switch self {
         case .network:
-            return "Brak połączenia z internetem. Sprawdź sieć i spróbuj ponownie."
+            LocalizedStringResource(
+                "Brak połączenia z internetem. Sprawdź sieć i spróbuj ponownie.",
+                bundle: #bundle
+            )
         case .cancelled:
-            return "Żądanie zostało anulowane."
+            LocalizedStringResource("Żądanie zostało anulowane.", bundle: #bundle)
         case .decoding:
-            return "Nie udało się odczytać odpowiedzi serwera."
+            LocalizedStringResource(
+                "Nie udało się odczytać odpowiedzi serwera.",
+                bundle: #bundle
+            )
         case .notFound:
-            return "Nie znaleziono restauracji."
+            LocalizedStringResource("Nie znaleziono restauracji.", bundle: #bundle)
         case .http(let statusCode, let message, _):
             if statusCode == 429 {
-                return "Wysłano zbyt wiele opinii. Spróbuj ponownie za chwilę."
+                LocalizedStringResource(
+                    "Wysłano zbyt wiele opinii. Spróbuj ponownie za chwilę.",
+                    bundle: #bundle
+                )
+            } else if (500...599).contains(statusCode) {
+                LocalizedStringResource(
+                    "Serwer jest tymczasowo niedostępny. Spróbuj ponownie.",
+                    bundle: #bundle
+                )
+            } else if message.isEmpty {
+                LocalizedStringResource(
+                    "Wystąpił błąd serwera (\(statusCode)).",
+                    bundle: #bundle
+                )
+            } else {
+                LocalizedStringResource(stringLiteral: message)
             }
-            if (500...599).contains(statusCode) {
-                return "Serwer jest tymczasowo niedostępny. Spróbuj ponownie."
-            }
-            return message.isEmpty ? "Wystąpił błąd serwera (\(statusCode))." : message
         }
     }
 }

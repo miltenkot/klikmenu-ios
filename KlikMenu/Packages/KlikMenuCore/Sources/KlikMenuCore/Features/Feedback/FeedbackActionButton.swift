@@ -5,10 +5,10 @@ struct FeedbackActionButton: View {
     let action: () -> Void
 
     var body: some View {
-        Button("Oceń obsługę", systemImage: "star.fill", action: action)
+        Button(LocalizedStringResource("Oceń obsługę", bundle: #bundle), systemImage: "star.fill", action: action)
             .labelStyle(FeedbackStarLabelStyle(compact: compact))
             .buttonStyle(.plain)
-            .accessibilityHint("Otwiera formularz oceny obsługi")
+            .accessibilityHint(Text("Otwiera formularz oceny obsługi", bundle: #bundle))
     }
 }
 
@@ -31,10 +31,10 @@ private struct FeedbackStarLabelStyle: LabelStyle {
         .padding(.horizontal, compact ? 0 : 14)
         .frame(width: compact ? 44 : nil, height: 44)
         .background(Color.klikSurface, in: Capsule())
-        .overlay(
+        .overlay {
             Capsule()
                 .stroke(Color.klikBorder, lineWidth: 1)
-        )
+        }
         .shadow(color: Color.black.opacity(0.12), radius: 10, y: 4)
     }
 }

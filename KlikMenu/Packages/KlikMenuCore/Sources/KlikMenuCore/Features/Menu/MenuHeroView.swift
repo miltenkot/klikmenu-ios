@@ -23,7 +23,8 @@ public struct MenuHeroView: View {
             MenuHeroBackground(heroImageURL: menu.heroImageURL)
             MenuHeroOverlay(showsGradient: menu.heroImageURL != nil)
             MenuHeroContent(
-                menu: menu,
+                name: menu.name,
+                description: menu.description,
                 showFeedback: showFeedback,
                 onFeedback: onFeedback,
                 topSafeAreaInset: topSafeAreaInset
@@ -77,7 +78,8 @@ private struct MenuHeroOverlay: View {
 }
 
 private struct MenuHeroContent: View {
-    let menu: RestaurantMenu
+    let name: String
+    let description: String?
     let showFeedback: Bool
     let onFeedback: () -> Void
     let topSafeAreaInset: CGFloat
@@ -86,7 +88,7 @@ private struct MenuHeroContent: View {
         VStack(alignment: .leading, spacing: 14) {
             MenuHeroTopBar(showFeedback: showFeedback, onFeedback: onFeedback)
 
-            Text(menu.name)
+            Text(name)
                 .font(.system(.largeTitle, design: .serif).weight(.bold))
                 .foregroundStyle(Color.klikHeroText)
                 .lineLimit(3)
@@ -95,7 +97,7 @@ private struct MenuHeroContent: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .accessibilityAddTraits(.isHeader)
 
-            if let description = menu.description {
+            if let description {
                 Text(description)
                     .font(.body)
                     .foregroundStyle(Color.klikHeroMuted)
@@ -122,13 +124,13 @@ private struct MenuHeroTopBar: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: 8) {
-            Text("KLIKMENU")
+            Text("KLIKMENU", bundle: #bundle)
                 .font(.caption.weight(.bold))
                 .tracking(2.2)
                 .foregroundStyle(Color.klikAccent)
                 .lineLimit(1)
                 .layoutPriority(1)
-                .accessibilityLabel("KlikMenu")
+                .accessibilityLabel(Text("KlikMenu", bundle: #bundle))
 
             Spacer(minLength: 8)
 
@@ -142,10 +144,10 @@ private struct MenuHeroTopBar: View {
 
                 ThemeSwitcherControl()
                     .foregroundStyle(Color.klikText)
-                    .background(
+                    .background {
                         Circle()
                             .fill(Color.klikSurface.opacity(0.92))
-                    )
+                    }
             }
             .layoutPriority(2)
         }

@@ -33,17 +33,17 @@ public struct MenuItemCardView: View {
                                 .padding(.horizontal, 10)
                                 .padding(.vertical, 4)
                                 .background(Color.klikDietaryBackground, in: Capsule())
-                                .overlay(
+                                .overlay {
                                     Capsule().stroke(Color.klikDietaryBorder, lineWidth: 1)
-                                )
+                                }
                                 .foregroundStyle(Color.klikDietaryText)
-                                .accessibilityLabel(dietaryLabel)
+                                .accessibilityLabel(Text(dietaryLabel))
                         }
                     }
 
                     Spacer(minLength: 8)
 
-                    Text(PriceFormatter.string(price: item.price, currency: currency))
+                    priceText
                         .font(.subheadline.weight(.bold))
                         .monospacedDigit()
                         .foregroundStyle(Color.klikAccent)
@@ -63,11 +63,15 @@ public struct MenuItemCardView: View {
                 }
 
                 if let ingredients = item.ingredients {
-                    detailRow(title: "Składniki", value: ingredients)
+                    Text("Składniki: \(ingredients)", bundle: #bundle)
+                        .font(.footnote)
+                        .foregroundStyle(Color.klikMuted)
                 }
 
                 if !item.allergens.isEmpty {
-                    detailRow(title: "Alergeny", value: item.allergens.joined(separator: ", "))
+                    Text("Alergeny: \(item.allergens.formatted())", bundle: #bundle)
+                        .font(.footnote)
+                        .foregroundStyle(Color.klikMuted)
                 }
             }
         }
@@ -75,12 +79,12 @@ public struct MenuItemCardView: View {
         .accessibilityElement(children: .combine)
     }
 
-    private func detailRow(title: String, value: String) -> some View {
-        (Text("\(title): ")
-            .font(.footnote.weight(.bold))
-            .foregroundStyle(Color.klikText)
-         + Text(value)
-            .font(.footnote)
-            .foregroundStyle(Color.klikMuted))
+    @ViewBuilder
+    private var priceText: some View {
+        if let value = Decimal(string: item.price, locale: Locale(identifier: "en_US_POSIX")) {
+            Text(value, format: .currency(code: currency).locale(Locale(identifier: "pl_PL")))
+        } else {
+            Text(verbatim: "\(item.price) \(currency)")
+        }
     }
 }

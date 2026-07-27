@@ -15,11 +15,11 @@ public enum ThemePreference: String, CaseIterable, Sendable {
         }
     }
 
-    public var label: String {
+    public var label: LocalizedStringResource {
         switch self {
-        case .system: "Systemowy"
-        case .light: "Jasny"
-        case .dark: "Ciemny"
+        case .system: LocalizedStringResource("Systemowy", bundle: #bundle)
+        case .light: LocalizedStringResource("Jasny", bundle: #bundle)
+        case .dark: LocalizedStringResource("Ciemny", bundle: #bundle)
         }
     }
 

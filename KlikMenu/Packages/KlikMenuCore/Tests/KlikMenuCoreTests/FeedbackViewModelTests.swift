@@ -37,5 +37,5 @@ func mapsFeedbackRateLimit() async {
         Issue.record("Expected error state")
         return
     }
-    #expect(message.localizedCaseInsensitiveContains("zbyt wiele"))
+    #expect(String(localized: message).localizedCaseInsensitiveContains("zbyt wiele"))
 }
