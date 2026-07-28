@@ -20,12 +20,18 @@ struct WindowSafeAreaTopReader: UIViewRepresentable {
         uiView.onInsetChange = { inset in
             Self.apply(inset: inset, to: $topInset)
         }
-        uiView.reportInset()
+        // Do not call `reportInset()` here — it would write SwiftUI state during
+        // the view update. Layout / window callbacks publish the value instead.
     }
 
     private static func apply(inset: CGFloat, to topInset: Binding<CGFloat>) {
         let resolved = inset > 0 ? inset : LayoutMetrics.fallbackTopSafeAreaInset
-        if abs(topInset.wrappedValue - resolved) > 0.5 {
+        guard abs(topInset.wrappedValue - resolved) > 0.5 else { return }
+
+        // Defer past the current update/layout pass to avoid
+        // "Modifying state during view update".
+        DispatchQueue.main.async {
+            guard abs(topInset.wrappedValue - resolved) > 0.5 else { return }
             topInset.wrappedValue = resolved
         }
     }
