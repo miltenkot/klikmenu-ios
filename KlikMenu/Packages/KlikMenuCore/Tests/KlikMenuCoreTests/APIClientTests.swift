@@ -88,8 +88,12 @@ struct APIClientTests {
             Issue.record("Expected 429")
         } catch let error as APIError {
             #expect(
-                String(localized: error.userFacingMessage)
-                    .localizedCaseInsensitiveContains("zbyt wiele")
+                {
+                    var copy = error.userFacingMessage
+                    copy.locale = Locale(identifier: "pl")
+                    return String(localized: copy)
+                }()
+                .localizedCaseInsensitiveContains("zbyt wiele")
             )
         } catch {
             Issue.record("Unexpected error \(error)")

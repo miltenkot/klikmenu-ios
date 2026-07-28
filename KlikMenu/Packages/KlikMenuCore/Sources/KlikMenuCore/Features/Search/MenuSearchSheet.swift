@@ -144,7 +144,7 @@ private struct SearchResultRow: View {
     @ViewBuilder
     private var priceText: some View {
         if let value = Decimal(string: item.price, locale: Locale(identifier: "en_US_POSIX")) {
-            Text(value, format: .currency(code: currency).locale(Locale(identifier: "pl_PL")))
+            Text(value, format: .currency(code: currency))
         } else {
             Text(verbatim: "\(item.price) \(currency)")
         }

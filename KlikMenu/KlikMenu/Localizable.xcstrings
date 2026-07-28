@@ -1,0 +1,150 @@
+{
+  "sourceLanguage" : "pl",
+  "strings" : {
+    "Wyceluj w kod QR" : {
+      "comment" : "Instruction on the QR scanner screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aim at a QR code"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyceluj w kod QR"
+          }
+        }
+      }
+    },
+    "Skaner kodów QR menu KlikMenu" : {
+      "comment" : "Accessibility label for the QR scanner screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu menu QR code scanner"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skaner kodów QR menu KlikMenu"
+          }
+        }
+      }
+    },
+    "Brak dostępu do kamery. Włącz go w Ustawieniach, aby skanować kody QR." : {
+      "comment" : "Camera permission denied message on the scanner screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera access is off. Enable it in Settings to scan QR codes."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak dostępu do kamery. Włącz go w Ustawieniach, aby skanować kody QR."
+          }
+        }
+      }
+    },
+    "Otwórz Ustawienia" : {
+      "comment" : "Button that opens system Settings for camera permission.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwórz Ustawienia"
+          }
+        }
+      }
+    },
+    "Skanuj ponownie" : {
+      "comment" : "Button that returns from the menu to the QR scanner.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan again"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skanuj ponownie"
+          }
+        }
+      }
+    },
+    "Wróć do skanera kodów QR" : {
+      "comment" : "Accessibility hint for the scan-again button.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Return to the QR code scanner"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wróć do skanera kodów QR"
+          }
+        }
+      }
+    },
+    "KLIKMENU" : {
+      "comment" : "Brand eyebrow on the QR scanner screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
+          }
+        }
+      }
+    },
+    "KlikMenu" : {
+      "comment" : "Spoken brand name for accessibility on the QR scanner screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

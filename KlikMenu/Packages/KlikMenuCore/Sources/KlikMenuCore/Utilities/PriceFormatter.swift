@@ -7,7 +7,7 @@ public enum PriceFormatter {
         }
         return value.formatted(
             .currency(code: currency)
-                .locale(Locale(identifier: "pl_PL"))
+                .locale(.autoupdatingCurrent)
         )
     }
 }

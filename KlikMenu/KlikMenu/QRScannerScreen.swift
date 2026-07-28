@@ -26,7 +26,7 @@ struct QRScannerScreen: View {
                     .tracking(2)
                     .foregroundStyle(.white.opacity(0.85))
                     .padding(.top, 24)
-                    .accessibilityLabel("KlikMenu")
+                    .accessibilityLabel(Text("KlikMenu"))
 
                 Spacer()
 
@@ -50,7 +50,7 @@ struct QRScannerScreen: View {
             .padding()
         }
         .accessibilityElement(children: .contain)
-        .accessibilityLabel("Skaner kodów QR menu KlikMenu")
+        .accessibilityLabel(Text("Skaner kodów QR menu KlikMenu"))
         .task {
             await requestCameraAccess()
         }

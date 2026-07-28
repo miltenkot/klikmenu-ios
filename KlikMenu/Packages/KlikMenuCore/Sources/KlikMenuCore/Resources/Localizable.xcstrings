@@ -1,762 +1,1140 @@
 {
-  "sourceLanguage" : "pl",
-  "strings" : {
-    "Oceń obsługę" : {
-      "comment" : "Feedback button title and sheet navigation title.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Oceń obsługę"
+  "sourceLanguage": "pl",
+  "strings": {
+    "Oceń obsługę": {
+      "comment": "Feedback button title and sheet navigation title.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oceń obsługę"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rate service"
           }
         }
       }
     },
-    "Otwiera formularz oceny obsługi" : {
-      "comment" : "Accessibility hint for the feedback button.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Otwiera formularz oceny obsługi"
+    "Otwiera formularz oceny obsługi": {
+      "comment": "Accessibility hint for the feedback button.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otwiera formularz oceny obsługi"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opens the service rating form"
           }
         }
       }
     },
-    "Zamknij" : {
-      "comment" : "Dismiss button on feedback sheet.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zamknij"
+    "Zamknij": {
+      "comment": "Dismiss button on feedback sheet.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zamknij"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
           }
         }
       }
     },
-    "Dziękujemy!" : {
-      "comment" : "Feedback success title.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dziękujemy!"
+    "Dziękujemy!": {
+      "comment": "Feedback success title.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dziękujemy!"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thank you!"
           }
         }
       }
     },
-    "Twoja opinia została wysłana." : {
-      "comment" : "Feedback success message.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Twoja opinia została wysłana."
+    "Twoja opinia została wysłana.": {
+      "comment": "Feedback success message.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Twoja opinia została wysłana."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your feedback has been sent."
           }
         }
       }
     },
-    "Wybierz kelnera" : {
-      "comment" : "Feedback form section header for waiter selection.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wybierz kelnera"
+    "Wybierz kelnera": {
+      "comment": "Feedback form section header for waiter selection.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wybierz kelnera"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a waiter"
           }
         }
       }
     },
-    "Wybrany" : {
-      "comment" : "Accessibility label for selected waiter checkmark.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wybrany"
+    "Wybrany": {
+      "comment": "Accessibility label for selected waiter checkmark.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wybrany"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selected"
           }
         }
       }
     },
-    "Kelner %@" : {
-      "comment" : "Accessibility label for a waiter row. The first variable is the waiter name.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kelner %@"
+    "Kelner %@": {
+      "comment": "Accessibility label for a waiter row. The first variable is the waiter name.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kelner %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiter %@"
           }
         }
       }
     },
-    "Ocena" : {
-      "comment" : "Feedback form section header for star rating.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ocena"
+    "Ocena": {
+      "comment": "Feedback form section header for star rating.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocena"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rating"
           }
         }
       }
     },
-    "%lld z 5 gwiazdek" : {
-      "comment" : "Accessibility label for an individual star. The first variable is the star value.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld z 5 gwiazdek"
+    "%lld z 5 gwiazdek": {
+      "comment": "Accessibility label for an individual star. The first variable is the star value.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld z 5 gwiazdek"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld of 5 stars"
           }
         }
       }
     },
-    "Dwukrotnie stuknij, aby wyczyścić ocenę" : {
-      "comment" : "Accessibility hint when the current star rating can be cleared.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dwukrotnie stuknij, aby wyczyścić ocenę"
+    "Dwukrotnie stuknij, aby wyczyścić ocenę": {
+      "comment": "Accessibility hint when the current star rating can be cleared.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dwukrotnie stuknij, aby wyczyścić ocenę"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Double tap to clear the rating"
           }
         }
       }
     },
-    "Ustaw ocenę na %lld" : {
-      "comment" : "Accessibility hint to set the star rating. The first variable is the star value.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ustaw ocenę na %lld"
+    "Ustaw ocenę na %lld": {
+      "comment": "Accessibility hint to set the star rating. The first variable is the star value.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ustaw ocenę na %lld"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set rating to %lld"
           }
         }
       }
     },
-    "Ocena %lld z 5 gwiazdek" : {
-      "comment" : "Accessibility label for the current rating. The first variable is the selected rating.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ocena %lld z 5 gwiazdek"
+    "Ocena %lld z 5 gwiazdek": {
+      "comment": "Accessibility label for the current rating. The first variable is the selected rating.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ocena %lld z 5 gwiazdek"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rating %lld of 5 stars"
           }
         }
       }
     },
-    "Brak oceny" : {
-      "comment" : "Accessibility label when no star rating is selected.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brak oceny"
+    "Brak oceny": {
+      "comment": "Accessibility label when no star rating is selected.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brak oceny"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No rating"
           }
         }
       }
     },
-    "Komentarz (opcjonalnie)" : {
-      "comment" : "Feedback form section header for optional comment.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Komentarz (opcjonalnie)"
+    "Komentarz (opcjonalnie)": {
+      "comment": "Feedback form section header for optional comment.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komentarz (opcjonalnie)"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comment (optional)"
           }
         }
       }
     },
-    "Dodaj komentarz" : {
-      "comment" : "Placeholder for the feedback comment field.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dodaj komentarz"
+    "Dodaj komentarz": {
+      "comment": "Placeholder for the feedback comment field.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dodaj komentarz"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add a comment"
           }
         }
       }
     },
-    "Komentarz do opinii" : {
-      "comment" : "Accessibility label for the feedback comment field.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Komentarz do opinii"
+    "Komentarz do opinii": {
+      "comment": "Accessibility label for the feedback comment field.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komentarz do opinii"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback comment"
           }
         }
       }
     },
-    "%lld z 1000 znaków" : {
-      "comment" : "Character counter accessibility label. The first variable is the current character count.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld z 1000 znaków"
+    "%lld z 1000 znaków": {
+      "comment": "Character counter accessibility label. The first variable is the current character count.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld z 1000 znaków"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld of 1000 characters"
           }
         }
       }
     },
-    "Błąd: %@" : {
-      "comment" : "Accessibility label for a feedback form error. The first variable is the error message.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Błąd: %@"
+    "Błąd: %@": {
+      "comment": "Accessibility label for a feedback form error. The first variable is the error message.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Błąd: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Error: %@"
           }
         }
       }
     },
-    "Wyślij opinię" : {
-      "comment" : "Submit button on the feedback form.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wyślij opinię"
+    "Wyślij opinię": {
+      "comment": "Submit button on the feedback form.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wyślij opinię"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Submit feedback"
           }
         }
       }
     },
-    "Filtry" : {
-      "comment" : "Search sheet filters section header.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Filtry"
+    "Filtry": {
+      "comment": "Search sheet filters section header.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtry"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filters"
           }
         }
       }
     },
-    "Dieta" : {
-      "comment" : "Dietary filter picker title.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dieta"
+    "Dieta": {
+      "comment": "Dietary filter picker title.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieta"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diet"
           }
         }
       }
     },
-    "Wszystkie" : {
-      "comment" : "Picker option meaning no filter is applied.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wszystkie"
+    "Wszystkie": {
+      "comment": "Picker option meaning no filter is applied.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wszystkie"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All"
           }
         }
       }
     },
-    "Wegetariańskie" : {
-      "comment" : "Vegetarian dietary label and filter option.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wegetariańskie"
+    "Wegetariańskie": {
+      "comment": "Vegetarian dietary label and filter option.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wegetariańskie"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vegetarian"
           }
         }
       }
     },
-    "Wegańskie" : {
-      "comment" : "Vegan dietary label and filter option.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wegańskie"
+    "Wegańskie": {
+      "comment": "Vegan dietary label and filter option.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wegańskie"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vegan"
           }
         }
       }
     },
-    "Filtr dietetyczny" : {
-      "comment" : "Accessibility label for the dietary filter picker.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Filtr dietetyczny"
+    "Filtr dietetyczny": {
+      "comment": "Accessibility label for the dietary filter picker.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtr dietetyczny"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dietary filter"
           }
         }
       }
     },
-    "Kategoria" : {
-      "comment" : "Category filter picker title.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kategoria"
+    "Kategoria": {
+      "comment": "Category filter picker title.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategoria"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Category"
           }
         }
       }
     },
-    "Subkategoria" : {
-      "comment" : "Subcategory filter picker title.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Subkategoria"
+    "Subkategoria": {
+      "comment": "Subcategory filter picker title.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subkategoria"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subcategory"
           }
         }
       }
     },
-    "Wyniki: %lld" : {
-      "comment" : "Search results section header. The first variable is the result count.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wyniki: %lld"
+    "Wyniki: %lld": {
+      "comment": "Search results section header. The first variable is the result count.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wyniki: %lld"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Results: %lld"
           }
         }
       }
     },
-    "Brak wyników" : {
-      "comment" : "Empty search results title.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brak wyników"
+    "Brak wyników": {
+      "comment": "Empty search results title.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brak wyników"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No results"
           }
         }
       }
     },
-    "Spróbuj zmienić frazę lub filtry." : {
-      "comment" : "Empty search results description.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spróbuj zmienić frazę lub filtry."
+    "Spróbuj zmienić frazę lub filtry.": {
+      "comment": "Empty search results description.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spróbuj zmienić frazę lub filtry."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try a different search or filters."
           }
         }
       }
     },
-    "%@ · %lld" : {
-      "comment" : "Search result category header. The first variable is the category name, the second is the item count.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ · %lld"
+    "%@ · %lld": {
+      "comment": "Search result category header. The first variable is the category name, the second is the item count.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %lld"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %lld"
           }
         }
       }
     },
-    "Szukaj w menu" : {
-      "comment" : "Search sheet navigation title.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Szukaj w menu"
+    "Szukaj w menu": {
+      "comment": "Search sheet navigation title.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Szukaj w menu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search menu"
           }
         }
       }
     },
-    "Szukaj po nazwie dania" : {
-      "comment" : "Search field prompt.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Szukaj po nazwie dania"
+    "Szukaj po nazwie dania": {
+      "comment": "Search field prompt.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Szukaj po nazwie dania"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search by dish name"
           }
         }
       }
     },
-    "Gotowe" : {
-      "comment" : "Done button that dismisses the search sheet.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gotowe"
+    "Gotowe": {
+      "comment": "Done button that dismisses the search sheet.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gotowe"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
           }
         }
       }
     },
-    "Wyniki wyszukiwania: %lld" : {
-      "comment" : "Accessibility label for search results. The first variable is the result count.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wyniki wyszukiwania: %lld"
+    "Wyniki wyszukiwania: %lld": {
+      "comment": "Accessibility label for search results. The first variable is the result count.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wyniki wyszukiwania: %lld"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search results: %lld"
           }
         }
       }
     },
-    "Przeglądaj i wyszukaj menu" : {
-      "comment" : "Search floating action button accessibility label.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Przeglądaj i wyszukaj menu"
+    "Przeglądaj i wyszukaj menu": {
+      "comment": "Search floating action button accessibility label.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Przeglądaj i wyszukaj menu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Browse and search the menu"
           }
         }
       }
     },
-    "Otwiera natywne wyszukiwanie i filtry" : {
-      "comment" : "Search floating action button accessibility hint.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Otwiera natywne wyszukiwanie i filtry"
+    "Otwiera natywne wyszukiwanie i filtry": {
+      "comment": "Search floating action button accessibility hint.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otwiera natywne wyszukiwanie i filtry"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opens search and filters"
           }
         }
       }
     },
-    "Nie udało się wczytać menu" : {
-      "comment" : "Menu error screen title.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nie udało się wczytać menu"
+    "Nie udało się wczytać menu": {
+      "comment": "Menu error screen title.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nie udało się wczytać menu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't load the menu"
           }
         }
       }
     },
-    "Spróbuj ponownie" : {
-      "comment" : "Retry button on the menu error screen.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spróbuj ponownie"
+    "Spróbuj ponownie": {
+      "comment": "Retry button on the menu error screen.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spróbuj ponownie"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try again"
           }
         }
       }
     },
-    "Menu jest puste" : {
-      "comment" : "Empty menu screen title.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Menu jest puste"
+    "Menu jest puste": {
+      "comment": "Empty menu screen title.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menu jest puste"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menu is empty"
           }
         }
       }
     },
-    "Ta restauracja nie ma jeszcze dostępnych pozycji." : {
-      "comment" : "Empty menu screen description.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ta restauracja nie ma jeszcze dostępnych pozycji."
+    "Ta restauracja nie ma jeszcze dostępnych pozycji.": {
+      "comment": "Empty menu screen description.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ta restauracja nie ma jeszcze dostępnych pozycji."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This restaurant doesn't have any items yet."
           }
         }
       }
     },
-    "Nie znaleziono restauracji." : {
-      "comment" : "Restaurant not found error message.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nie znaleziono restauracji."
+    "Nie znaleziono restauracji.": {
+      "comment": "Restaurant not found error message.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nie znaleziono restauracji."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurant not found."
           }
         }
       }
     },
-    "Nieprawidłowy link" : {
-      "comment" : "Invalid invocation URL title.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nieprawidłowy link"
+    "Nieprawidłowy link": {
+      "comment": "Invalid invocation URL title.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nieprawidłowy link"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invalid link"
           }
         }
       }
     },
-    "Link musi mieć postać https://app.klikmenu.pl/menu/{slug}." : {
-      "comment" : "Invalid invocation URL description.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Link musi mieć postać https://app.klikmenu.pl/menu/{slug}."
+    "Link musi mieć postać https://app.klikmenu.pl/menu/{slug}.": {
+      "comment": "Invalid invocation URL description.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Link musi mieć postać https://app.klikmenu.pl/menu/{slug}."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The link must look like https://app.klikmenu.pl/menu/{slug}."
           }
         }
       }
     },
-    "KLIKMENU" : {
-      "comment" : "Brand eyebrow shown in the menu hero and loading screen.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "KLIKMENU"
+    "KLIKMENU": {
+      "comment": "Brand eyebrow shown in the menu hero and loading screen.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KLIKMENU"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KLIKMENU"
           }
         }
       }
     },
-    "KlikMenu" : {
-      "comment" : "Spoken brand name for accessibility.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "KlikMenu"
+    "KlikMenu": {
+      "comment": "Spoken brand name for accessibility.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KlikMenu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KlikMenu"
           }
         }
       }
     },
-    "Ładujemy menu…" : {
-      "comment" : "Loading screen title.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ładujemy menu…"
+    "Ładujemy menu…": {
+      "comment": "Loading screen title.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ładujemy menu…"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading menu…"
           }
         }
       }
     },
-    "Przygotowujemy kartę dań restauracji." : {
-      "comment" : "Loading screen subtitle.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Przygotowujemy kartę dań restauracji."
+    "Przygotowujemy kartę dań restauracji.": {
+      "comment": "Loading screen subtitle.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Przygotowujemy kartę dań restauracji."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparing the restaurant menu."
           }
         }
       }
     },
-    "Składniki: %@" : {
-      "comment" : "Menu item ingredients row. The first variable is the ingredients list.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Składniki: %@"
+    "Składniki: %@": {
+      "comment": "Menu item ingredients row. The first variable is the ingredients list.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Składniki: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingredients: %@"
           }
         }
       }
     },
-    "Alergeny: %@" : {
-      "comment" : "Menu item allergens row. The first variable is the formatted allergens list.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alergeny: %@"
+    "Alergeny: %@": {
+      "comment": "Menu item allergens row. The first variable is the formatted allergens list.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alergeny: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allergens: %@"
           }
         }
       }
     },
-    "Motyw aplikacji" : {
-      "comment" : "Theme switcher menu title and accessibility label.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Motyw aplikacji"
+    "Motyw aplikacji": {
+      "comment": "Theme switcher menu title and accessibility label.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motyw aplikacji"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App theme"
           }
         }
       }
     },
-    "Motyw" : {
-      "comment" : "Theme preference picker title.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Motyw"
+    "Motyw": {
+      "comment": "Theme preference picker title.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motyw"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Theme"
           }
         }
       }
     },
-    "Systemowy" : {
-      "comment" : "System theme preference option.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Systemowy"
+    "Systemowy": {
+      "comment": "System theme preference option.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Systemowy"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
           }
         }
       }
     },
-    "Jasny" : {
-      "comment" : "Light theme preference option.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jasny"
+    "Jasny": {
+      "comment": "Light theme preference option.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jasny"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Light"
           }
         }
       }
     },
-    "Ciemny" : {
-      "comment" : "Dark theme preference option.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ciemny"
+    "Ciemny": {
+      "comment": "Dark theme preference option.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ciemny"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dark"
           }
         }
       }
     },
-    "Wybierz motyw jasny, ciemny lub systemowy" : {
-      "comment" : "Theme switcher accessibility hint.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wybierz motyw jasny, ciemny lub systemowy"
+    "Wybierz motyw jasny, ciemny lub systemowy": {
+      "comment": "Theme switcher accessibility hint.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wybierz motyw jasny, ciemny lub systemowy"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose light, dark, or system theme"
           }
         }
       }
     },
-    "Brak połączenia z internetem. Sprawdź sieć i spróbuj ponownie." : {
-      "comment" : "Network error message.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brak połączenia z internetem. Sprawdź sieć i spróbuj ponownie."
+    "Brak połączenia z internetem. Sprawdź sieć i spróbuj ponownie.": {
+      "comment": "Network error message.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brak połączenia z internetem. Sprawdź sieć i spróbuj ponownie."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No internet connection. Check your network and try again."
           }
         }
       }
     },
-    "Żądanie zostało anulowane." : {
-      "comment" : "Cancelled request error message.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Żądanie zostało anulowane."
+    "Żądanie zostało anulowane.": {
+      "comment": "Cancelled request error message.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Żądanie zostało anulowane."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The request was cancelled."
           }
         }
       }
     },
-    "Nie udało się odczytać odpowiedzi serwera." : {
-      "comment" : "Decoding error message.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nie udało się odczytać odpowiedzi serwera."
+    "Nie udało się odczytać odpowiedzi serwera.": {
+      "comment": "Decoding error message.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nie udało się odczytać odpowiedzi serwera."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't read the server response."
           }
         }
       }
     },
-    "Wysłano zbyt wiele opinii. Spróbuj ponownie za chwilę." : {
-      "comment" : "Rate limit error message for feedback.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wysłano zbyt wiele opinii. Spróbuj ponownie za chwilę."
+    "Wysłano zbyt wiele opinii. Spróbuj ponownie za chwilę.": {
+      "comment": "Rate limit error message for feedback.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wysłano zbyt wiele opinii. Spróbuj ponownie za chwilę."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Too many reviews sent. Please try again shortly."
           }
         }
       }
     },
-    "Serwer jest tymczasowo niedostępny. Spróbuj ponownie." : {
-      "comment" : "Server unavailable error message.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serwer jest tymczasowo niedostępny. Spróbuj ponownie."
+    "Serwer jest tymczasowo niedostępny. Spróbuj ponownie.": {
+      "comment": "Server unavailable error message.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serwer jest tymczasowo niedostępny. Spróbuj ponownie."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The server is temporarily unavailable. Please try again."
           }
         }
       }
     },
-    "Wystąpił błąd serwera (%lld)." : {
-      "comment" : "Generic HTTP error. The first variable is the status code.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wystąpił błąd serwera (%lld)."
+    "Wystąpił błąd serwera (%lld).": {
+      "comment": "Generic HTTP error. The first variable is the status code.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wystąpił błąd serwera (%lld)."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A server error occurred (%lld)."
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

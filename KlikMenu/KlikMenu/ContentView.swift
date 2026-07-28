@@ -28,7 +28,7 @@ struct ContentView: View {
                     .buttonStyle(.plain)
                     .padding(.leading, 16)
                     .safeAreaPadding(.bottom, 16)
-                    .accessibilityHint("Wróć do skanera kodów QR")
+                    .accessibilityHint(Text("Wróć do skanera kodów QR"))
             }
         }
     }
