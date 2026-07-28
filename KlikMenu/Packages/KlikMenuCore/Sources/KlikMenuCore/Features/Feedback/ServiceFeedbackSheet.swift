@@ -30,9 +30,11 @@ public struct ServiceFeedbackSheet: View {
             .navigationBarTitleDisplayMode(.inline)
             #endif
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button(LocalizedStringResource("Zamknij", bundle: #bundle)) { dismiss() }
-                        .frame(minHeight: 44)
+                if showsCloseToolbarButton {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button(LocalizedStringResource("Zamknij", bundle: #bundle)) { dismiss() }
+                            .frame(minHeight: 44)
+                    }
                 }
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
@@ -42,6 +44,11 @@ public struct ServiceFeedbackSheet: View {
                 }
             }
         }
+    }
+
+    private var showsCloseToolbarButton: Bool {
+        if case .success = viewModel.state { return false }
+        return true
     }
 
     private func formView(model: FeedbackViewModel) -> some View {
