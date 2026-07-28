@@ -70,34 +70,7 @@ public struct ServiceFeedbackSheet: View {
             }
 
             Section {
-                HStack(spacing: 4) {
-                    ForEach(1...5, id: \.self) { star in
-                        Button {
-                            model.rating = model.rating == star ? 0 : star
-                        } label: {
-                            Image(systemName: star <= model.rating ? "star.fill" : "star")
-                                .font(.title2)
-                                .foregroundStyle(Color.klikAccent)
-                                .frame(width: 44, height: 44)
-                                .contentShape(Rectangle())
-                        }
-                        .buttonStyle(.borderless)
-                        .accessibilityLabel(Text("\(star) z 5 gwiazdek", bundle: #bundle))
-                        .accessibilityAddTraits(star == model.rating ? .isSelected : [])
-                        .accessibilityHint(
-                            model.rating == star
-                                ? Text("Dwukrotnie stuknij, aby wyczyścić ocenę", bundle: #bundle)
-                                : Text("Ustaw ocenę na \(star)", bundle: #bundle)
-                        )
-                    }
-                    Spacer(minLength: 0)
-                }
-                .accessibilityElement(children: .contain)
-                .accessibilityLabel(
-                    model.rating > 0
-                        ? Text("Ocena \(model.rating) z 5 gwiazdek", bundle: #bundle)
-                        : Text("Brak oceny", bundle: #bundle)
-                )
+                FeedbackStarRatingControl(rating: $model.rating)
             } header: {
                 Text("Ocena", bundle: #bundle)
             }
@@ -165,6 +138,46 @@ public struct ServiceFeedbackSheet: View {
                 }
                 .accessibilityHidden(true)
         }
+    }
+}
+
+private struct FeedbackStarRatingControl: View {
+    @Binding var rating: Int
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    var body: some View {
+        HStack(spacing: 4) {
+            ForEach(1...5, id: \.self) { star in
+                let isFilled = star <= rating
+                Button {
+                    rating = rating == star ? 0 : star
+                } label: {
+                    Image(systemName: "star.fill")
+                        .font(.title2)
+                        .foregroundStyle(isFilled ? Color.klikAccent : Color.klikAccent.opacity(0.22))
+                        .scaleEffect(isFilled ? 1 : 0.92)
+                        .frame(width: 44, height: 44)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.borderless)
+                .accessibilityLabel(Text("\(star) z 5 gwiazdek", bundle: #bundle))
+                .accessibilityAddTraits(star == rating ? .isSelected : [])
+                .accessibilityHint(
+                    rating == star
+                        ? Text("Dwukrotnie stuknij, aby wyczyścić ocenę", bundle: #bundle)
+                        : Text("Ustaw ocenę na \(star)", bundle: #bundle)
+                )
+            }
+            Spacer(minLength: 0)
+        }
+        .animation(reduceMotion ? nil : .snappy(duration: 0.2), value: rating)
+        .sensoryFeedback(.selection, trigger: rating)
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(
+            rating > 0
+                ? Text("Ocena \(rating) z 5 gwiazdek", bundle: #bundle)
+                : Text("Brak oceny", bundle: #bundle)
+        )
     }
 }
 
