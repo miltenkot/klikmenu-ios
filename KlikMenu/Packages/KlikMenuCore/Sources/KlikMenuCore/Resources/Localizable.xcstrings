@@ -16,6 +16,30 @@
             "state": "translated",
             "value": "Rate service"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Service bewerten"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оцінити обслуговування"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ohodnotit obsluhu"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ohodnotiť obsluhu"
+          }
         }
       }
     },
@@ -33,6 +57,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Opens the service rating form"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffnet das Formular zur Servicebewertung"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Відкриває форму оцінки обслуговування"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otevře formulář hodnocení obsluhy"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otvorí formulár hodnotenia obsluhy"
           }
         }
       }
@@ -52,6 +100,30 @@
             "state": "translated",
             "value": "Close"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schließen"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Закрити"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zavřít"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zavrieť"
+          }
         }
       }
     },
@@ -69,6 +141,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thank you!"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vielen Dank!"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дякуємо!"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Děkujeme!"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ďakujeme!"
           }
         }
       }
@@ -88,6 +184,30 @@
             "state": "translated",
             "value": "Your feedback has been sent."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dein Feedback wurde gesendet."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ваш відгук надіслано."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vaše hodnocení bylo odesláno."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Váš názor bol odoslaný."
+          }
         }
       }
     },
@@ -105,6 +225,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Choose a waiter"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kellner wählen"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оберіть офіціанта"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vyberte číšníka"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vyberte čašníka"
           }
         }
       }
@@ -124,6 +268,30 @@
             "state": "translated",
             "value": "Selected"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ausgewählt"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вибрано"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vybráno"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vybrané"
+          }
         }
       }
     },
@@ -141,6 +309,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Waiter %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kellner %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Офіціант %@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Číšník %@"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Čašník %@"
           }
         }
       }
@@ -160,6 +352,30 @@
             "state": "translated",
             "value": "Rating"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bewertung"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оцінка"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hodnocení"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hodnotenie"
+          }
         }
       }
     },
@@ -177,6 +393,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld of 5 stars"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld von 5 Sternen"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld з 5 зірок"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld z 5 hvězdiček"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld z 5 hviezdičiek"
           }
         }
       }
@@ -196,6 +436,30 @@
             "state": "translated",
             "value": "Double tap to clear the rating"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doppeltippen, um die Bewertung zu löschen"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Двічі торкніться, щоб скинути оцінку"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dvojitým klepnutím hodnocení vymažete"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dvojitým klepnutím hodnotenie vymažete"
+          }
         }
       }
     },
@@ -213,6 +477,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Set rating to %lld"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bewertung auf %lld setzen"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Встановити оцінку %lld"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nastavit hodnocení na %lld"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nastaviť hodnotenie na %lld"
           }
         }
       }
@@ -232,6 +520,30 @@
             "state": "translated",
             "value": "Rating %lld of 5 stars"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bewertung %lld von 5 Sternen"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оцінка %lld з 5 зірок"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hodnocení %lld z 5 hvězdiček"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hodnotenie %lld z 5 hviezdičiek"
+          }
         }
       }
     },
@@ -249,6 +561,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "No rating"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Bewertung"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Немає оцінки"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bez hodnocení"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bez hodnotenia"
           }
         }
       }
@@ -268,6 +604,30 @@
             "state": "translated",
             "value": "Comment (optional)"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kommentar (optional)"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Коментар (необов’язково)"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komentář (volitelné)"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komentár (voliteľné)"
+          }
         }
       }
     },
@@ -285,6 +645,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Add a comment"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kommentar hinzufügen"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Додати коментар"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Přidat komentář"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pridať komentár"
           }
         }
       }
@@ -304,6 +688,30 @@
             "state": "translated",
             "value": "Feedback comment"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback-Kommentar"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Коментар до відгуку"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komentář k hodnocení"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Komentár k hodnoteniu"
+          }
         }
       }
     },
@@ -321,6 +729,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld of 1000 characters"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld von 1000 Zeichen"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld з 1000 символів"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld z 1000 znaků"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld z 1000 znakov"
           }
         }
       }
@@ -340,6 +772,30 @@
             "state": "translated",
             "value": "Error: %@"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fehler: %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Помилка: %@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chyba: %@"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chyba: %@"
+          }
         }
       }
     },
@@ -357,6 +813,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Submit feedback"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback senden"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Надіслати відгук"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Odeslat hodnocení"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Odoslať hodnotenie"
           }
         }
       }
@@ -376,6 +856,30 @@
             "state": "translated",
             "value": "Filters"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filter"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Фільтри"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtry"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtre"
+          }
         }
       }
     },
@@ -393,6 +897,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Diet"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ernährung"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дієта"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strava"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strava"
           }
         }
       }
@@ -412,6 +940,30 @@
             "state": "translated",
             "value": "All"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Усі"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vše"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Všetky"
+          }
         }
       }
     },
@@ -429,6 +981,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vegetarian"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vegetarisch"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вегетаріанське"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vegetariánské"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vegetariánske"
           }
         }
       }
@@ -448,6 +1024,30 @@
             "state": "translated",
             "value": "Vegan"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vegan"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Веганське"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Veganské"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vegánske"
+          }
         }
       }
     },
@@ -465,6 +1065,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dietary filter"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ernährungsfilter"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дієтичний фільтр"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtr stravy"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filter stravy"
           }
         }
       }
@@ -484,6 +1108,30 @@
             "state": "translated",
             "value": "Category"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategorie"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Категорія"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategorie"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kategória"
+          }
         }
       }
     },
@@ -501,6 +1149,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Subcategory"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unterkategorie"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Підкатегорія"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Podkategorie"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Podkategória"
           }
         }
       }
@@ -520,6 +1192,30 @@
             "state": "translated",
             "value": "Results: %lld"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ergebnisse: %lld"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Результати: %lld"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Výsledky: %lld"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Výsledky: %lld"
+          }
         }
       }
     },
@@ -537,6 +1233,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "No results"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Ergebnisse"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Немає результатів"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Žádné výsledky"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Žiadne výsledky"
           }
         }
       }
@@ -556,6 +1276,30 @@
             "state": "translated",
             "value": "Try a different search or filters."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versuche einen anderen Suchbegriff oder Filter."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Спробуйте змінити фразу або фільтри."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zkuste změnit frázi nebo filtry."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skúste zmeniť frázu alebo filtre."
+          }
         }
       }
     },
@@ -570,6 +1314,30 @@
           }
         },
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %lld"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %lld"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %lld"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %lld"
+          }
+        },
+        "sk": {
           "stringUnit": {
             "state": "translated",
             "value": "%@ · %lld"
@@ -592,6 +1360,30 @@
             "state": "translated",
             "value": "Search menu"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menü durchsuchen"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пошук у меню"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hledat v menu"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hľadať v menu"
+          }
         }
       }
     },
@@ -609,6 +1401,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Search by dish name"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach Gerichtenamen suchen"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шукати за назвою страви"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hledat podle názvu jídla"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hľadať podľa názvu jedla"
           }
         }
       }
@@ -628,6 +1444,30 @@
             "state": "translated",
             "value": "Done"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fertig"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готово"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hotovo"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hotovo"
+          }
         }
       }
     },
@@ -645,6 +1485,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Search results: %lld"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suchergebnisse: %lld"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Результати пошуку: %lld"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Výsledky hledání: %lld"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Výsledky vyhľadávania: %lld"
           }
         }
       }
@@ -664,6 +1528,30 @@
             "state": "translated",
             "value": "Browse and search the menu"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menü durchsuchen und filtern"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Переглянути та шукати в меню"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Procházet a hledat v menu"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prehliadať a hľadať v menu"
+          }
         }
       }
     },
@@ -681,6 +1569,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Opens search and filters"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffnet Suche und Filter"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Відкриває пошук і фільтри"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otevře hledání a filtry"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otvorí vyhľadávanie a filtre"
           }
         }
       }
@@ -700,6 +1612,30 @@
             "state": "translated",
             "value": "Couldn't load the menu"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menü konnte nicht geladen werden"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не вдалося завантажити меню"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menu se nepodařilo načíst"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menu sa nepodarilo načítať"
+          }
         }
       }
     },
@@ -717,6 +1653,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Try again"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erneut versuchen"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Спробувати знову"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zkusit znovu"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skúsiť znova"
           }
         }
       }
@@ -736,6 +1696,30 @@
             "state": "translated",
             "value": "Menu is empty"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das Menü ist leer"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Меню порожнє"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menu je prázdné"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menu je prázdne"
+          }
         }
       }
     },
@@ -753,6 +1737,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "This restaurant doesn't have any items yet."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Restaurant hat noch keine Gerichte."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "У цьому ресторані ще немає доступних позицій."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tato restaurace zatím nemá žádné položky."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Táto reštaurácia zatiaľ nemá žiadne položky."
           }
         }
       }
@@ -772,6 +1780,30 @@
             "state": "translated",
             "value": "Restaurant not found."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurant nicht gefunden."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ресторан не знайдено."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurace nebyla nalezena."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reštaurácia nebola nájdená."
+          }
         }
       }
     },
@@ -789,6 +1821,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Invalid link"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ungültiger Link"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недійсне посилання"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neplatný odkaz"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neplatný odkaz"
           }
         }
       }
@@ -808,6 +1864,30 @@
             "state": "translated",
             "value": "The link must look like https://app.klikmenu.pl/menu/{slug}."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Link muss dem Format https://app.klikmenu.pl/menu/{slug} entsprechen."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Посилання має мати вигляд https://app.klikmenu.pl/menu/{slug}."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Odkaz musí mít tvar https://app.klikmenu.pl/menu/{slug}."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Odkaz musí mať tvar https://app.klikmenu.pl/menu/{slug}."
+          }
         }
       }
     },
@@ -822,6 +1902,30 @@
           }
         },
         "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KLIKMENU"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KLIKMENU"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KLIKMENU"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KLIKMENU"
+          }
+        },
+        "sk": {
           "stringUnit": {
             "state": "translated",
             "value": "KLIKMENU"
@@ -844,6 +1948,30 @@
             "state": "translated",
             "value": "KlikMenu"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KlikMenu"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KlikMenu"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KlikMenu"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KlikMenu"
+          }
         }
       }
     },
@@ -861,6 +1989,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Loading menu…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Menü wird geladen…"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Завантажуємо меню…"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Načítáme menu…"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Načítavame menu…"
           }
         }
       }
@@ -880,6 +2032,30 @@
             "state": "translated",
             "value": "Preparing the restaurant menu."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wir bereiten die Speisekarte vor."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готуємо меню ресторану."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Připravujeme jídelní lístek."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pripravujeme jedálny lístok."
+          }
         }
       }
     },
@@ -897,6 +2073,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ingredients: %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zutaten: %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Інгредієнти: %@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Složky: %@"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zložky: %@"
           }
         }
       }
@@ -916,6 +2116,30 @@
             "state": "translated",
             "value": "Allergens: %@"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allergene: %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Алергени: %@"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alergeny: %@"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alergény: %@"
+          }
         }
       }
     },
@@ -933,6 +2157,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "App theme"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App-Design"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тема програми"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motiv aplikace"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motív aplikácie"
           }
         }
       }
@@ -952,6 +2200,30 @@
             "state": "translated",
             "value": "Theme"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Design"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тема"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motiv"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Motív"
+          }
         }
       }
     },
@@ -969,6 +2241,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "System"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Системна"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Systémový"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Systémový"
           }
         }
       }
@@ -988,6 +2284,30 @@
             "state": "translated",
             "value": "Light"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hell"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Світла"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Světlý"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Svetlý"
+          }
         }
       }
     },
@@ -1005,6 +2325,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dark"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dunkel"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Темна"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tmavý"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tmavý"
           }
         }
       }
@@ -1024,6 +2368,30 @@
             "state": "translated",
             "value": "Choose light, dark, or system theme"
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hell-, Dunkel- oder Systemdesign wählen"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Оберіть світлу, темну або системну тему"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vyberte světlý, tmavý nebo systémový motiv"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vyberte svetlý, tmavý alebo systémový motív"
+          }
         }
       }
     },
@@ -1041,6 +2409,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "No internet connection. Check your network and try again."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Internetverbindung. Prüfe das Netzwerk und versuche es erneut."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Немає з’єднання з інтернетом. Перевірте мережу та спробуйте знову."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Žádné připojení k internetu. Zkontrolujte síť a zkuste to znovu."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Žiadne pripojenie na internet. Skontrolujte sieť a skúste to znova."
           }
         }
       }
@@ -1060,6 +2452,30 @@
             "state": "translated",
             "value": "The request was cancelled."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Anfrage wurde abgebrochen."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запит скасовано."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Požadavek byl zrušen."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Požiadavka bola zrušená."
+          }
         }
       }
     },
@@ -1077,6 +2493,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "Couldn't read the server response."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serverantwort konnte nicht gelesen werden."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не вдалося прочитати відповідь сервера."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Odpověď serveru se nepodařilo načíst."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Odpoveď servera sa nepodarilo načítať."
           }
         }
       }
@@ -1096,6 +2536,30 @@
             "state": "translated",
             "value": "Too many reviews sent. Please try again shortly."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zu viele Bewertungen gesendet. Bitte versuche es gleich erneut."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Надіслано забагато відгуків. Спробуйте знову за мить."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bylo odesláno příliš mnoho hodnocení. Zkuste to znovu za chvíli."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bolo odoslaných príliš veľa hodnotení. Skúste to znova o chvíľu."
+          }
         }
       }
     },
@@ -1114,6 +2578,30 @@
             "state": "translated",
             "value": "The server is temporarily unavailable. Please try again."
           }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Server ist vorübergehend nicht verfügbar. Bitte erneut versuchen."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сервер тимчасово недоступний. Спробуйте знову."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Server je dočasně nedostupný. Zkuste to znovu."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Server je dočasne nedostupný. Skúste to znova."
+          }
         }
       }
     },
@@ -1131,6 +2619,30 @@
           "stringUnit": {
             "state": "translated",
             "value": "A server error occurred (%lld)."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es ist ein Serverfehler aufgetreten (%lld)."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сталася помилка сервера (%lld)."
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Došlo k chybě serveru (%lld)."
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Došlo k chybe servera (%lld)."
           }
         }
       }

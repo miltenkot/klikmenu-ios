@@ -474,11 +474,15 @@
 				};
 			};
 			buildConfigurationList = 2A82583E3010F1A4003FB5CC /* Build configuration list for PBXProject "KlikMenu" */;
-			developmentRegion = en;
+			developmentRegion = pl;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				pl,
+				en,
+				de,
+				uk,
+				cs,
+				sk,
 				Base,
 			);
 			mainGroup = 2A82583A3010F1A4003FB5CC;

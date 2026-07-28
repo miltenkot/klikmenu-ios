@@ -18,6 +18,11 @@ import KlikMenuCore
         "createdAt": "2026-01-01T00:00:00Z",
         "updatedAt": "2026-01-01T00:00:00Z",
         "heroImageUrl": null,
+        "requestedLocale": "pl",
+        "resolvedLocale": "pl",
+        "baseLocale": "pl",
+        "availableLocales": ["pl", "en"],
+        "supportedLocales": ["pl", "en", "de", "uk", "cs", "sk"],
         "categories": [
           {
             "id": "c",
@@ -60,6 +65,7 @@ import KlikMenuCore
     }
     let result = try JSONDecoder().decode(PublicMenuResponseDTO.self, from: data).data.asDomain()
     #expect(result.name == "Bistro")
+    #expect(result.resolvedLocale == .pl)
     #expect(result.categories[0].items[0].dietaryType == .vegetarian)
     #expect(PriceFormatter.string(price: "24.00", currency: "PLN").contains("24"))
 }

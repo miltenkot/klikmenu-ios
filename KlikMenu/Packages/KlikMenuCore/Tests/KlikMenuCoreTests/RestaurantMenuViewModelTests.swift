@@ -2,7 +2,7 @@ import Testing
 import KlikMenuCore
 
 private struct MenuAPI: KlikMenuAPIClient {
-    func fetchMenu(slug: String) async throws -> RestaurantMenu {
+    func fetchMenu(slug: String, locale: SupportedLocale) async throws -> RestaurantMenu {
         RestaurantMenu(
             id: "r",
             name: "R",
@@ -30,7 +30,10 @@ private struct MenuAPI: KlikMenuAPIClient {
 }
 
 private struct MissingMenuAPI: KlikMenuAPIClient {
-    func fetchMenu(slug: String) async throws -> RestaurantMenu { throw APIError.notFound }
+    func fetchMenu(slug: String, locale: SupportedLocale) async throws -> RestaurantMenu {
+        throw APIError.notFound
+    }
+
     func fetchFeedbackConfig(slug: String) async throws -> FeedbackConfig { throw APIError.notFound }
     func submitFeedback(slug: String, request: FeedbackRequest) async throws -> SubmitFeedbackResponseDTO {
         throw APIError.network

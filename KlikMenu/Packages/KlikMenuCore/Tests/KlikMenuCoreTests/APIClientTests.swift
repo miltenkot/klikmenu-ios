@@ -64,7 +64,7 @@ struct APIClientTests {
         }
         let api = makeAPI()
         do {
-            _ = try await api.fetchMenu(slug: "missing")
+            _ = try await api.fetchMenu(slug: "missing", locale: .pl)
             Issue.record("Expected not found")
         } catch let error as APIError {
             #expect(error == .notFound)

@@ -3,6 +3,7 @@ import SwiftUI
 
 public struct RestaurantMenuView: View {
     private let slug: String
+    @Environment(\.scenePhase) private var scenePhase
     @State private var viewModel: RestaurantMenuViewModel
     @State private var showSearch = false
     @State private var presentedFeedback: FeedbackPresentation?
@@ -63,6 +64,10 @@ public struct RestaurantMenuView: View {
         }
         .task(id: slug) {
             await viewModel.load(slug: slug)
+        }
+        .onChange(of: scenePhase) { _, phase in
+            guard phase == .active else { return }
+            Task { await viewModel.reloadIfLanguageChanged() }
         }
     }
 

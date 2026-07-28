@@ -11,6 +11,10 @@ extension RestaurantDTO {
             phone: phone.nilIfBlank,
             currency: currency,
             heroImageURL: heroImageUrl.flatMap(URL.init(string:)),
+            requestedLocale: requestedLocale.flatMap(SupportedLocale.init(rawValue:)),
+            resolvedLocale: resolvedLocale.flatMap(SupportedLocale.init(rawValue:)),
+            baseLocale: baseLocale.flatMap(SupportedLocale.init(rawValue:)),
+            availableLocales: availableLocales.compactMap(SupportedLocale.init(rawValue:)),
             categories: categories
                 .filter(\.isVisible)
                 .map { $0.asDomain() }

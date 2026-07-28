@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol KlikMenuAPIClient: Sendable {
-    func fetchMenu(slug: String) async throws -> RestaurantMenu
+    func fetchMenu(slug: String, locale: SupportedLocale) async throws -> RestaurantMenu
     func fetchFeedbackConfig(slug: String) async throws -> FeedbackConfig
     func submitFeedback(slug: String, request: FeedbackRequest) async throws -> SubmitFeedbackResponseDTO
 }
@@ -29,16 +29,17 @@ public struct LiveKlikMenuAPIClient: KlikMenuAPIClient, Sendable {
         self.encoder = JSONEncoder()
     }
 
-    public func fetchMenu(slug: String) async throws -> RestaurantMenu {
+    public func fetchMenu(slug: String, locale: SupportedLocale) async throws -> RestaurantMenu {
         let response: PublicMenuResponseDTO = try await get(
-            path: "/api/v1/public/restaurants/\(slug)/menu"
+            pathComponents: ["api", "v1", "public", "restaurants", slug, "menu"],
+            queryItems: [URLQueryItem(name: "locale", value: locale.rawValue)]
         )
         return response.data.asDomain()
     }
 
     public func fetchFeedbackConfig(slug: String) async throws -> FeedbackConfig {
         let response: FeedbackConfigResponseDTO = try await get(
-            path: "/api/v1/public/restaurants/\(slug)/feedback-config"
+            pathComponents: ["api", "v1", "public", "restaurants", slug, "feedback-config"]
         )
         return response.data.asDomain()
     }
@@ -47,7 +48,9 @@ public struct LiveKlikMenuAPIClient: KlikMenuAPIClient, Sendable {
         slug: String,
         request: FeedbackRequest
     ) async throws -> SubmitFeedbackResponseDTO {
-        var urlRequest = try makeRequest(path: "/api/v1/public/restaurants/\(slug)/feedback")
+        var urlRequest = try makeRequest(
+            pathComponents: ["api", "v1", "public", "restaurants", slug, "feedback"]
+        )
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpBody = try encoder.encode(
@@ -60,14 +63,31 @@ public struct LiveKlikMenuAPIClient: KlikMenuAPIClient, Sendable {
         return try await perform(urlRequest)
     }
 
-    private func get<T: Decodable & Sendable>(path: String) async throws -> T {
-        try await perform(makeRequest(path: path))
+    private func get<T: Decodable & Sendable>(
+        pathComponents: [String],
+        queryItems: [URLQueryItem] = []
+    ) async throws -> T {
+        try await perform(makeRequest(pathComponents: pathComponents, queryItems: queryItems))
     }
 
-    private func makeRequest(path: String) throws -> URLRequest {
-        guard let url = URL(string: path, relativeTo: baseURL)?.absoluteURL else {
+    private func makeRequest(
+        pathComponents: [String],
+        queryItems: [URLQueryItem] = []
+    ) throws -> URLRequest {
+        guard var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: false) else {
             throw APIError.network
         }
+
+        let encodedPath = pathComponents
+            .map { $0.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? $0 }
+            .joined(separator: "/")
+        components.percentEncodedPath = "/" + encodedPath
+        components.queryItems = queryItems.isEmpty ? nil : queryItems
+
+        guard let url = components.url else {
+            throw APIError.network
+        }
+
         var request = URLRequest(url: url)
         request.timeoutInterval = 20
         request.httpMethod = "GET"
