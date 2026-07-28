@@ -36,7 +36,7 @@ struct ServiceFeedbackFormView: View {
                 ) {
                     Text("Dodaj komentarz", bundle: #bundle)
                 }
-                .lineLimit(5...)
+                .lineLimit(2...6)
                 .focused($isCommentFocused)
                 .accessibilityLabel(Text("Komentarz do opinii", bundle: #bundle))
                 Text(verbatim: "\(model.comment.count)/1000")
