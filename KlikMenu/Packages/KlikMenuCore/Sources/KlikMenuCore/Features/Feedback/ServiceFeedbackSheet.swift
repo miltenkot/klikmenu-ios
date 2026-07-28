@@ -6,6 +6,7 @@ public struct ServiceFeedbackSheet: View {
     public let config: FeedbackConfig
     @Environment(\.dismiss) private var dismiss
     @State private var viewModel: FeedbackViewModel
+    @FocusState private var isCommentFocused: Bool
 
     public init(slug: String, config: FeedbackConfig, viewModel: FeedbackViewModel) {
         self.slug = slug
@@ -32,6 +33,12 @@ public struct ServiceFeedbackSheet: View {
                 ToolbarItem(placement: .cancellationAction) {
                     Button(LocalizedStringResource("Zamknij", bundle: #bundle)) { dismiss() }
                         .frame(minHeight: 44)
+                }
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button(LocalizedStringResource("Gotowe", bundle: #bundle)) {
+                        isCommentFocused = false
+                    }
                 }
             }
         }
@@ -84,6 +91,7 @@ public struct ServiceFeedbackSheet: View {
                     Text("Dodaj komentarz", bundle: #bundle)
                 }
                 .lineLimit(5...)
+                .focused($isCommentFocused)
                 .accessibilityLabel(Text("Komentarz do opinii", bundle: #bundle))
                 Text(verbatim: "\(model.comment.count)/1000")
                     .font(.caption)
