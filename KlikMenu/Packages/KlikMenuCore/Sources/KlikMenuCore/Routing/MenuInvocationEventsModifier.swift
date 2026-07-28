@@ -5,16 +5,16 @@ struct MenuInvocationEventsModifier: ViewModifier {
     let onURL: (URL) -> Void
 
     func body(content: Content) -> some View {
-        if isEnabled {
-            content
-                .onOpenURL(perform: onURL)
-                .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
-                    if let url = activity.webpageURL {
-                        onURL(url)
-                    }
-                }
-        } else {
-            content
-        }
+        // Keep modifiers unconditionally attached so cold-start App Clip /
+        // universal-link activities are not dropped by a conditional view tree.
+        content
+            .onOpenURL { url in
+                guard isEnabled else { return }
+                onURL(url)
+            }
+            .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
+                guard isEnabled, let url = activity.webpageURL else { return }
+                onURL(url)
+            }
     }
 }

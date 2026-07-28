@@ -18,19 +18,20 @@ Verified via `xcodebuild -showBuildSettings`:
 
 ### Hardened Process Entitlements (default set only)
 
-Applied to app targets only (not frameworks / tests).
+Applied to the full app target. Removed from the App Clip after device invocation regressions
+(App Clip launch / web-activity delivery is sensitive to extra process entitlements).
 
 | Entitlement | Value | Targets | Rationale |
 |---|---|---|---|
-| `com.apple.security.hardened-process` | `true` | KlikMenu, KlikMenuClip | Root Enhanced Security process flag |
-| `com.apple.security.hardened-process.enhanced-security-version-string` | `"2"` | KlikMenu, KlikMenuClip | Selects v2 runtime protections |
-| `com.apple.security.hardened-process.hardened-heap` | `true` | KlikMenu, KlikMenuClip | Heap type-isolation buckets |
-| `com.apple.security.hardened-process.dyld-ro` | `true` | KlikMenu, KlikMenuClip | Read-only dyld / reduce runtime mutation |
-| `com.apple.security.hardened-process.platform-restrictions-string` | `"2"` | KlikMenu, KlikMenuClip | Dyld + Mach messaging restrictions |
+| `com.apple.security.hardened-process` | `true` | KlikMenu | Root Enhanced Security process flag |
+| `com.apple.security.hardened-process.enhanced-security-version-string` | `"2"` | KlikMenu | Selects v2 runtime protections |
+| `com.apple.security.hardened-process.hardened-heap` | `true` | KlikMenu | Heap type-isolation buckets |
+| `com.apple.security.hardened-process.dyld-ro` | `true` | KlikMenu | Read-only dyld / reduce runtime mutation |
+| `com.apple.security.hardened-process.platform-restrictions-string` | `"2"` | KlikMenu | Dyld + Mach messaging restrictions |
 
 Files:
-- `KlikMenu/KlikMenu.entitlements` (new; wired via `CODE_SIGN_ENTITLEMENTS`)
-- `KlikMenuClip/KlikMenuClip.entitlements` (updated; keeps existing App Clip parent-application identifier)
+- `KlikMenu/KlikMenu.entitlements` (full app)
+- `KlikMenuClip/KlikMenuClip.entitlements` (parent-application identifier only)
 
 ### Not applied (by design)
 
