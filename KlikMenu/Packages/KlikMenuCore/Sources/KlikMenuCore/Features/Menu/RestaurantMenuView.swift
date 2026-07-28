@@ -19,7 +19,7 @@ public struct RestaurantMenuView: View {
         Group {
             switch viewModel.state {
             case .loading:
-                MenuLoadingView()
+                MenuLoadingView(topSafeAreaInset: topSafeAreaInset)
             case .empty:
                 EmptyMenuView()
             case .notFound:

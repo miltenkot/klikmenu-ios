@@ -2,74 +2,36 @@ import SwiftUI
 
 public struct MenuLoadingView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var pulse = false
+    public var topSafeAreaInset: CGFloat
 
-    public init() {}
+    public init(topSafeAreaInset: CGFloat? = nil) {
+        self.topSafeAreaInset = topSafeAreaInset ?? LayoutMetrics.fallbackTopSafeAreaInset
+    }
 
     public var body: some View {
         VStack(spacing: 0) {
-            VStack(alignment: .leading, spacing: 16) {
-                Text("KLIKMENU", bundle: #bundle)
-                    .font(.caption.weight(.bold))
-                    .tracking(2)
-                    .foregroundStyle(Color.klikHeroMuted)
-
-                HStack(alignment: .top, spacing: 12) {
-                    if !reduceMotion {
-                        ProgressView()
-                            .tint(Color.klikAccent)
-                            .accessibilityHidden(true)
-                    }
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Ładujemy menu…", bundle: #bundle)
-                            .font(.system(.largeTitle, design: .serif).weight(.bold))
-                            .foregroundStyle(Color.klikHeroText)
-                        Text("Przygotowujemy kartę dań restauracji.", bundle: #bundle)
-                            .foregroundStyle(Color.klikHeroMuted)
-                    }
-                }
-            }
-            .padding(24)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background { Color.klikHero }
-
-            Spacer(minLength: 16)
-
-            skeletonCard
-
-            Spacer(minLength: 16)
+            MenuLoadingHeroView(
+                topSafeAreaInset: topSafeAreaInset,
+                showsProgress: !reduceMotion
+            )
+            MenuLoadingSkeletonCard(isPulsing: reduceMotion ? true : pulse)
+                .padding(.horizontal, 16)
+                .offset(y: -28)
+            Spacer(minLength: 0)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background { Color.klikPageBackground.ignoresSafeArea() }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Text("Ładujemy menu…", bundle: #bundle))
-    }
-
-    private var skeletonCard: some View {
-        VStack(alignment: .leading, spacing: 18) {
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color.klikBorder.opacity(0.7))
-                .frame(width: 140, height: 18)
-            ForEach(0..<3, id: \.self) { _ in
-                HStack {
-                    VStack(alignment: .leading, spacing: 8) {
-                        RoundedRectangle(cornerRadius: 6)
-                            .fill(Color.klikBorder.opacity(0.7))
-                            .frame(height: 14)
-                        RoundedRectangle(cornerRadius: 6)
-                            .fill(Color.klikBorder.opacity(0.45))
-                            .frame(height: 10)
-                    }
-                    Spacer()
-                    RoundedRectangle(cornerRadius: 6)
-                        .fill(Color.klikBorder.opacity(0.7))
-                        .frame(width: 48, height: 14)
-                }
+        .task(id: reduceMotion) {
+            guard !reduceMotion else {
+                pulse = false
+                return
+            }
+            withAnimation(.easeInOut(duration: 1.05).repeatForever(autoreverses: true)) {
+                pulse = true
             }
         }
-        .padding(24)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background { Color.klikSurface }
-        .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
-        .padding(.horizontal, 16)
     }
 }
