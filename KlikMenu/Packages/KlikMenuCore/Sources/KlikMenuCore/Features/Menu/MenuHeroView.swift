@@ -20,8 +20,12 @@ public struct MenuHeroView: View {
 
     public var body: some View {
         ZStack(alignment: .topLeading) {
-            MenuHeroBackground(heroImageURL: menu.heroImageURL)
-            MenuHeroOverlay(showsGradient: menu.heroImageURL != nil)
+            ZStack {
+                MenuHeroBackground(heroImageURL: menu.heroImageURL)
+                MenuHeroOverlay(showsGradient: menu.heroImageURL != nil)
+            }
+            .stretchy()
+
             MenuHeroContent(
                 name: menu.name,
                 description: menu.description,
@@ -32,7 +36,6 @@ public struct MenuHeroView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(minHeight: 300)
-        .clipped()
         .accessibilityElement(children: .contain)
     }
 }
