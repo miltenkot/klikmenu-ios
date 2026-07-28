@@ -35,7 +35,6 @@ private struct FeedbackStarButton: View {
         Button(action: action) {
             Image(systemName: "star")
                 .symbolVariant(isFilled ? .fill : .none)
-                .contentTransition(.symbolEffect)
                 .font(.title2)
                 .foregroundStyle(isFilled ? Color.klikAccent : Color.klikAccent.opacity(0.22))
                 .frame(width: 44, height: 44)

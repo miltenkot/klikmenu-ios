@@ -91,6 +91,22 @@ private struct RestaurantMenuLoadedView: View {
     let topSafeAreaInset: CGFloat
     @Binding var showSearch: Bool
     let onFeedback: () -> Void
+    private let feedRows: [MenuFeedRow]
+
+    init(
+        menu: RestaurantMenu,
+        showFeedback: Bool,
+        topSafeAreaInset: CGFloat,
+        showSearch: Binding<Bool>,
+        onFeedback: @escaping () -> Void
+    ) {
+        self.menu = menu
+        self.showFeedback = showFeedback
+        self.topSafeAreaInset = topSafeAreaInset
+        _showSearch = showSearch
+        self.onFeedback = onFeedback
+        feedRows = MenuFeedRow.rows(categories: menu.categories, currency: menu.currency)
+    }
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -103,11 +119,8 @@ private struct RestaurantMenuLoadedView: View {
                         topSafeAreaInset: topSafeAreaInset
                     )
 
-                    ForEach(menu.categories) { category in
-                        MenuCategorySectionView(category: category, currency: menu.currency)
-                            .padding(.horizontal, 16)
-                            // Match previous group padding(top: 12) + offset(y: -24).
-                            .padding(.top, category.id == menu.categories.first?.id ? -12 : 18)
+                    ForEach(feedRows) { row in
+                        MenuFeedRowView(row: row)
                     }
                 }
                 .padding(.bottom, 96)
