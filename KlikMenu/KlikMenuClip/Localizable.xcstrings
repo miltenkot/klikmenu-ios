@@ -1,0 +1,48 @@
+{
+  "sourceLanguage": "pl",
+  "strings": {
+    "KlikMenu": {
+      "comment": "Host App Clip localization marker so Bundle.main advertises pl/en/de/uk/cs/sk.",
+      "extractionState": "manual",
+      "localizations": {
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KlikMenu"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KlikMenu"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KlikMenu"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KlikMenu"
+          }
+        },
+        "cs": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KlikMenu"
+          }
+        },
+        "sk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "KlikMenu"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

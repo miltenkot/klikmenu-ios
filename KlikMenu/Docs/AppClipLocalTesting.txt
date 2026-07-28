@@ -19,4 +19,11 @@ W Xcode:
 App Clip czyta `_XCAppClipURL` przy starcie oraz obsługuje
 `onContinueUserActivity` / `onOpenURL` dla invocacji z urządzenia.
 
+Test języka (API locale + UI):
+- Zmień język iPhone’a: Ustawienia → Ogólne → Język i region
+  (np. English). Dla Clipa liczy się język systemu, nie
+  Settings → Apps → KlikMenu.
+- Zabij Clip z App Switchera i uruchom ponownie scheme KlikMenuClip.
+- Menu powinno iść z ?locale=en (oraz pozostałe pl/de/uk/cs/sk).
+
 Nie konfiguruj produkcyjnego App Clip Experience w App Store Connect w tym kroku.
