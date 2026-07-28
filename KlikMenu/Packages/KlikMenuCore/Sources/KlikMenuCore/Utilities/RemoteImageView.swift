@@ -16,32 +16,20 @@ public struct RemoteImageView: View {
                     AsyncImage(url: url) { phase in
                         switch phase {
                         case .empty:
-                            placeholder
+                            Color.clear
                         case .success(let image):
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: contentMode)
                         case .failure:
-                            placeholder
+                            Color.clear
                         @unknown default:
-                            placeholder
+                            Color.clear
                         }
                     }
-                } else {
-                    placeholder
                 }
             }
             .clipped()
             .accessibilityHidden(true)
-    }
-
-    private var placeholder: some View {
-        Rectangle()
-            .fill(Color.klikBrand.opacity(0.18))
-            .overlay {
-                Image(systemName: "photo")
-                    .font(.title2)
-                    .foregroundStyle(Color.klikBrand.opacity(0.55))
-            }
     }
 }
