@@ -7,6 +7,14 @@ public enum APIError: Error, Equatable, Sendable {
     case notFound
     case http(statusCode: Int, message: String, code: String?)
 
+    /// Public menu returns 400 when `locale` is outside the restaurant's available locales.
+    public var isUnsupportedLocale: Bool {
+        guard case .http(let statusCode, let message, let code) = self else { return false }
+        if code == "UNSUPPORTED_LOCALE" { return true }
+        return statusCode == 400
+            && message.localizedCaseInsensitiveContains("locale is not available")
+    }
+
     public var userFacingMessage: LocalizedStringResource {
         switch self {
         case .network:

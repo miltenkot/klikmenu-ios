@@ -15,6 +15,7 @@ public final class RestaurantMenuViewModel {
     public private(set) var state: State = .loading
     public private(set) var menu: RestaurantMenu?
     public private(set) var feedbackConfig: FeedbackConfig?
+    /// Locale used for the successfully loaded menu content (may be Polish after fallback).
     public private(set) var loadedLocale: SupportedLocale?
 
     private let api: any KlikMenuAPIClient
@@ -22,6 +23,8 @@ public final class RestaurantMenuViewModel {
     private var slug = ""
     private var loadTask: Task<Void, Never>?
     private var loadGeneration = 0
+    /// Last app-language preference we attempted to load, including unsupported ones that fell back to Polish.
+    private var lastAttemptedAppLanguage: SupportedLocale?
 
     public init(
         api: any KlikMenuAPIClient,
@@ -42,7 +45,7 @@ public final class RestaurantMenuViewModel {
     public func reloadIfLanguageChanged() async {
         guard !slug.isEmpty else { return }
         let locale = languageResolver.resolve()
-        guard locale != loadedLocale else { return }
+        guard locale != lastAttemptedAppLanguage else { return }
         await load(slug: slug, locale: locale)
     }
 
@@ -78,14 +81,16 @@ public final class RestaurantMenuViewModel {
 
     private func performLoad(slug: String, locale: SupportedLocale, generation: Int) async {
         do {
-            async let menuTask = api.fetchMenu(slug: slug, locale: locale)
             async let feedbackTask = fetchFeedbackConfigIgnoringErrors(slug: slug)
-
-            let loadedMenu = try await menuTask
+            let (loadedMenu, resolvedLocale) = try await fetchMenuWithPolishFallback(
+                slug: slug,
+                preferredLocale: locale
+            )
             guard generation == loadGeneration, !Task.isCancelled else { return }
 
             menu = loadedMenu
-            loadedLocale = locale
+            loadedLocale = resolvedLocale
+            lastAttemptedAppLanguage = locale
             feedbackConfig = await feedbackTask
             guard generation == loadGeneration, !Task.isCancelled else { return }
             state = loadedMenu.hasMenuItems ? .loaded : .empty
@@ -103,6 +108,22 @@ public final class RestaurantMenuViewModel {
             menu = nil
             loadedLocale = nil
             state = .error(APIError.network.userFacingMessage)
+        }
+    }
+
+    /// Requests `preferredLocale`, then falls back to Polish when the restaurant does not support it.
+    private func fetchMenuWithPolishFallback(
+        slug: String,
+        preferredLocale: SupportedLocale
+    ) async throws -> (RestaurantMenu, SupportedLocale) {
+        do {
+            let menu = try await api.fetchMenu(slug: slug, locale: preferredLocale)
+            return (menu, preferredLocale)
+        } catch let error as APIError where error.isUnsupportedLocale
+            && preferredLocale != SupportedLocale.default
+        {
+            let menu = try await api.fetchMenu(slug: slug, locale: .default)
+            return (menu, .default)
         }
     }
 

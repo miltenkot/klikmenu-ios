@@ -13,6 +13,7 @@ private final class LocalePreferenceBox: @unchecked Sendable {
 private actor LocaleRecordingAPI: KlikMenuAPIClient {
     private(set) var menuLocales: [SupportedLocale] = []
     private var menuResults: [SupportedLocale: RestaurantMenu] = [:]
+    private var unsupportedLocales: Set<SupportedLocale> = []
     private var holdFirstRequest = false
     private var pendingContinuations: [CheckedContinuation<RestaurantMenu, Error>] = []
 
@@ -24,12 +25,23 @@ private actor LocaleRecordingAPI: KlikMenuAPIClient {
         menuResults[locale] = menu
     }
 
+    func markUnsupported(_ locale: SupportedLocale) {
+        unsupportedLocales.insert(locale)
+    }
+
     func fetchMenu(slug: String, locale: SupportedLocale) async throws -> RestaurantMenu {
         menuLocales.append(locale)
         if holdFirstRequest, menuLocales.count == 1 {
             return try await withCheckedThrowingContinuation { continuation in
                 pendingContinuations.append(continuation)
             }
+        }
+        if unsupportedLocales.contains(locale) {
+            throw APIError.http(
+                statusCode: 400,
+                message: "Locale is not available for this restaurant",
+                code: "UNSUPPORTED_LOCALE"
+            )
         }
         if let menu = menuResults[locale] {
             return menu
@@ -173,4 +185,29 @@ func keepsSeparateInMemoryStatePerSlugAndLocale() async {
     #expect(english.menu?.name == "EN A")
     #expect(polish.loadedLocale == .pl)
     #expect(english.loadedLocale == .en)
+}
+
+@Test @MainActor
+func fallsBackToPolishWhenRestaurantDoesNotSupportPreferredLocale() async {
+    let api = LocaleRecordingAPI()
+    await api.markUnsupported(.en)
+    await api.setMenu(menu(name: "PL only", locale: .pl), for: .pl)
+
+    let model = RestaurantMenuViewModel(
+        api: api,
+        languageResolver: AppLanguageResolver(preferredLocalizations: ["en-US"])
+    )
+
+    await model.load(slug: "burger-klik")
+    #expect(model.state == .loaded)
+    #expect(model.loadedLocale == .pl)
+    #expect(model.menu?.name == "PL only")
+
+    let locales = await api.menuLocales
+    #expect(locales == [.en, .pl])
+
+    // Same preferred language should not re-hit the API on scene activation.
+    await model.reloadIfLanguageChanged()
+    let localesAfterReload = await api.menuLocales
+    #expect(localesAfterReload == [.en, .pl])
 }
