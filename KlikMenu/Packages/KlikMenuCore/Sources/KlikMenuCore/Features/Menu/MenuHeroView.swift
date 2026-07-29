@@ -29,13 +29,16 @@ public struct MenuHeroView: View {
             MenuHeroContent(
                 name: menu.name,
                 description: menu.description,
+                hasHeroImage: menu.heroImageURL != nil,
                 showFeedback: showFeedback,
                 onFeedback: onFeedback,
                 topSafeAreaInset: topSafeAreaInset
             )
         }
         .frame(maxWidth: .infinity)
-        .frame(minHeight: 300)
+        // Photo heroes keep a tall canvas; solid-color heroes hug content so
+        // missing restaurant description doesn't leave a large empty gap (web parity).
+        .frame(minHeight: menu.heroImageURL == nil ? nil : 300)
         .accessibilityElement(children: .contain)
     }
 }
@@ -83,9 +86,19 @@ private struct MenuHeroOverlay: View {
 private struct MenuHeroContent: View {
     let name: String
     let description: String?
+    let hasHeroImage: Bool
     let showFeedback: Bool
     let onFeedback: () -> Void
     let topSafeAreaInset: CGFloat
+
+    private var bottomPadding: CGFloat {
+        if hasHeroImage {
+            return description == nil ? 28 : 52
+        }
+        // Solid-color hero: keep a bit more air under the title than the ultra-compact web gap,
+        // but still tighter than a photo hero with description.
+        return description == nil ? 36 : 44
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -116,7 +129,7 @@ private struct MenuHeroContent: View {
             (topSafeAreaInset > 0 ? topSafeAreaInset : LayoutMetrics.fallbackTopSafeAreaInset) + 10
         )
         .padding(.horizontal, 16)
-        .padding(.bottom, 52)
+        .padding(.bottom, bottomPadding)
         .frame(maxWidth: .infinity, alignment: .topLeading)
     }
 }
