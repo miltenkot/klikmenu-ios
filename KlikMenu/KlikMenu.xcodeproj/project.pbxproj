@@ -119,7 +119,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2A1D8A5A3017A06B00E956B9 /* openapi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Resources/OpenAPI/openapi.json; sourceTree = "<group>"; };
+		2A1D8A5A3017A06B00E956B9 /* Resources/OpenAPI/openapi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Resources/OpenAPI/openapi.json; sourceTree = "<group>"; };
 		2A8258433010F1A4003FB5CC /* KlikMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KlikMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8258503010F1A7003FB5CC /* KlikMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlikMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A82585A3010F1A7003FB5CC /* KlikMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlikMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,7 +240,7 @@
 		2A82583A3010F1A4003FB5CC = {
 			isa = PBXGroup;
 			children = (
-				2A1D8A5A3017A06B00E956B9 /* openapi.json */,
+				2A1D8A5A3017A06B00E956B9 /* Resources/OpenAPI/openapi.json */,
 				2A8258453010F1A4003FB5CC /* KlikMenu */,
 				2A8258533010F1A7003FB5CC /* KlikMenuTests */,
 				2A82585D3010F1A7003FB5CC /* KlikMenuUITests */,
@@ -789,8 +789,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9AKL82KSN5;
+				ENABLE_ENHANCED_SECURITY = YES;
+				ENABLE_POINTER_AUTHENTICATION = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = KlikMenu;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSCameraUsageDescription = "KlikMenu używa kamery do skanowania kodów QR z linkami do menu restauracji.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -823,8 +827,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9AKL82KSN5;
+				ENABLE_ENHANCED_SECURITY = YES;
+				ENABLE_POINTER_AUTHENTICATION = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = KlikMenu;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSCameraUsageDescription = "KlikMenu używa kamery do skanowania kodów QR z linkami do menu restauracji.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -941,10 +949,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9AKL82KSN5;
+				ENABLE_ENHANCED_SECURITY = YES;
+				ENABLE_POINTER_AUTHENTICATION = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KlikMenuClip/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KlikMenu;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -976,10 +987,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9AKL82KSN5;
+				ENABLE_ENHANCED_SECURITY = YES;
+				ENABLE_POINTER_AUTHENTICATION = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KlikMenuClip/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KlikMenu;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1113,6 +1127,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pl.klikmenu.KlikMenuCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1152,6 +1170,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pl.klikmenu.KlikMenuCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
 				SWIFT_EMIT_LOC_STRINGS = YES;
