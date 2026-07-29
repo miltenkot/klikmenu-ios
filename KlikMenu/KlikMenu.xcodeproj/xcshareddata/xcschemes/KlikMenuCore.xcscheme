@@ -14,9 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A8258423010F1A4003FB5CC"
-               BuildableName = "KlikMenu.app"
-               BlueprintName = "KlikMenu"
+               BlueprintIdentifier = "2A9C10013017C00100E956B9"
+               BuildableName = "KlikMenuCore.framework"
+               BlueprintName = "KlikMenuCore"
+               ReferencedContainer = "container:KlikMenu.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2A9C20033017C00100E956B9"
+               BuildableName = "KlikMenuCoreTests.xctest"
+               BlueprintName = "KlikMenuCoreTests"
                ReferencedContainer = "container:KlikMenu.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,31 +48,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A82584F3010F1A7003FB5CC"
-               BuildableName = "KlikMenuTests.xctest"
-               BlueprintName = "KlikMenuTests"
-               ReferencedContainer = "container:KlikMenu.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A9C20033017C00100E956B9"
                BuildableName = "KlikMenuCoreTests.xctest"
                BlueprintName = "KlikMenuCoreTests"
-               ReferencedContainer = "container:KlikMenu.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A8258593010F1A7003FB5CC"
-               BuildableName = "KlikMenuUITests.xctest"
-               BlueprintName = "KlikMenuUITests"
                ReferencedContainer = "container:KlikMenu.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -78,9 +70,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A8258423010F1A4003FB5CC"
-            BuildableName = "KlikMenu.app"
-            BlueprintName = "KlikMenu"
+            BlueprintIdentifier = "2A9C10013017C00100E956B9"
+            BuildableName = "KlikMenuCore.framework"
+            BlueprintName = "KlikMenuCore"
             ReferencedContainer = "container:KlikMenu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -95,9 +87,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2A8258423010F1A4003FB5CC"
-            BuildableName = "KlikMenu.app"
-            BlueprintName = "KlikMenu"
+            BlueprintIdentifier = "2A9C10013017C00100E956B9"
+            BuildableName = "KlikMenuCore.framework"
+            BlueprintName = "KlikMenuCore"
             ReferencedContainer = "container:KlikMenu.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
