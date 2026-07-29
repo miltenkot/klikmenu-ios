@@ -100,15 +100,103 @@ struct APIClientTests {
         }
     }
 
+    @Test func mapsServerError() async {
+        MockURLProtocol.setHandler { _ in
+            (500, Data(#"{"error":{"code":"INTERNAL","message":"boom"}}"#.utf8))
+        }
+        do {
+            _ = try await makeAPI().submitFeedback(
+                slug: "r",
+                request: FeedbackRequest(waiterID: "w", rating: 3, comment: "ok")
+            )
+            Issue.record("Expected server error")
+        } catch let error as APIError {
+            guard case .http(let status, _, _) = error else {
+                Issue.record("Expected http error")
+                return
+            }
+            #expect(status == 500)
+            #expect(
+                {
+                    var copy = error.userFacingMessage
+                    copy.locale = Locale(identifier: "pl")
+                    return String(localized: copy)
+                }()
+                .localizedCaseInsensitiveContains("serwer")
+            )
+        } catch {
+            Issue.record("Unexpected error \(error)")
+        }
+    }
+
     @Test func decodesFeedbackConfig() async throws {
         let body = Data(
-            #"{"data":{"enabled":true,"restaurantName":"Bistro","waiters":[{"id":"w","name":"Anna","photoUrl":null}]}}"#
-                .utf8
+            #"""
+            {"data":{"enabled":true,"restaurantName":"Bistro","baseLocale":"pl","availableLocales":["pl","en"],"waiters":[{"id":"w","name":"Anna","photoUrl":null}]}}
+            """#.utf8
         )
         MockURLProtocol.setHandler { _ in (200, body) }
         let config = try await makeAPI().fetchFeedbackConfig(slug: "bistro")
         #expect(config.enabled)
+        #expect(config.baseLocale == .pl)
+        #expect(config.availableLocales == [.pl, .en])
         #expect(config.waiters.count == 1)
         #expect(config.waiters[0].name == "Anna")
+        #expect(config.isFeedbackAvailable)
+    }
+
+    @Test func decodesDisabledFeedbackConfigWithEmptyWaiters() async throws {
+        let body = Data(
+            #"""
+            {"data":{"enabled":false,"restaurantName":"Bistro","baseLocale":"pl","availableLocales":["pl"],"waiters":[]}}
+            """#.utf8
+        )
+        MockURLProtocol.setHandler { _ in (200, body) }
+        let config = try await makeAPI().fetchFeedbackConfig(slug: "bistro")
+        #expect(config.enabled == false)
+        #expect(config.waiters.isEmpty)
+        #expect(config.isFeedbackAvailable == false)
+    }
+
+    @Test func encodesFeedbackSubmitRequestBody() async throws {
+        MockURLProtocol.setHandler { request in
+            #expect(request.httpMethod == "POST")
+            #expect(request.url?.path.hasSuffix("/feedback") == true)
+            #expect(request.value(forHTTPHeaderField: "Content-Type") == "application/json")
+
+            let body: Data
+            if let httpBody = request.httpBody {
+                body = httpBody
+            } else if let stream = request.httpBodyStream {
+                stream.open()
+                defer { stream.close() }
+                var collected = Data()
+                let bufferSize = 1024
+                let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: bufferSize)
+                defer { buffer.deallocate() }
+                while stream.hasBytesAvailable {
+                    let read = stream.read(buffer, maxLength: bufferSize)
+                    guard read > 0 else { break }
+                    collected.append(buffer, count: read)
+                }
+                body = collected
+            } else {
+                Issue.record("Missing request body")
+                return (500, Data())
+            }
+
+            let json = try JSONSerialization.jsonObject(with: body) as? [String: Any]
+            #expect(json?["waiterId"] as? String == "waiter-1")
+            #expect(json?["rating"] as? Int == 4)
+            #expect(json?["comment"] as? String == "Great service")
+            #expect(json?["website"] as? String == "")
+            return (202, Data(#"{"accepted":true}"#.utf8))
+        }
+
+        let response = try await makeAPI().submitFeedback(
+            slug: "bistro-klik",
+            request: FeedbackRequest(waiterID: "waiter-1", rating: 4, comment: "Great service")
+        )
+        #expect(response.accepted == true)
     }
 }

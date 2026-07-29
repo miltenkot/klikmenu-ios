@@ -26,4 +26,10 @@ Test języka (API locale + UI):
 - Zabij Clip z App Switchera i uruchom ponownie scheme KlikMenuClip.
 - Menu powinno iść z ?locale=en (oraz pozostałe pl/de/uk/cs/sk).
 
-Nie konfiguruj produkcyjnego App Clip Experience w App Store Connect w tym kroku.
+Produkcja (manualnie w Apple Developer / ASC):
+- Włącz Associated Domains dla App ID pełnej apki i Clipa.
+- Opublikuj AASA dla app.klikmenu.pl (applinks + appclips).
+- Skonfiguruj App Clip Experience w App Store Connect
+  (URL prefix https://app.klikmenu.pl/menu/).
+
+Nie konfiguruj produkcyjnego App Clip Experience w App Store Connect w tym kroku lokalnego testu.

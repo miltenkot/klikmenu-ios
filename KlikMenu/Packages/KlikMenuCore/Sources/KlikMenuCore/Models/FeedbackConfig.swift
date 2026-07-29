@@ -5,11 +5,21 @@ public struct FeedbackConfig: Sendable, Equatable, Identifiable {
 
     public let enabled: Bool
     public let restaurantName: String
+    public let baseLocale: SupportedLocale
+    public let availableLocales: [SupportedLocale]
     public let waiters: [PublicWaiter]
 
-    public init(enabled: Bool, restaurantName: String, waiters: [PublicWaiter]) {
+    public init(
+        enabled: Bool,
+        restaurantName: String,
+        baseLocale: SupportedLocale = .default,
+        availableLocales: [SupportedLocale] = [],
+        waiters: [PublicWaiter]
+    ) {
         self.enabled = enabled
         self.restaurantName = restaurantName
+        self.baseLocale = baseLocale
+        self.availableLocales = availableLocales
         self.waiters = waiters
     }
 

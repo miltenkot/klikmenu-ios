@@ -7,7 +7,22 @@ public struct FeedbackConfigResponseDTO: Decodable, Sendable {
 public struct FeedbackConfigDTO: Decodable, Sendable {
     public let enabled: Bool
     public let restaurantName: String
+    public let baseLocale: String
+    public let availableLocales: [String]
     public let waiters: [PublicWaiterDTO]
+
+    private enum CodingKeys: String, CodingKey {
+        case enabled, restaurantName, baseLocale, availableLocales, waiters
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        enabled = try container.decode(Bool.self, forKey: .enabled)
+        restaurantName = try container.decode(String.self, forKey: .restaurantName)
+        baseLocale = try container.decodeIfPresent(String.self, forKey: .baseLocale) ?? SupportedLocale.default.rawValue
+        availableLocales = try container.decodeIfPresent([String].self, forKey: .availableLocales) ?? []
+        waiters = try container.decodeIfPresent([PublicWaiterDTO].self, forKey: .waiters) ?? []
+    }
 }
 
 public struct PublicWaiterDTO: Decodable, Sendable {

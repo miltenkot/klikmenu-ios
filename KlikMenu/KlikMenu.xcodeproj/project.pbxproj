@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A1D8A5B3017A06B00E956B9 /* openapi.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A1D8A5A3017A06B00E956B9 /* openapi.json */; };
 		2A8258933010F221003FB5CC /* KlikMenuClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 2A8258713010F21F003FB5CC /* KlikMenuClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A9C10103017C00100E956B9 /* KlikMenuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; };
 		2A9C10113017C00100E956B9 /* KlikMenuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; };
@@ -120,7 +119,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2A1D8A5A3017A06B00E956B9 /* openapi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = openapi.json; sourceTree = "<group>"; };
+		2A1D8A5A3017A06B00E956B9 /* openapi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Resources/OpenAPI/openapi.json; sourceTree = "<group>"; };
 		2A8258433010F1A4003FB5CC /* KlikMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KlikMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A8258503010F1A7003FB5CC /* KlikMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlikMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A82585A3010F1A7003FB5CC /* KlikMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KlikMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -508,7 +507,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A1D8A5B3017A06B00E956B9 /* openapi.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

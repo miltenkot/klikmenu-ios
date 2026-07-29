@@ -9,10 +9,12 @@ public struct RestaurantMenu: Sendable, Equatable, Identifiable {
     public let phone: String?
     public let currency: String
     public let heroImageURL: URL?
+    public let feedbackEnabled: Bool
     public let requestedLocale: SupportedLocale?
     public let resolvedLocale: SupportedLocale?
     public let baseLocale: SupportedLocale?
     public let availableLocales: [SupportedLocale]
+    public let supportedLocales: [SupportedLocale]
     public let categories: [MenuCategory]
 
     public init(
@@ -24,10 +26,12 @@ public struct RestaurantMenu: Sendable, Equatable, Identifiable {
         phone: String?,
         currency: String,
         heroImageURL: URL?,
+        feedbackEnabled: Bool = false,
         requestedLocale: SupportedLocale? = nil,
         resolvedLocale: SupportedLocale? = nil,
         baseLocale: SupportedLocale? = nil,
         availableLocales: [SupportedLocale] = [],
+        supportedLocales: [SupportedLocale] = [],
         categories: [MenuCategory]
     ) {
         self.id = id
@@ -38,10 +42,12 @@ public struct RestaurantMenu: Sendable, Equatable, Identifiable {
         self.phone = phone
         self.currency = currency
         self.heroImageURL = heroImageURL
+        self.feedbackEnabled = feedbackEnabled
         self.requestedLocale = requestedLocale
         self.resolvedLocale = resolvedLocale
         self.baseLocale = baseLocale
         self.availableLocales = availableLocales
+        self.supportedLocales = supportedLocales
         self.categories = categories
     }
 

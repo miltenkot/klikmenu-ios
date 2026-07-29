@@ -42,11 +42,21 @@ struct RestaurantMenuURLParserTests {
         "https://app.klikmenu.pl/menu/bistro%5Cklik",
         "https://app.klikmenu.pl/menu/bistro%20klik",
         "https://app.klikmenu.pl/menu/%20",
+        "https://app.klikmenu.pl/menu/Bistro-Klik",
+        "https://app.klikmenu.pl/menu/-bistro",
+        "https://app.klikmenu.pl/menu/bistro-",
+        "https://app.klikmenu.pl/menu/bistro--klik",
         "ftp://app.klikmenu.pl/menu/bistro-klik",
         "not-a-url"
     ])
     func rejectsInvalidURLs(_ urlString: String) {
         #expect(RestaurantMenuURLParser.parse(urlString) == nil)
+    }
+
+    @Test func rejectsMissingSlug() {
+        #expect(RestaurantMenuURLParser.parse("https://app.klikmenu.pl/menu/") == nil)
+        #expect(RestaurantMenuInvocation.route(from: "") == nil)
+        #expect(RestaurantMenuInvocation.route(from: "   ") == nil)
     }
 
     @Test func invocationAcceptsBareSlug() {

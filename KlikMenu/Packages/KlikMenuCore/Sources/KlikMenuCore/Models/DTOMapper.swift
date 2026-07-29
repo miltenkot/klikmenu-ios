@@ -11,14 +11,16 @@ extension RestaurantDTO {
             phone: phone.nilIfBlank,
             currency: currency,
             heroImageURL: heroImageUrl.flatMap(URL.init(string:)),
+            feedbackEnabled: feedbackEnabled,
             requestedLocale: requestedLocale.flatMap(SupportedLocale.init(rawValue:)),
             resolvedLocale: resolvedLocale.flatMap(SupportedLocale.init(rawValue:)),
             baseLocale: baseLocale.flatMap(SupportedLocale.init(rawValue:)),
             availableLocales: availableLocales.compactMap(SupportedLocale.init(rawValue:)),
+            supportedLocales: supportedLocales.compactMap(SupportedLocale.init(rawValue:)),
+            // Keep API array order (OpenAPI public menu already returns display order).
             categories: categories
                 .filter(\.isVisible)
                 .map { $0.asDomain() }
-                .sorted { $0.position < $1.position }
         )
     }
 }
@@ -32,12 +34,10 @@ extension MenuCategoryDTO {
             position: position,
             items: items
                 .filter { $0.isVisible && $0.isAvailable }
-                .map { $0.asDomain() }
-                .sorted { $0.position < $1.position },
+                .map { $0.asDomain() },
             subcategories: subcategories
                 .filter(\.isVisible)
                 .map { $0.asDomain() }
-                .sorted { $0.position < $1.position }
         )
     }
 }
@@ -53,7 +53,6 @@ extension MenuSubcategoryDTO {
             items: items
                 .filter { $0.isVisible && $0.isAvailable }
                 .map { $0.asDomain() }
-                .sorted { $0.position < $1.position }
         )
     }
 }
@@ -83,6 +82,8 @@ extension FeedbackConfigDTO {
         FeedbackConfig(
             enabled: enabled,
             restaurantName: restaurantName,
+            baseLocale: SupportedLocale(rawValue: baseLocale) ?? .default,
+            availableLocales: availableLocales.compactMap(SupportedLocale.init(rawValue:)),
             waiters: waiters.map {
                 PublicWaiter(
                     id: $0.id,

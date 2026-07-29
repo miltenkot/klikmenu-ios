@@ -38,10 +38,9 @@ public enum RestaurantMenuURLParser: Sendable {
     return RestaurantMenuRoute(slug: decodedSlug)
   }
 
+  /// OpenAPI restaurant slug: `^[a-z0-9]+(?:-[a-z0-9]+)*$` (max 120).
   private static func isValidSlug(_ slug: String) -> Bool {
-    guard !slug.isEmpty else { return false }
-    if slug.contains("/") || slug.contains("\\") { return false }
-    if slug.rangeOfCharacter(from: .whitespacesAndNewlines) != nil { return false }
-    return true
+    guard (1...120).contains(slug.count) else { return false }
+    return slug.wholeMatch(of: /^[a-z0-9]+(?:-[a-z0-9]+)*$/) != nil
   }
 }
