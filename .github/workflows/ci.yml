@@ -11,7 +11,8 @@ permissions:
 
 jobs:
   ci:
-    runs-on: macos-15
+    # macos-15 tops out at Xcode 26.3 / iOS 26.2; project targets iOS 26.4.
+    runs-on: macos-26
     timeout-minutes: 45
 
     steps:
@@ -20,15 +21,15 @@ jobs:
         with:
           persist-credentials: false
 
-      # Default Xcode on macos-15 is 16.4, which does not support #bundle (Xcode 26+).
-      - name: Select Xcode 26
+      - name: Select Xcode matching project deployment target
         run: |
           set -euo pipefail
           for candidate in \
-            /Applications/Xcode_26.3.app \
-            /Applications/Xcode_26.2.app \
-            /Applications/Xcode_26.1.1.app \
-            /Applications/Xcode_26.0.1.app
+            /Applications/Xcode_26.4.1.app \
+            /Applications/Xcode_26.4.app \
+            /Applications/Xcode_26.5.app \
+            /Applications/Xcode_26.6.app \
+            /Applications/Xcode.app
           do
             if [ -d "${candidate}" ]; then
               sudo xcode-select -s "${candidate}"
@@ -48,67 +49,9 @@ jobs:
         run: |
           set -euo pipefail
 
-          # Project may target a newer iOS than the runner's Xcode ships (e.g. 26.4 vs 26.2).
-          # Override deployment target to the newest installed iOS simulator runtime.
-          IOS_VERSION="$(
-            xcrun simctl list runtimes available \
-              | sed -n 's/^iOS \([0-9][0-9]*\.[0-9][0-9]*\).*/\1/p' \
-              | sort -V \
-              | tail -n 1
-          )"
-          if [ -z "${IOS_VERSION}" ]; then
-            echo "No iOS simulator runtime available"
-            xcrun simctl list runtimes
-            exit 1
-          fi
-          echo "Using IPHONEOS_DEPLOYMENT_TARGET=${IOS_VERSION}"
-
-          DEVICE_ID="$(
-            xcrun simctl list devices available \
-              | sed -n 's/.*iPhone[^()]*( *\([A-F0-9-]\{36\}\) *).*/\1/p' \
-              | head -n 1
-          )"
-
-          if [ -z "${DEVICE_ID}" ]; then
-            RUNTIME_ID="$(
-              xcrun simctl list runtimes available \
-                | sed -n 's/.* - \(com\.apple\.CoreSimulator\.SimRuntime\.iOS-[^ ]*\).*/\1/p' \
-                | tail -n 1
-            )"
-            DEVICE_TYPE="$(
-              xcrun simctl list devicetypes \
-                | sed -n 's/.*(\(com\.apple\.CoreSimulator\.SimDeviceType\.iPhone[^)]*\)).*/\1/p' \
-                | head -n 1
-            )"
-
-            if [ -z "${RUNTIME_ID}" ] || [ -z "${DEVICE_TYPE}" ]; then
-              echo "Unable to create an iPhone simulator"
-              xcrun simctl list runtimes
-              xcrun simctl list devicetypes
-              exit 1
-            fi
-
-            echo "Creating simulator: type=${DEVICE_TYPE} runtime=${RUNTIME_ID}"
-            DEVICE_ID="$(xcrun simctl create "CI iPhone" "${DEVICE_TYPE}" "${RUNTIME_ID}")"
-          fi
-
-          echo "Using simulator: ${DEVICE_ID}"
-          xcrun simctl boot "${DEVICE_ID}" || true
-          xcrun simctl bootstatus "${DEVICE_ID}" -b
-
-          # Sanity: destination must appear after deployment-target override.
-          xcodebuild -project KlikMenu.xcodeproj -scheme KlikMenuCore \
-            -showdestinations \
-            IPHONEOS_DEPLOYMENT_TARGET="${IOS_VERSION}" \
-            | tee /tmp/klikmenu-destinations.txt
-
-          if ! grep -q "${DEVICE_ID}" /tmp/klikmenu-destinations.txt; then
-            echo "Created simulator is still not a valid xcodebuild destination"
-            exit 1
-          fi
-
+          # App scheme exposes real simulator destinations; framework-only schemes often do not on CI.
           xcodebuild test \
             -project KlikMenu.xcodeproj \
-            -scheme KlikMenuCore \
-            -destination "platform=iOS Simulator,id=${DEVICE_ID}" \
-            IPHONEOS_DEPLOYMENT_TARGET="${IOS_VERSION}"
+            -scheme KlikMenu \
+            -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' \
+            -only-testing:KlikMenuCoreTests
