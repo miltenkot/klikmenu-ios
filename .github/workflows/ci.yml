@@ -12,7 +12,7 @@ permissions:
 jobs:
   ci:
     runs-on: macos-15
-    timeout-minutes: 30
+    timeout-minutes: 45
 
     steps:
       - name: Check out repository
@@ -35,6 +35,7 @@ jobs:
               break
             fi
           done
+          sudo xcodebuild -runFirstLaunch
           xcodebuild -version
           swift --version
 
@@ -47,29 +48,67 @@ jobs:
         run: |
           set -euo pipefail
 
-          DESTINATION="$(
-            xcodebuild -project KlikMenu.xcodeproj -scheme KlikMenuCore -showdestinations 2>/dev/null \
-              | awk -F'[,}]' '
-                  /platform:iOS Simulator/ && /name:iPhone/ {
-                    for (i = 1; i <= NF; i++) {
-                      if ($i ~ /^ id:/) {
-                        gsub(/^ id:/, "", $i)
-                        print "id=" $i
-                        exit
-                      }
-                    }
-                  }
-                '
+          # Project may target a newer iOS than the runner's Xcode ships (e.g. 26.4 vs 26.2).
+          # Override deployment target to the newest installed iOS simulator runtime.
+          IOS_VERSION="$(
+            xcrun simctl list runtimes available \
+              | sed -n 's/^iOS \([0-9][0-9]*\.[0-9][0-9]*\).*/\1/p' \
+              | sort -V \
+              | tail -n 1
+          )"
+          if [ -z "${IOS_VERSION}" ]; then
+            echo "No iOS simulator runtime available"
+            xcrun simctl list runtimes
+            exit 1
+          fi
+          echo "Using IPHONEOS_DEPLOYMENT_TARGET=${IOS_VERSION}"
+
+          DEVICE_ID="$(
+            xcrun simctl list devices available \
+              | sed -n 's/.*iPhone[^()]*( *\([A-F0-9-]\{36\}\) *).*/\1/p' \
+              | head -n 1
           )"
 
-          if [ -z "${DESTINATION}" ]; then
-            echo "No iPhone simulator destination found"
-            xcodebuild -project KlikMenu.xcodeproj -scheme KlikMenuCore -showdestinations
+          if [ -z "${DEVICE_ID}" ]; then
+            RUNTIME_ID="$(
+              xcrun simctl list runtimes available \
+                | sed -n 's/.* - \(com\.apple\.CoreSimulator\.SimRuntime\.iOS-[^ ]*\).*/\1/p' \
+                | tail -n 1
+            )"
+            DEVICE_TYPE="$(
+              xcrun simctl list devicetypes \
+                | sed -n 's/.*(\(com\.apple\.CoreSimulator\.SimDeviceType\.iPhone[^)]*\)).*/\1/p' \
+                | head -n 1
+            )"
+
+            if [ -z "${RUNTIME_ID}" ] || [ -z "${DEVICE_TYPE}" ]; then
+              echo "Unable to create an iPhone simulator"
+              xcrun simctl list runtimes
+              xcrun simctl list devicetypes
+              exit 1
+            fi
+
+            echo "Creating simulator: type=${DEVICE_TYPE} runtime=${RUNTIME_ID}"
+            DEVICE_ID="$(xcrun simctl create "CI iPhone" "${DEVICE_TYPE}" "${RUNTIME_ID}")"
+          fi
+
+          echo "Using simulator: ${DEVICE_ID}"
+          xcrun simctl boot "${DEVICE_ID}" || true
+          xcrun simctl bootstatus "${DEVICE_ID}" -b
+
+          # Sanity: destination must appear after deployment-target override.
+          xcodebuild -project KlikMenu.xcodeproj -scheme KlikMenuCore \
+            -showdestinations \
+            IPHONEOS_DEPLOYMENT_TARGET="${IOS_VERSION}" \
+            | tee /tmp/klikmenu-destinations.txt
+
+          if ! grep -q "${DEVICE_ID}" /tmp/klikmenu-destinations.txt; then
+            echo "Created simulator is still not a valid xcodebuild destination"
             exit 1
           fi
 
-          echo "Using destination: ${DESTINATION}"
           xcodebuild test \
             -project KlikMenu.xcodeproj \
             -scheme KlikMenuCore \
-            -destination "${DESTINATION}"
+            -destination "platform=iOS Simulator,id=${DEVICE_ID}" \
+            IPHONEOS_DEPLOYMENT_TARGET="${IOS_VERSION}"
