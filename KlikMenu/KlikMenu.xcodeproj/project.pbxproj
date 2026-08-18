@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A9C20093017C00100E956B9 /* KlikMenuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; };
 		2A8258933010F221003FB5CC /* KlikMenuClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 2A8258713010F21F003FB5CC /* KlikMenuClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2A9C10103017C00100E956B9 /* KlikMenuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; };
 		2A9C10113017C00100E956B9 /* KlikMenuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; };
@@ -15,6 +14,7 @@
 		2A9C10133017C00100E956B9 /* KlikMenuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; };
 		2A9C10303017C00100E956B9 /* KlikMenuCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2A9C10313017C00100E956B9 /* KlikMenuCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2A9C20093017C00100E956B9 /* KlikMenuCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9C10023017C00100E956B9 /* KlikMenuCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -857,7 +857,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KlikMenu/KlikMenu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9AKL82KSN5;
 				ENABLE_ENHANCED_SECURITY = YES;
 				ENABLE_POINTER_AUTHENTICATION = YES;
@@ -875,7 +875,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.klikmenu.KlikMenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -895,7 +895,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KlikMenu/KlikMenu.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9AKL82KSN5;
 				ENABLE_ENHANCED_SECURITY = YES;
 				ENABLE_POINTER_AUTHENTICATION = YES;
@@ -913,7 +913,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.klikmenu.KlikMenu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -1017,7 +1017,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KlikMenuClip/KlikMenuClip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9AKL82KSN5;
 				ENABLE_ENHANCED_SECURITY = YES;
 				ENABLE_POINTER_AUTHENTICATION = YES;
@@ -1035,7 +1035,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.klikmenu.KlikMenu.Clip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -1055,7 +1055,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KlikMenuClip/KlikMenuClip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9AKL82KSN5;
 				ENABLE_ENHANCED_SECURITY = YES;
 				ENABLE_POINTER_AUTHENTICATION = YES;
@@ -1073,7 +1073,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.klikmenu.KlikMenu.Clip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -1256,7 +1256,6 @@
 			};
 			name = Release;
 		};
-
 		2A9C200A3017C00100E956B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
