@@ -97,6 +97,7 @@ extension MenuItemDTO {
             price: price,
             variants: variants.map { $0.asDomain() },
             dietaryType: DietaryType(rawValue: dietaryType) ?? .none,
+            spicinessLevel: SpicinessLevel(rawValue: spicinessLevel) ?? .none,
             position: position,
             isAvailable: isAvailable,
             imageKey: imageKey,

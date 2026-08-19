@@ -53,6 +53,7 @@ import KlikMenuCore
                 "price": "18.00",
                 "variants": [],
                 "dietaryType": "VEGAN",
+                "spicinessLevel": "SPICY",
                 "position": 0,
                 "isAvailable": true,
                 "isVisible": true,
@@ -73,6 +74,7 @@ import KlikMenuCore
                 "price": "1.00",
                 "variants": [],
                 "dietaryType": "NONE",
+                "spicinessLevel": "NONE",
                 "position": 99,
                 "isAvailable": true,
                 "isVisible": false,
@@ -104,6 +106,7 @@ import KlikMenuCore
                     "price": "42.00",
                     "variants": [],
                     "dietaryType": "NONE",
+                    "spicinessLevel": "VERY_SPICY",
                     "position": 0,
                     "isAvailable": true,
                     "isVisible": true,
@@ -123,6 +126,7 @@ import KlikMenuCore
                     "price": "10.00",
                     "variants": [],
                     "dietaryType": "VEGETARIAN",
+                    "spicinessLevel": "MEDIUM_SPICY",
                     "position": 1,
                     "isAvailable": false,
                     "isVisible": true,
@@ -170,6 +174,7 @@ import KlikMenuCore
     #expect(direct.servingSize == "300 ml")
     #expect(direct.allergens == ["celery"])
     #expect(direct.dietaryType == .vegan)
+    #expect(direct.spicinessLevel == .spicy)
     #expect(direct.imageKey == "menu-items/2026-01-01/soup.png")
     #expect(direct.imageURL?.absoluteString == "https://cdn.example/soup.jpg")
     #expect(direct.subcategoryID == nil)
@@ -178,6 +183,7 @@ import KlikMenuCore
     let burger = category.subcategories[0].items[0]
     #expect(burger.name == "Klik Burger")
     #expect(burger.allergens == ["gluten", "milk"])
+    #expect(burger.spicinessLevel == .verySpicy)
     #expect(burger.subcategoryID == "sc-burgers")
     #expect(category.subcategories[0].items.count == 1)
     #expect(PriceFormatter.string(price: "42.00", currency: "PLN").contains("42"))

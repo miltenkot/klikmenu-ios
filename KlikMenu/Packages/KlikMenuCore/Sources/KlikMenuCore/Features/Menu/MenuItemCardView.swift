@@ -56,18 +56,7 @@ private struct MenuItemCardHeaderView: View {
                     .foregroundStyle(Color.klikText)
                     .fixedSize(horizontal: false, vertical: true)
 
-                if let dietaryLabel = item.dietaryType.displayLabel {
-                    Text(dietaryLabel)
-                        .font(.caption.weight(.bold))
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 4)
-                        .background(Color.klikDietaryBackground, in: Capsule())
-                        .overlay {
-                            Capsule().stroke(Color.klikDietaryBorder, lineWidth: 1)
-                        }
-                        .foregroundStyle(Color.klikDietaryText)
-                        .accessibilityLabel(Text(dietaryLabel))
-                }
+                MenuItemBadgesView(dietaryType: item.dietaryType, spicinessLevel: item.spicinessLevel)
             }
 
             if item.variants.isEmpty {

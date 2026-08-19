@@ -167,6 +167,7 @@ public struct MenuItemDTO: Decodable, Sendable {
     public let price: String
     public let variants: [MenuItemVariantDTO]
     public let dietaryType: String
+    public let spicinessLevel: String
     public let position: Int
     public let isAvailable: Bool
     public let isVisible: Bool
@@ -177,7 +178,7 @@ public struct MenuItemDTO: Decodable, Sendable {
 
     private enum CodingKeys: String, CodingKey {
         case id, categoryId, name, description, ingredients, servingSize, subcategoryId
-        case allergens, price, variants, dietaryType, position, isAvailable, isVisible, imageKey, imageUrl
+        case allergens, price, variants, dietaryType, spicinessLevel, position, isAvailable, isVisible, imageKey, imageUrl
         case createdAt, updatedAt
     }
 
@@ -194,6 +195,7 @@ public struct MenuItemDTO: Decodable, Sendable {
         price = try container.decode(String.self, forKey: .price)
         variants = try container.decodeIfPresent([MenuItemVariantDTO].self, forKey: .variants) ?? []
         dietaryType = try container.decodeIfPresent(String.self, forKey: .dietaryType) ?? "NONE"
+        spicinessLevel = try container.decodeIfPresent(String.self, forKey: .spicinessLevel) ?? "NONE"
         position = try container.decodeIfPresent(Int.self, forKey: .position) ?? 0
         isAvailable = try container.decodeIfPresent(Bool.self, forKey: .isAvailable) ?? true
         isVisible = try container.decodeIfPresent(Bool.self, forKey: .isVisible) ?? true

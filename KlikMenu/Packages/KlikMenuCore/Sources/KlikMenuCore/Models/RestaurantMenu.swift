@@ -158,6 +158,7 @@ public struct MenuItem: Sendable, Equatable, Identifiable {
     public let price: String
     public let variants: [MenuItemVariant]
     public let dietaryType: DietaryType
+    public let spicinessLevel: SpicinessLevel
     public let position: Int
     public let isAvailable: Bool
     public let imageKey: String?
@@ -175,6 +176,7 @@ public struct MenuItem: Sendable, Equatable, Identifiable {
         price: String,
         variants: [MenuItemVariant] = [],
         dietaryType: DietaryType,
+        spicinessLevel: SpicinessLevel = .none,
         position: Int,
         isAvailable: Bool,
         imageKey: String? = nil,
@@ -191,6 +193,7 @@ public struct MenuItem: Sendable, Equatable, Identifiable {
         self.price = price
         self.variants = variants
         self.dietaryType = dietaryType
+        self.spicinessLevel = spicinessLevel
         self.position = position
         self.isAvailable = isAvailable
         self.imageKey = imageKey

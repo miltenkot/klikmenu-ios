@@ -54,6 +54,18 @@ extension Color {
         light: Color(red: 23 / 255, green: 92 / 255, blue: 71 / 255),
         dark: Color(red: 145 / 255, green: 226 / 255, blue: 184 / 255)
     )
+    public static let klikSpicyBackground = Color(
+        light: Color(red: 252 / 255, green: 239 / 255, blue: 232 / 255),
+        dark: Color(red: 66 / 255, green: 33 / 255, blue: 25 / 255)
+    )
+    public static let klikSpicyBorder = Color(
+        light: Color(red: 238 / 255, green: 196 / 255, blue: 175 / 255),
+        dark: Color(red: 139 / 255, green: 67 / 255, blue: 49 / 255)
+    )
+    public static let klikSpicyText = Color(
+        light: Color(red: 164 / 255, green: 70 / 255, blue: 35 / 255),
+        dark: Color(red: 1, green: 176 / 255, blue: 135 / 255)
+    )
 }
 
 extension Color {

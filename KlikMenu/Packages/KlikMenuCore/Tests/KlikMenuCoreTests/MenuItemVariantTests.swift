@@ -15,6 +15,7 @@ import KlikMenuCore
       "allergens": [],
       "price": "39.00",
       "dietaryType": "NONE",
+      "spicinessLevel": "NONE",
       "position": 0,
       "isAvailable": true,
       "isVisible": true,
@@ -29,6 +30,7 @@ import KlikMenuCore
 
     #expect(item.variants.isEmpty)
     #expect(item.price == "39.00")
+    #expect(item.spicinessLevel == .none)
 }
 
 @Test func decodesMenuItemVariants() throws {
@@ -76,6 +78,7 @@ import KlikMenuCore
         }
       ],
       "dietaryType": "NONE",
+      "spicinessLevel": "MEDIUM_SPICY",
       "position": 0,
       "isAvailable": true,
       "isVisible": true,
@@ -94,6 +97,7 @@ import KlikMenuCore
     #expect(item.variants[0].price == "19.00")
     #expect(item.variants[2].detail == nil)
     #expect(item.price == "18.00")
+    #expect(item.spicinessLevel == .mediumSpicy)
     #expect(PriceFormatter.string(price: item.variants[1].price, currency: "PLN").contains("22"))
     #expect(PriceFormatter.string(price: item.variants[2].price, currency: "PLN").contains("12"))
 }
@@ -152,6 +156,7 @@ import KlikMenuCore
         }
       ],
       "dietaryType": "NONE",
+      "spicinessLevel": "NONE",
       "position": 0,
       "isAvailable": true,
       "isVisible": true,
@@ -166,4 +171,33 @@ import KlikMenuCore
     #expect(item.variants.count == 2)
     #expect(item.variants.allSatisfy { $0.detail == nil })
     #expect(item.variants.map(\.label) == ["Mała", "Duża"])
+    #expect(item.spicinessLevel == .none)
+}
+
+@Test func defaultsSpicinessLevelToNoneWhenMissingFromPayload() throws {
+    let json = """
+    {
+      "id": "i-legacy",
+      "categoryId": "c",
+      "name": "Legacy item",
+      "description": null,
+      "ingredients": null,
+      "servingSize": null,
+      "subcategoryId": null,
+      "allergens": [],
+      "price": "11.00",
+      "variants": [],
+      "dietaryType": "NONE",
+      "position": 0,
+      "isAvailable": true,
+      "isVisible": true,
+      "imageUrl": null,
+      "createdAt": "2026-01-01T00:00:00Z",
+      "updatedAt": "2026-01-01T00:00:00Z"
+    }
+    """
+    let data = try #require(json.data(using: .utf8))
+    let item = try JSONDecoder().decode(MenuItemDTO.self, from: data).asDomain()
+
+    #expect(item.spicinessLevel == .none)
 }

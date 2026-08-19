@@ -37,11 +37,7 @@ private struct SearchMenuItemHeaderView: View {
                     .foregroundStyle(Color.klikText)
                     .fixedSize(horizontal: false, vertical: true)
 
-                if let dietary = item.dietaryType.displayLabel {
-                    Text(dietary)
-                        .font(.caption)
-                        .foregroundStyle(Color.klikAccent)
-                }
+                MenuItemBadgesView(dietaryType: item.dietaryType, spicinessLevel: item.spicinessLevel)
             }
 
             if item.variants.isEmpty {
