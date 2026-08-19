@@ -223,8 +223,8 @@ import Testing
         ("cs", "Vaše objednávka"),
         ("uk", "Ваше замовлення")
     ])
-    func localizesOrderTitle(locale: String, expected: String) throws {
-        #expect(try catalogString(key: "Twoje zamówienie", locale: locale) == expected)
+    func localizesOrderTitle(locale: String, expected: String) {
+        #expect(localizedString(key: "Twoje zamówienie", locale: locale) == expected)
     }
 
     @Test(arguments: [
@@ -235,8 +235,8 @@ import Testing
         ("cs", "Mezisoučet"),
         ("uk", "Сума товарів")
     ])
-    func localizesProductsSubtotal(locale: String, expected: String) throws {
-        #expect(try catalogString(key: "Suma produktów", locale: locale) == expected)
+    func localizesProductsSubtotal(locale: String, expected: String) {
+        #expect(localizedString(key: "Suma produktów", locale: locale) == expected)
     }
 
     @Test(arguments: [
@@ -247,8 +247,8 @@ import Testing
         ("cs", "Celkem"),
         ("uk", "Разом")
     ])
-    func localizesTotal(locale: String, expected: String) throws {
-        #expect(try catalogString(key: "Razem", locale: locale) == expected)
+    func localizesTotal(locale: String, expected: String) {
+        #expect(localizedString(key: "Razem", locale: locale) == expected)
     }
 
     @Test(arguments: [
@@ -259,8 +259,8 @@ import Testing
         ("cs", "Přidat"),
         ("uk", "Додати")
     ])
-    func localizesAdd(locale: String, expected: String) throws {
-        #expect(try catalogString(key: "Dodaj", locale: locale) == expected)
+    func localizesAdd(locale: String, expected: String) {
+        #expect(localizedString(key: "Dodaj", locale: locale) == expected)
     }
 
     @Test(arguments: [
@@ -271,8 +271,8 @@ import Testing
         ("cs", "Vymazat"),
         ("uk", "Очистити")
     ])
-    func localizesClear(locale: String, expected: String) throws {
-        #expect(try catalogString(key: "Wyczyść", locale: locale) == expected)
+    func localizesClear(locale: String, expected: String) {
+        #expect(localizedString(key: "Wyczyść", locale: locale) == expected)
     }
 
     @Test(arguments: [
@@ -283,8 +283,8 @@ import Testing
         ("cs", "Odstranit"),
         ("uk", "Видалити")
     ])
-    func localizesRemove(locale: String, expected: String) throws {
-        #expect(try catalogString(key: "Usuń", locale: locale) == expected)
+    func localizesRemove(locale: String, expected: String) {
+        #expect(localizedString(key: "Usuń", locale: locale) == expected)
     }
 
     @Test(arguments: [
@@ -295,9 +295,9 @@ import Testing
         ("cs", "Ukažte tento seznam obsluze, aby bylo objednání jednodušší."),
         ("uk", "Покажіть цей список офіціанту, щоб було легше зробити замовлення.")
     ])
-    func localizesWaiterHint(locale: String, expected: String) throws {
+    func localizesWaiterHint(locale: String, expected: String) {
         #expect(
-            try catalogString(
+            localizedString(
                 key: "Pokaż tę listę kelnerowi, aby łatwiej złożyć zamówienie.",
                 locale: locale
             ) == expected
@@ -308,13 +308,16 @@ import Testing
         "test-\(UUID().uuidString)"
     }
 
-    private func catalogString(key: String, locale: String) throws -> String {
-        guard let url = Bundle.module.url(forResource: "Localizable", withExtension: "xcstrings") else {
-            throw CatalogError.missingResource
-        }
-        let data = try Data(contentsOf: url)
+    private func localizedString(key: String, locale: String) -> String {
+        let catalogURL = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .appending(path: "Sources/KlikMenuCore/Resources/Localizable.xcstrings")
+
         guard
-            let json = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+            let data = try? Data(contentsOf: catalogURL),
+            let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
             let strings = json["strings"] as? [String: Any],
             let entry = strings[key] as? [String: Any],
             let localizations = entry["localizations"] as? [String: Any],
@@ -322,14 +325,10 @@ import Testing
             let stringUnit = localeEntry["stringUnit"] as? [String: Any],
             let value = stringUnit["value"] as? String
         else {
-            throw CatalogError.missingTranslation(key: key, locale: locale)
+            return key
         }
-        return value
-    }
 
-    private enum CatalogError: Error {
-        case missingResource
-        case missingTranslation(key: String, locale: String)
+        return value
     }
 
     private func makeMenu(

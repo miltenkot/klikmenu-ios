@@ -82,7 +82,7 @@ struct CachedImageLoaderTests {
         }
     }
 
-    private let samplePNGData = Data(base64Encoded: "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAAEAAAABAAD2/wD/AAREU0lERgJggg==")!
+    private let samplePNGData = Data(base64Encoded: "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/aXcAAAAASUVORK5CYII=")!
 
     private func makeLoader() -> CachedImageLoader {
         let urlCache = URLCache(memoryCapacity: 10 * 1024 * 1024, diskCapacity: 0)
