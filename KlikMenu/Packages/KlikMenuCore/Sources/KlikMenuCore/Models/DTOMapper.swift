@@ -10,6 +10,7 @@ extension RestaurantDTO {
             address: address.nilIfBlank,
             phone: phone.nilIfBlank,
             currency: currency,
+            heroImageKey: heroImageKey,
             heroImageURL: heroImageUrl.flatMap(URL.init(string:)),
             feedbackEnabled: feedbackEnabled,
             requestedLocale: requestedLocale.flatMap(SupportedLocale.init(rawValue:)),
@@ -85,6 +86,7 @@ extension MenuItemDTO {
             dietaryType: DietaryType(rawValue: dietaryType) ?? .none,
             position: position,
             isAvailable: isAvailable,
+            imageKey: imageKey,
             imageURL: imageUrl.flatMap(URL.init(string:))
         )
     }

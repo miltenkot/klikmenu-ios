@@ -5,7 +5,7 @@ struct FeedbackWaiterAvatarView: View {
 
     var body: some View {
         if waiter.photoURL != nil {
-            RemoteImageView(url: waiter.photoURL)
+            RemoteImageView(url: waiter.photoURL, cacheKey: waiter.id)
                 .frame(width: 40, height: 40)
                 .clipShape(Circle())
         } else {

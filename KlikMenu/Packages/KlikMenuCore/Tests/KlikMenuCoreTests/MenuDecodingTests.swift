@@ -17,6 +17,7 @@ import KlikMenuCore
         "feedbackEnabled": true,
         "createdAt": "2026-01-01T00:00:00Z",
         "updatedAt": "2026-01-01T00:00:00Z",
+        "heroImageKey": "restaurants/2026-01-01/hero.png",
         "heroImageUrl": "https://cdn.example/hero.jpg",
         "requestedLocale": "en",
         "resolvedLocale": "en",
@@ -49,6 +50,7 @@ import KlikMenuCore
                 "position": 0,
                 "isAvailable": true,
                 "isVisible": true,
+                "imageKey": "menu-items/2026-01-01/soup.png",
                 "imageUrl": "https://cdn.example/soup.jpg",
                 "createdAt": "2026-01-01T00:00:00Z",
                 "updatedAt": "2026-01-01T00:00:00Z"
@@ -137,6 +139,7 @@ import KlikMenuCore
     let result = try JSONDecoder().decode(PublicMenuResponseDTO.self, from: data).data.asDomain()
     #expect(result.name == "Bistro")
     #expect(result.description == "Opis")
+    #expect(result.heroImageKey == "restaurants/2026-01-01/hero.png")
     #expect(result.heroImageURL?.absoluteString == "https://cdn.example/hero.jpg")
     #expect(result.feedbackEnabled)
     #expect(result.requestedLocale == .en)
@@ -157,6 +160,7 @@ import KlikMenuCore
     #expect(direct.servingSize == "300 ml")
     #expect(direct.allergens == ["celery"])
     #expect(direct.dietaryType == .vegan)
+    #expect(direct.imageKey == "menu-items/2026-01-01/soup.png")
     #expect(direct.imageURL?.absoluteString == "https://cdn.example/soup.jpg")
     #expect(direct.subcategoryID == nil)
     #expect(direct.variants.isEmpty)

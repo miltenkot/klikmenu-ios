@@ -8,6 +8,7 @@ public struct RestaurantMenu: Sendable, Equatable, Identifiable {
     public let address: String?
     public let phone: String?
     public let currency: String
+    public let heroImageKey: String?
     public let heroImageURL: URL?
     public let feedbackEnabled: Bool
     public let requestedLocale: SupportedLocale?
@@ -25,6 +26,7 @@ public struct RestaurantMenu: Sendable, Equatable, Identifiable {
         address: String?,
         phone: String?,
         currency: String,
+        heroImageKey: String? = nil,
         heroImageURL: URL?,
         feedbackEnabled: Bool = false,
         requestedLocale: SupportedLocale? = nil,
@@ -41,6 +43,7 @@ public struct RestaurantMenu: Sendable, Equatable, Identifiable {
         self.address = address
         self.phone = phone
         self.currency = currency
+        self.heroImageKey = heroImageKey
         self.heroImageURL = heroImageURL
         self.feedbackEnabled = feedbackEnabled
         self.requestedLocale = requestedLocale
@@ -151,6 +154,7 @@ public struct MenuItem: Sendable, Equatable, Identifiable {
     public let dietaryType: DietaryType
     public let position: Int
     public let isAvailable: Bool
+    public let imageKey: String?
     public let imageURL: URL?
 
     public init(
@@ -167,6 +171,7 @@ public struct MenuItem: Sendable, Equatable, Identifiable {
         dietaryType: DietaryType,
         position: Int,
         isAvailable: Bool,
+        imageKey: String? = nil,
         imageURL: URL?
     ) {
         self.id = id
@@ -182,6 +187,7 @@ public struct MenuItem: Sendable, Equatable, Identifiable {
         self.dietaryType = dietaryType
         self.position = position
         self.isAvailable = isAvailable
+        self.imageKey = imageKey
         self.imageURL = imageURL
     }
 }

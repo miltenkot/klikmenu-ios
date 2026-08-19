@@ -12,7 +12,7 @@ public struct MenuItemCardView: View {
     public var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             if item.imageURL != nil {
-                RemoteImageView(url: item.imageURL)
+                RemoteImageView(url: item.imageURL, cacheKey: item.imageKey)
                     .frame(maxWidth: .infinity)
                     .frame(height: 180)
                     .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))

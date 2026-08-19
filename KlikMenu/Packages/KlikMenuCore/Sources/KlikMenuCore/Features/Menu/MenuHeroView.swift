@@ -21,7 +21,7 @@ public struct MenuHeroView: View {
     public var body: some View {
         ZStack(alignment: .topLeading) {
             ZStack {
-                MenuHeroBackground(heroImageURL: menu.heroImageURL)
+                MenuHeroBackground(heroImageURL: menu.heroImageURL, heroImageKey: menu.heroImageKey)
                 MenuHeroOverlay(showsGradient: menu.heroImageURL != nil)
             }
             .stretchy()
@@ -45,13 +45,14 @@ public struct MenuHeroView: View {
 
 private struct MenuHeroBackground: View {
     let heroImageURL: URL?
+    let heroImageKey: String?
 
     var body: some View {
         Group {
             if heroImageURL != nil {
                 Color.clear
                     .overlay {
-                        RemoteImageView(url: heroImageURL)
+                        RemoteImageView(url: heroImageURL, cacheKey: heroImageKey)
                     }
                     .clipped()
             } else {

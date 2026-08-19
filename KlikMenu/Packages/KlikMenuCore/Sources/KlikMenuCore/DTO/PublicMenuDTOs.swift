@@ -16,6 +16,7 @@ public struct RestaurantDTO: Decodable, Sendable {
     public let feedbackEnabled: Bool
     public let createdAt: String
     public let updatedAt: String
+    public let heroImageKey: String?
     public let heroImageUrl: String?
     public let requestedLocale: String?
     public let resolvedLocale: String?
@@ -26,7 +27,7 @@ public struct RestaurantDTO: Decodable, Sendable {
 
     private enum CodingKeys: String, CodingKey {
         case id, name, slug, description, address, phone, currency
-        case isPublished, feedbackEnabled, createdAt, updatedAt, heroImageUrl
+        case isPublished, feedbackEnabled, createdAt, updatedAt, heroImageKey, heroImageUrl
         case requestedLocale, resolvedLocale, baseLocale, availableLocales, supportedLocales
         case categories
     }
@@ -44,6 +45,7 @@ public struct RestaurantDTO: Decodable, Sendable {
         feedbackEnabled = try container.decodeIfPresent(Bool.self, forKey: .feedbackEnabled) ?? false
         createdAt = try container.decode(String.self, forKey: .createdAt)
         updatedAt = try container.decode(String.self, forKey: .updatedAt)
+        heroImageKey = try container.decodeIfPresent(String.self, forKey: .heroImageKey)
         heroImageUrl = try container.decodeIfPresent(String.self, forKey: .heroImageUrl)
         requestedLocale = try container.decodeIfPresent(String.self, forKey: .requestedLocale)
         resolvedLocale = try container.decodeIfPresent(String.self, forKey: .resolvedLocale)
@@ -158,13 +160,14 @@ public struct MenuItemDTO: Decodable, Sendable {
     public let position: Int
     public let isAvailable: Bool
     public let isVisible: Bool
+    public let imageKey: String?
     public let imageUrl: String?
     public let createdAt: String
     public let updatedAt: String
 
     private enum CodingKeys: String, CodingKey {
         case id, categoryId, name, description, ingredients, servingSize, subcategoryId
-        case allergens, price, variants, dietaryType, position, isAvailable, isVisible, imageUrl
+        case allergens, price, variants, dietaryType, position, isAvailable, isVisible, imageKey, imageUrl
         case createdAt, updatedAt
     }
 
@@ -184,6 +187,7 @@ public struct MenuItemDTO: Decodable, Sendable {
         position = try container.decodeIfPresent(Int.self, forKey: .position) ?? 0
         isAvailable = try container.decodeIfPresent(Bool.self, forKey: .isAvailable) ?? true
         isVisible = try container.decodeIfPresent(Bool.self, forKey: .isVisible) ?? true
+        imageKey = try container.decodeIfPresent(String.self, forKey: .imageKey)
         imageUrl = try container.decodeIfPresent(String.self, forKey: .imageUrl)
         createdAt = try container.decode(String.self, forKey: .createdAt)
         updatedAt = try container.decode(String.self, forKey: .updatedAt)
