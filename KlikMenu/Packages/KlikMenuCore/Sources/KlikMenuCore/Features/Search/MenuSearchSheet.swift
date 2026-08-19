@@ -71,7 +71,7 @@ public struct MenuSearchSheet: View {
                     ForEach(results) { group in
                         Section {
                             ForEach(group.items) { entry in
-                                SearchResultRow(item: entry.item, currency: menu.currency)
+                                SearchMenuItemRow(item: entry.item, currency: menu.currency)
                             }
                         } header: {
                             Text("\(group.category.name) · \(group.items.count)", bundle: #bundle)
@@ -115,38 +115,5 @@ public struct MenuSearchSheet: View {
 
     private func refreshResults() {
         results = filterMenuCategories(menu.categories, filters: filters)
-    }
-}
-
-private struct SearchResultRow: View {
-    let item: MenuItem
-    let currency: String
-
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(item.name)
-                    .font(.body.weight(.semibold))
-                if let dietary = item.dietaryType.displayLabel {
-                    Text(dietary)
-                        .font(.caption)
-                        .foregroundStyle(Color.klikAccent)
-                }
-            }
-            Spacer()
-            priceText
-                .font(.subheadline.weight(.medium))
-                .monospacedDigit()
-        }
-        .accessibilityElement(children: .combine)
-    }
-
-    @ViewBuilder
-    private var priceText: some View {
-        if let value = Decimal(string: item.price, locale: Locale(identifier: "en_US_POSIX")) {
-            Text(value, format: .currency(code: currency))
-        } else {
-            Text(verbatim: "\(item.price) \(currency)")
-        }
     }
 }
