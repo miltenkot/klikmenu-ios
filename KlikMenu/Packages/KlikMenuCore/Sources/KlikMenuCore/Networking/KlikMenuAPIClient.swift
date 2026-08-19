@@ -7,12 +7,7 @@ public protocol KlikMenuAPIClient: Sendable {
 }
 
 public struct LiveKlikMenuAPIClient: KlikMenuAPIClient, Sendable {
-    public static let defaultBaseURL: URL = {
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "api.klikmenu.pl"
-        return components.url ?? URL(fileURLWithPath: "/api-klikmenu-pl-missing")
-    }()
+    public static let defaultBaseURL = KlikMenuAPIConfiguration.baseURL
 
     public let baseURL: URL
     private let http: any HTTPClient

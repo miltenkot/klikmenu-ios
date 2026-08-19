@@ -81,7 +81,7 @@ import KlikMenuCore
         subcategories: [subcategory1, subcategory2]
     )
 
-    var filters = MenuFilters(categoryID: "c1", subcategoryID: "s2")
+    let filters = MenuFilters(categoryID: "c1", subcategoryID: "s2")
     let result = filterMenuCategories([category], filters: filters)
     #expect(result.first?.items.map(\.item.id) == ["b"])
 }

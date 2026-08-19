@@ -115,6 +115,28 @@ public struct MenuSubcategory: Sendable, Equatable, Identifiable {
     }
 }
 
+public struct MenuItemVariant: Sendable, Equatable, Identifiable {
+    public let id: String
+    public let label: String
+    public let detail: String?
+    public let price: String
+    public let position: Int
+
+    public init(
+        id: String,
+        label: String,
+        detail: String?,
+        price: String,
+        position: Int
+    ) {
+        self.id = id
+        self.label = label
+        self.detail = detail
+        self.price = price
+        self.position = position
+    }
+}
+
 public struct MenuItem: Sendable, Equatable, Identifiable {
     public let id: String
     public let categoryID: String
@@ -125,6 +147,7 @@ public struct MenuItem: Sendable, Equatable, Identifiable {
     public let servingSize: String?
     public let allergens: [String]
     public let price: String
+    public let variants: [MenuItemVariant]
     public let dietaryType: DietaryType
     public let position: Int
     public let isAvailable: Bool
@@ -140,6 +163,7 @@ public struct MenuItem: Sendable, Equatable, Identifiable {
         servingSize: String?,
         allergens: [String],
         price: String,
+        variants: [MenuItemVariant] = [],
         dietaryType: DietaryType,
         position: Int,
         isAvailable: Bool,
@@ -154,6 +178,7 @@ public struct MenuItem: Sendable, Equatable, Identifiable {
         self.servingSize = servingSize
         self.allergens = allergens
         self.price = price
+        self.variants = variants
         self.dietaryType = dietaryType
         self.position = position
         self.isAvailable = isAvailable

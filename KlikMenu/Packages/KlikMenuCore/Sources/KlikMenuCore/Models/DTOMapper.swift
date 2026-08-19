@@ -57,6 +57,18 @@ extension MenuSubcategoryDTO {
     }
 }
 
+extension MenuItemVariantDTO {
+    public func asDomain() -> MenuItemVariant {
+        MenuItemVariant(
+            id: id,
+            label: label,
+            detail: detail.nilIfBlank,
+            price: price,
+            position: position
+        )
+    }
+}
+
 extension MenuItemDTO {
     public func asDomain() -> MenuItem {
         MenuItem(
@@ -69,6 +81,7 @@ extension MenuItemDTO {
             servingSize: servingSize.nilIfBlank,
             allergens: allergens,
             price: price,
+            variants: variants.map { $0.asDomain() },
             dietaryType: DietaryType(rawValue: dietaryType) ?? .none,
             position: position,
             isAvailable: isAvailable,

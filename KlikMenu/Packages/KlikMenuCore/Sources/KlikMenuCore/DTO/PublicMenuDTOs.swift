@@ -116,6 +116,33 @@ public struct MenuSubcategoryDTO: Decodable, Sendable {
     }
 }
 
+public struct MenuItemVariantDTO: Decodable, Sendable {
+    public let id: String
+    public let menuItemId: String
+    public let label: String
+    public let detail: String?
+    public let price: String
+    public let position: Int
+    public let createdAt: String
+    public let updatedAt: String
+
+    private enum CodingKeys: String, CodingKey {
+        case id, menuItemId, label, detail, price, position, createdAt, updatedAt
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(String.self, forKey: .id)
+        menuItemId = try container.decode(String.self, forKey: .menuItemId)
+        label = try container.decode(String.self, forKey: .label)
+        detail = try container.decodeIfPresent(String.self, forKey: .detail)
+        price = try container.decode(String.self, forKey: .price)
+        position = try container.decodeIfPresent(Int.self, forKey: .position) ?? 0
+        createdAt = try container.decode(String.self, forKey: .createdAt)
+        updatedAt = try container.decode(String.self, forKey: .updatedAt)
+    }
+}
+
 public struct MenuItemDTO: Decodable, Sendable {
     public let id: String
     public let categoryId: String
@@ -126,6 +153,7 @@ public struct MenuItemDTO: Decodable, Sendable {
     public let subcategoryId: String?
     public let allergens: [String]
     public let price: String
+    public let variants: [MenuItemVariantDTO]
     public let dietaryType: String
     public let position: Int
     public let isAvailable: Bool
@@ -136,7 +164,7 @@ public struct MenuItemDTO: Decodable, Sendable {
 
     private enum CodingKeys: String, CodingKey {
         case id, categoryId, name, description, ingredients, servingSize, subcategoryId
-        case allergens, price, dietaryType, position, isAvailable, isVisible, imageUrl
+        case allergens, price, variants, dietaryType, position, isAvailable, isVisible, imageUrl
         case createdAt, updatedAt
     }
 
@@ -151,6 +179,7 @@ public struct MenuItemDTO: Decodable, Sendable {
         subcategoryId = try container.decodeIfPresent(String.self, forKey: .subcategoryId)
         allergens = try container.decodeIfPresent([String].self, forKey: .allergens) ?? []
         price = try container.decode(String.self, forKey: .price)
+        variants = try container.decodeIfPresent([MenuItemVariantDTO].self, forKey: .variants) ?? []
         dietaryType = try container.decodeIfPresent(String.self, forKey: .dietaryType) ?? "NONE"
         position = try container.decodeIfPresent(Int.self, forKey: .position) ?? 0
         isAvailable = try container.decodeIfPresent(Bool.self, forKey: .isAvailable) ?? true

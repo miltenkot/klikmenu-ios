@@ -17,10 +17,23 @@ public enum RestaurantMenuURLParser: Sendable {
   }
 
   public static func parse(_ components: URLComponents) -> RestaurantMenuRoute? {
-    guard components.scheme?.lowercased() == "https" else { return nil }
-    guard components.host?.lowercased() == requiredHost else { return nil }
+    parse(
+      components,
+      allowsLocalDevelopmentHTTP: RestaurantMenuURLSecurityPolicy.allowsLocalDevelopmentHTTP
+    )
+  }
 
-    if let port = components.port, port != 443 {
+  static func parse(
+    _ components: URLComponents,
+    allowsLocalDevelopmentHTTP: Bool
+  ) -> RestaurantMenuRoute? {
+    switch RestaurantMenuURLSecurityPolicy.validate(
+      components: components,
+      allowsLocalDevelopmentHTTP: allowsLocalDevelopmentHTTP
+    ) {
+    case .allowed:
+      break
+    case .rejected:
       return nil
     }
 

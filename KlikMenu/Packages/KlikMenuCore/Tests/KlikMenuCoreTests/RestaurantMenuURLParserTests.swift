@@ -1,6 +1,6 @@
 import Foundation
 import Testing
-import KlikMenuCore
+@testable import KlikMenuCore
 
 struct RestaurantMenuURLParserTests {
 
@@ -67,5 +67,47 @@ struct RestaurantMenuURLParserTests {
     @Test func invocationRejectsForeignURL() {
         let route = RestaurantMenuInvocation.route(from: "https://example.com/menu/bistro-klik")
         #expect(route == nil)
+    }
+
+    @Test func acceptsLocalDevelopmentHTTPWhenAllowed() {
+        let url = "http://192.168.100.18:5173/menu/pubmentzen"
+        let route = RestaurantMenuURLParser.parse(
+            URLComponents(string: url)!,
+            allowsLocalDevelopmentHTTP: true
+        )
+        #expect(route == RestaurantMenuRoute(slug: "pubmentzen"))
+    }
+
+    @Test func rejectsLocalDevelopmentHTTPWhenNotAllowed() {
+        let url = "http://192.168.100.18:5173/menu/pubmentzen"
+        let route = RestaurantMenuURLParser.parse(
+            URLComponents(string: url)!,
+            allowsLocalDevelopmentHTTP: false
+        )
+        #expect(route == nil)
+    }
+
+    @Test func acceptsProductionHTTPSWhenLocalHTTPDisabled() {
+        let route = RestaurantMenuURLParser.parse(
+            URLComponents(string: "https://app.klikmenu.pl/menu/pubmentzen")!,
+            allowsLocalDevelopmentHTTP: false
+        )
+        #expect(route == RestaurantMenuRoute(slug: "pubmentzen"))
+    }
+
+    @Test func rejectsPublicHTTPEvenWhenLocalHTTPAllowed() {
+        let route = RestaurantMenuURLParser.parse(
+            URLComponents(string: "http://app.klikmenu.pl/menu/pubmentzen")!,
+            allowsLocalDevelopmentHTTP: true
+        )
+        #expect(route == nil)
+    }
+
+    @Test func acceptsLocalhostDevelopmentHTTPWhenAllowed() {
+        let route = RestaurantMenuURLParser.parse(
+            URLComponents(string: "http://localhost:5173/menu/pubmentzen")!,
+            allowsLocalDevelopmentHTTP: true
+        )
+        #expect(route == RestaurantMenuRoute(slug: "pubmentzen"))
     }
 }

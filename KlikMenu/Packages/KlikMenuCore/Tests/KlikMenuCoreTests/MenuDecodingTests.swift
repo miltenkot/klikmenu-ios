@@ -44,6 +44,7 @@ import KlikMenuCore
                 "subcategoryId": null,
                 "allergens": ["celery"],
                 "price": "18.00",
+                "variants": [],
                 "dietaryType": "VEGAN",
                 "position": 0,
                 "isAvailable": true,
@@ -62,6 +63,7 @@ import KlikMenuCore
                 "subcategoryId": null,
                 "allergens": [],
                 "price": "1.00",
+                "variants": [],
                 "dietaryType": "NONE",
                 "position": 99,
                 "isAvailable": true,
@@ -92,6 +94,7 @@ import KlikMenuCore
                     "subcategoryId": "sc-burgers",
                     "allergens": ["gluten", "milk"],
                     "price": "42.00",
+                    "variants": [],
                     "dietaryType": "NONE",
                     "position": 0,
                     "isAvailable": true,
@@ -110,6 +113,7 @@ import KlikMenuCore
                     "subcategoryId": "sc-burgers",
                     "allergens": [],
                     "price": "10.00",
+                    "variants": [],
                     "dietaryType": "VEGETARIAN",
                     "position": 1,
                     "isAvailable": false,
@@ -155,6 +159,7 @@ import KlikMenuCore
     #expect(direct.dietaryType == .vegan)
     #expect(direct.imageURL?.absoluteString == "https://cdn.example/soup.jpg")
     #expect(direct.subcategoryID == nil)
+    #expect(direct.variants.isEmpty)
 
     let burger = category.subcategories[0].items[0]
     #expect(burger.name == "Klik Burger")

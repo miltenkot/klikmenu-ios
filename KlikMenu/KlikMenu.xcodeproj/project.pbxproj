@@ -142,6 +142,7 @@
 		2A8258943010F221003FB5CC /* Exceptions for "KlikMenuClip" folder in "KlikMenuClip" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"Info-Debug.plist",
 				Info.plist,
 			);
 			target = 2A8258703010F21F003FB5CC /* KlikMenuClip */;
@@ -863,6 +864,7 @@
 				ENABLE_POINTER_AUTHENTICATION = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Configuration/DebugNetworking.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KlikMenu;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSCameraUsageDescription = "KlikMenu używa kamery do skanowania kodów QR z linkami do menu restauracji.";
@@ -1023,7 +1025,7 @@
 				ENABLE_POINTER_AUTHENTICATION = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = KlikMenuClip/Info.plist;
+				INFOPLIST_FILE = "KlikMenuClip/Info-Debug.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = KlikMenu;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
