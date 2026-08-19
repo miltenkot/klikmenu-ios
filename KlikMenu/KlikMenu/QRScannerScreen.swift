@@ -9,6 +9,7 @@ struct QRScannerScreen: View {
 
     @State private var cameraAuthorized = false
     @State private var permissionDenied = false
+    @State private var isResolvingCode = false
 
     var body: some View {
         ZStack {
@@ -48,6 +49,10 @@ struct QRScannerScreen: View {
                 Spacer(minLength: 24)
             }
             .padding()
+
+            if isResolvingCode {
+                QRScannerLoadingOverlay()
+            }
         }
         .accessibilityElement(children: .contain)
         .accessibilityLabel(Text("Skaner kodów QR menu KlikMenu"))
@@ -58,13 +63,18 @@ struct QRScannerScreen: View {
 
     private func handleScannedCode(_ code: String) {
         if code == lastRejectedCode {
+            isResolvingCode = false
             scannerResetID = UUID()
             return
         }
 
         if let parsed = RestaurantMenuInvocation.route(from: code) {
-            route = parsed
+            isResolvingCode = true
+            DispatchQueue.main.async {
+                route = parsed
+            }
         } else {
+            isResolvingCode = false
             lastRejectedCode = code
             scannerResetID = UUID()
         }
@@ -75,19 +85,46 @@ struct QRScannerScreen: View {
         case .authorized:
             cameraAuthorized = true
             permissionDenied = false
+            isResolvingCode = false
         case .notDetermined:
             let granted = await AVCaptureDevice.requestAccess(for: .video)
             cameraAuthorized = granted
             permissionDenied = !granted
+            if !granted {
+                isResolvingCode = false
+            }
         default:
             cameraAuthorized = false
             permissionDenied = true
+            isResolvingCode = false
         }
     }
 
     private func openSettings() {
         guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
         UIApplication.shared.open(url)
+    }
+}
+
+private struct QRScannerLoadingOverlay: View {
+    var body: some View {
+        ZStack {
+            Color.black.opacity(0.35)
+                .ignoresSafeArea()
+
+            VStack(spacing: 12) {
+                ProgressView()
+                    .tint(.white)
+                Text("Wczytywanie menu…")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.white)
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 16)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(Text("Wczytywanie menu…"))
     }
 }
 

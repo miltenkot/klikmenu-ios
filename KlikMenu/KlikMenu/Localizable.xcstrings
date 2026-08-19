@@ -1,342 +1,384 @@
 {
-  "sourceLanguage": "pl",
-  "strings": {
-    "Wyceluj w kod QR": {
-      "comment": "Instruction on the QR scanner screen.",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aim at a QR code"
+  "sourceLanguage" : "pl",
+  "strings" : {
+    "Brak dostępu do kamery. Włącz go w Ustawieniach, aby skanować kody QR." : {
+      "comment" : "Camera permission denied message on the scanner screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chybí přístup ke kameře. Povolte jej v Nastavení pro skenování QR kódů."
           }
         },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wyceluj w kod QR"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Kamerazugriff. Aktiviere ihn in den Einstellungen, um QR-Codes zu scannen."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Auf den QR-Code zielen"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera access is off. Enable it in Settings to scan QR codes."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Наведіть на QR-код"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak dostępu do kamery. Włącz go w Ustawieniach, aby skanować kody QR."
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zaměřte QR kód"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chýba prístup ku kamere. Zapnite ho v Nastaveniach na skenovanie QR kódov."
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zamerajte QR kód"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає доступу до камери. Увімкніть його в Параметрах, щоб сканувати QR-коди."
           }
         }
       }
     },
-    "Skaner kodów QR menu KlikMenu": {
-      "comment": "Accessibility label for the QR scanner screen.",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu menu QR code scanner"
+    "KlikMenu" : {
+      "comment" : "Spoken brand name for accessibility on the QR scanner screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
           }
         },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skaner kodów QR menu KlikMenu"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu-Menü-QR-Code-Scanner"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сканер QR-кодів меню KlikMenu"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skener QR kódů menu KlikMenu"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skener QR kódov menu KlikMenu"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
           }
         }
       }
     },
-    "Brak dostępu do kamery. Włącz go w Ustawieniach, aby skanować kody QR.": {
-      "comment": "Camera permission denied message on the scanner screen.",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Camera access is off. Enable it in Settings to scan QR codes."
+    "KLIKMENU" : {
+      "comment" : "Brand eyebrow on the QR scanner screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
           }
         },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Brak dostępu do kamery. Włącz go w Ustawieniach, aby skanować kody QR."
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kein Kamerazugriff. Aktiviere ihn in den Einstellungen, um QR-Codes zu scannen."
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Немає доступу до камери. Увімкніть його в Параметрах, щоб сканувати QR-коди."
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chybí přístup ke kameře. Povolte jej v Nastavení pro skenování QR kódů."
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chýba prístup ku kamere. Zapnite ho v Nastaveniach na skenovanie QR kódov."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
           }
         }
       }
     },
-    "Otwórz Ustawienia": {
-      "comment": "Button that opens system Settings for camera permission.",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Open Settings"
+    "Otwórz Ustawienia" : {
+      "comment" : "Button that opens system Settings for camera permission.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevřít Nastavení"
           }
         },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otwórz Ustawienia"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen öffnen"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Einstellungen öffnen"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Відкрити Параметри"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwórz Ustawienia"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otevřít Nastavení"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otvoriť Nastavenia"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otvoriť Nastavenia"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відкрити Параметри"
           }
         }
       }
     },
-    "Skanuj ponownie": {
-      "comment": "Button that returns from the menu to the QR scanner.",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Scan again"
+    "Skaner kodów QR menu KlikMenu" : {
+      "comment" : "Accessibility label for the QR scanner screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skener QR kódů menu KlikMenu"
           }
         },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skanuj ponownie"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu-Menü-QR-Code-Scanner"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Erneut scannen"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu menu QR code scanner"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сканувати знову"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skaner kodów QR menu KlikMenu"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skenovat znovu"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skener QR kódov menu KlikMenu"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skenovať znova"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сканер QR-кодів меню KlikMenu"
           }
         }
       }
     },
-    "Wróć do skanera kodów QR": {
-      "comment": "Accessibility hint for the scan-again button.",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Return to the QR code scanner"
+    "Skanuj ponownie" : {
+      "comment" : "Button that returns from the menu to the QR scanner.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skenovat znovu"
           }
         },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wróć do skanera kodów QR"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erneut scannen"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zurück zum QR-Code-Scanner"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan again"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Повернутися до сканера QR-кодів"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skanuj ponownie"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zpět ke skeneru QR kódů"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skenovať znova"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Späť ku skeneru QR kódov"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сканувати знову"
           }
         }
       }
     },
-    "KLIKMENU": {
-      "comment": "Brand eyebrow on the QR scanner screen.",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KLIKMENU"
+    "Wczytywanie menu…" : {
+      "comment" : "Loading text shown while resolving QR code and opening menu.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Načítání menu…"
           }
         },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KLIKMENU"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü wird geladen…"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KLIKMENU"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading menu…"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KLIKMENU"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wczytywanie menu…"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KLIKMENU"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Načítava sa menu…"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KLIKMENU"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завантаження меню…"
           }
         }
       }
     },
-    "KlikMenu": {
-      "comment": "Spoken brand name for accessibility on the QR scanner screen.",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu"
+    "Wróć do skanera kodów QR" : {
+      "comment" : "Accessibility hint for the scan-again button.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zpět ke skeneru QR kódů"
           }
         },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zurück zum QR-Code-Scanner"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Return to the QR code scanner"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wróć do skanera kodów QR"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Späť ku skeneru QR kódov"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Повернутися до сканера QR-кодів"
+          }
+        }
+      }
+    },
+    "Wyceluj w kod QR" : {
+      "comment" : "Instruction on the QR scanner screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaměřte QR kód"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf den QR-Code zielen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aim at a QR code"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyceluj w kod QR"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamerajte QR kód"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наведіть на QR-код"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }
