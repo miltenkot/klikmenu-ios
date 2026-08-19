@@ -94,7 +94,7 @@ private struct FeedbackWaiterRowView: View {
                         .accessibilityLabel(Text("Wybrany", bundle: #bundle))
                 }
             }
-            .contentShape(Rectangle())
+            .contentShape(.rect)
             .frame(minHeight: 44)
         }
         .buttonStyle(.plain)

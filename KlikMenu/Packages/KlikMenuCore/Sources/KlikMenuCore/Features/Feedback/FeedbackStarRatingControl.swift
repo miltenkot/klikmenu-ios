@@ -38,7 +38,7 @@ private struct FeedbackStarButton: View {
                 .font(.title2)
                 .foregroundStyle(isFilled ? Color.klikAccent : Color.klikAccent.opacity(0.22))
                 .frame(width: 44, height: 44)
-                .contentShape(Rectangle())
+                .contentShape(.rect)
         }
         .buttonStyle(.borderless)
         .accessibilityLabel(Text("\(star) z 5 gwiazdek", bundle: #bundle))
