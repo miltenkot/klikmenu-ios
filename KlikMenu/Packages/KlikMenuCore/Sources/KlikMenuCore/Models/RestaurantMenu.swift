@@ -16,6 +16,8 @@ public struct RestaurantMenu: Sendable, Equatable, Identifiable {
     public let baseLocale: SupportedLocale?
     public let availableLocales: [SupportedLocale]
     public let supportedLocales: [SupportedLocale]
+    public let orderListEnabled: Bool
+    public let serviceCharge: ServiceCharge?
     public let categories: [MenuCategory]
 
     public init(
@@ -34,6 +36,8 @@ public struct RestaurantMenu: Sendable, Equatable, Identifiable {
         baseLocale: SupportedLocale? = nil,
         availableLocales: [SupportedLocale] = [],
         supportedLocales: [SupportedLocale] = [],
+        orderListEnabled: Bool = false,
+        serviceCharge: ServiceCharge? = nil,
         categories: [MenuCategory]
     ) {
         self.id = id
@@ -51,6 +55,8 @@ public struct RestaurantMenu: Sendable, Equatable, Identifiable {
         self.baseLocale = baseLocale
         self.availableLocales = availableLocales
         self.supportedLocales = supportedLocales
+        self.orderListEnabled = orderListEnabled
+        self.serviceCharge = serviceCharge
         self.categories = categories
     }
 

@@ -24,6 +24,12 @@ import KlikMenuCore
         "baseLocale": "pl",
         "availableLocales": ["pl", "en"],
         "supportedLocales": ["pl", "en", "de", "uk", "cs", "sk"],
+        "orderListEnabled": true,
+        "serviceCharge": {
+          "type": "PERCENTAGE",
+          "value": "10",
+          "label": "Service fee"
+        },
         "categories": [
           {
             "id": "c-food",
@@ -147,6 +153,10 @@ import KlikMenuCore
     #expect(result.baseLocale == .pl)
     #expect(result.availableLocales == [.pl, .en])
     #expect(result.supportedLocales == [.pl, .en, .de, .uk, .cs, .sk])
+    #expect(result.orderListEnabled == true)
+    #expect(result.serviceCharge?.type == .percentage)
+    #expect(result.serviceCharge?.value == Decimal(string: "10", locale: Locale(identifier: "en_US_POSIX")))
+    #expect(result.serviceCharge?.label == "Service fee")
     #expect(result.categories.count == 1)
 
     let category = result.categories[0]

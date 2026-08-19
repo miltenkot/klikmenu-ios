@@ -23,7 +23,7 @@ public struct MenuItemCardView: View {
                 MenuItemCardHeaderView(item: item, currency: currency)
 
                 if !item.variants.isEmpty {
-                    MenuItemVariantsListView(variants: item.variants, currency: currency)
+                    MenuItemVariantsListView(item: item, variants: item.variants, currency: currency)
                 }
 
                 if item.variants.isEmpty, let servingSize = item.servingSize {
@@ -73,10 +73,14 @@ private struct MenuItemCardHeaderView: View {
             if item.variants.isEmpty {
                 Spacer(minLength: 8)
 
-                MenuItemPriceText(price: item.price, currency: currency)
-                    .font(.subheadline.weight(.bold))
-                    .monospacedDigit()
-                    .foregroundStyle(Color.klikAccent)
+                VStack(alignment: .trailing, spacing: 8) {
+                    MenuItemPriceText(price: item.price, currency: currency)
+                        .font(.subheadline.weight(.bold))
+                        .monospacedDigit()
+                        .foregroundStyle(Color.klikAccent)
+
+                    AddToOrderControlView(item: item, variant: nil)
+                }
             }
         }
     }

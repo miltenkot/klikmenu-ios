@@ -1,5 +1,16 @@
 import Foundation
 
+extension ServiceChargeDTO {
+    public func asDomain() -> ServiceCharge? {
+        guard let type = ServiceCharge.ChargeType(rawValue: type.uppercased()),
+              let decimalValue = Decimal(string: value, locale: Locale(identifier: "en_US_POSIX")),
+              !label.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return nil
+        }
+        return ServiceCharge(type: type, value: decimalValue, label: label)
+    }
+}
+
 extension RestaurantDTO {
     public func asDomain() -> RestaurantMenu {
         RestaurantMenu(
@@ -18,6 +29,8 @@ extension RestaurantDTO {
             baseLocale: baseLocale.flatMap(SupportedLocale.init(rawValue:)),
             availableLocales: availableLocales.compactMap(SupportedLocale.init(rawValue:)),
             supportedLocales: supportedLocales.compactMap(SupportedLocale.init(rawValue:)),
+            orderListEnabled: orderListEnabled,
+            serviceCharge: serviceCharge?.asDomain(),
             // Keep API array order (OpenAPI public menu already returns display order).
             categories: categories
                 .filter(\.isVisible)

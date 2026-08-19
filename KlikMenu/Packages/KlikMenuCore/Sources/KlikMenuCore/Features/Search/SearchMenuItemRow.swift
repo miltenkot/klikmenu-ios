@@ -9,7 +9,7 @@ struct SearchMenuItemRow: View {
             SearchMenuItemHeaderView(item: item, currency: currency)
 
             if !item.variants.isEmpty {
-                MenuItemVariantsListView(variants: item.variants, currency: currency)
+                MenuItemVariantsListView(item: item, variants: item.variants, currency: currency)
             } else if let servingSize = item.servingSize {
                 Text(servingSize)
                     .font(.caption.weight(.semibold))
@@ -47,11 +47,15 @@ private struct SearchMenuItemHeaderView: View {
             if item.variants.isEmpty {
                 Spacer(minLength: 8)
 
-                MenuItemPriceText(price: item.price, currency: currency)
-                    .font(.subheadline.weight(.medium))
-                    .monospacedDigit()
-                    .foregroundStyle(Color.klikAccent)
-                    .layoutPriority(1)
+                VStack(alignment: .trailing, spacing: 8) {
+                    MenuItemPriceText(price: item.price, currency: currency)
+                        .font(.subheadline.weight(.medium))
+                        .monospacedDigit()
+                        .foregroundStyle(Color.klikAccent)
+                        .layoutPriority(1)
+
+                    AddToOrderControlView(item: item, variant: nil)
+                }
             }
         }
     }

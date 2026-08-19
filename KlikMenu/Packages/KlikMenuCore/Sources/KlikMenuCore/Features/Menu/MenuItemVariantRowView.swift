@@ -1,13 +1,14 @@
 import SwiftUI
 
 struct MenuItemVariantsListView: View {
+    let item: MenuItem
     let variants: [MenuItemVariant]
     let currency: String
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             ForEach(variants) { variant in
-                MenuItemVariantRowView(variant: variant, currency: currency)
+                MenuItemVariantRowView(item: item, variant: variant, currency: currency)
             }
         }
         .accessibilityElement(children: .contain)
@@ -15,11 +16,12 @@ struct MenuItemVariantsListView: View {
 }
 
 struct MenuItemVariantRowView: View {
+    let item: MenuItem
     let variant: MenuItemVariant
     let currency: String
 
     var body: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 12) {
+        HStack(alignment: .top, spacing: 12) {
             VStack(alignment: .leading, spacing: 4) {
                 Text(variant.label)
                     .font(.subheadline)
@@ -35,12 +37,16 @@ struct MenuItemVariantRowView: View {
 
             Spacer(minLength: 8)
 
-            MenuItemPriceText(price: variant.price, currency: currency)
-                .font(.subheadline.weight(.bold))
-                .monospacedDigit()
-                .foregroundStyle(Color.klikAccent)
-                .layoutPriority(1)
+            VStack(alignment: .trailing, spacing: 8) {
+                MenuItemPriceText(price: variant.price, currency: currency)
+                    .font(.subheadline.weight(.bold))
+                    .monospacedDigit()
+                    .foregroundStyle(Color.klikAccent)
+                    .layoutPriority(1)
+
+                AddToOrderControlView(item: item, variant: variant)
+            }
         }
-        .accessibilityElement(children: .combine)
+        .accessibilityElement(children: .contain)
     }
 }

@@ -4,6 +4,12 @@ public struct PublicMenuResponseDTO: Decodable, Sendable {
     public let data: RestaurantDTO
 }
 
+public struct ServiceChargeDTO: Decodable, Sendable {
+    public let type: String
+    public let value: String
+    public let label: String
+}
+
 public struct RestaurantDTO: Decodable, Sendable {
     public let id: String
     public let name: String
@@ -23,13 +29,15 @@ public struct RestaurantDTO: Decodable, Sendable {
     public let baseLocale: String?
     public let availableLocales: [String]
     public let supportedLocales: [String]
+    public let orderListEnabled: Bool
+    public let serviceCharge: ServiceChargeDTO?
     public let categories: [MenuCategoryDTO]
 
     private enum CodingKeys: String, CodingKey {
         case id, name, slug, description, address, phone, currency
         case isPublished, feedbackEnabled, createdAt, updatedAt, heroImageKey, heroImageUrl
         case requestedLocale, resolvedLocale, baseLocale, availableLocales, supportedLocales
-        case categories
+        case orderListEnabled, serviceCharge, categories
     }
 
     public init(from decoder: Decoder) throws {
@@ -52,6 +60,8 @@ public struct RestaurantDTO: Decodable, Sendable {
         baseLocale = try container.decodeIfPresent(String.self, forKey: .baseLocale)
         availableLocales = try container.decodeIfPresent([String].self, forKey: .availableLocales) ?? []
         supportedLocales = try container.decodeIfPresent([String].self, forKey: .supportedLocales) ?? []
+        orderListEnabled = try container.decodeIfPresent(Bool.self, forKey: .orderListEnabled) ?? false
+        serviceCharge = try container.decodeIfPresent(ServiceChargeDTO.self, forKey: .serviceCharge)
         categories = try container.decodeIfPresent([MenuCategoryDTO].self, forKey: .categories) ?? []
     }
 }

@@ -9,7 +9,11 @@ public enum PriceFormatter {
         guard let value = Decimal(string: price, locale: Locale(identifier: "en_US_POSIX")) else {
             return "\(price) \(currency)"
         }
-        return value.formatted(
+        return string(decimal: value, currency: currency)
+    }
+
+    public static func string(decimal: Decimal, currency: String) -> String {
+        decimal.formatted(
             .currency(code: currency)
                 .locale(displayLocale)
         )

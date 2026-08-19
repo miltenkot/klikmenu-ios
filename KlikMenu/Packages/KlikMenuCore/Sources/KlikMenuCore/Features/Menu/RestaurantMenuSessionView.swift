@@ -8,24 +8,30 @@ public struct RestaurantMenuSessionView<Idle: View>: View {
 
     private let initialURL: URL?
     private let handlesSystemInvocation: Bool
+    private let onOrderBarVisibilityChanged: ((Bool) -> Void)?
     @ViewBuilder private let idle: Idle
 
     public init(
         route: Binding<RestaurantMenuRoute?>,
         initialURL: URL? = nil,
         handlesSystemInvocation: Bool = false,
+        onOrderBarVisibilityChanged: ((Bool) -> Void)? = nil,
         @ViewBuilder idle: () -> Idle
     ) {
         _route = route
         self.initialURL = initialURL
         self.handlesSystemInvocation = handlesSystemInvocation
+        self.onOrderBarVisibilityChanged = onOrderBarVisibilityChanged
         self.idle = idle()
     }
 
     public var body: some View {
         Group {
             if let route {
-                RestaurantMenuView(slug: route.slug)
+                RestaurantMenuView(
+                    slug: route.slug,
+                    onOrderBarVisibilityChanged: onOrderBarVisibilityChanged
+                )
             } else if let invalidURLMessage {
                 ContentUnavailableView {
                     Label {

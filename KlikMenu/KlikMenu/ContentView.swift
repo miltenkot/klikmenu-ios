@@ -5,12 +5,16 @@ struct ContentView: View {
     @State private var route: RestaurantMenuRoute?
     @State private var lastRejectedCode: String?
     @State private var scannerResetID = UUID()
+    @State private var isOrderBarVisible = false
 
     var body: some View {
         ZStack(alignment: .bottomLeading) {
             RestaurantMenuSessionView(
                 route: $route,
-                handlesSystemInvocation: true
+                handlesSystemInvocation: true,
+                onOrderBarVisibilityChanged: { isVisible in
+                    isOrderBarVisible = isVisible
+                }
             ) {
                 QRScannerScreen(
                     route: $route,
@@ -27,8 +31,13 @@ struct ContentView: View {
                     .background(.ultraThinMaterial, in: Capsule())
                     .buttonStyle(.plain)
                     .padding(.leading, 16)
-                    .safeAreaPadding(.bottom, 16)
+                    .safeAreaPadding(.bottom, isOrderBarVisible ? 86 : 16)
                     .accessibilityHint(Text("Wróć do skanera kodów QR"))
+            }
+        }
+        .onChange(of: route) { _, newRoute in
+            if newRoute == nil {
+                isOrderBarVisible = false
             }
         }
     }

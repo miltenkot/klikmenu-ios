@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MenuSearchFloatingButton: View {
     let action: () -> Void
+    var size: CGFloat = 60
 
     var body: some View {
         Button(
@@ -12,7 +13,7 @@ struct MenuSearchFloatingButton: View {
             .labelStyle(.iconOnly)
             .font(.title3.weight(.semibold))
             .foregroundStyle(Color.klikHeroText)
-            .frame(width: 60, height: 60)
+            .frame(width: size, height: size)
             .background(Color.klikAccent, in: Circle())
             .overlay {
                 Circle()

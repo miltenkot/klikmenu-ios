@@ -1,2652 +1,3256 @@
 {
-  "sourceLanguage": "pl",
-  "strings": {
-    "Oceń obsługę": {
-      "comment": "Feedback button title and sheet navigation title.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Oceń obsługę"
+  "sourceLanguage" : "pl",
+  "strings" : {
+    "·" : {
+
+    },
+    "%@ · %lld" : {
+      "comment" : "Search result category header. The first variable is the category name, the second is the item count.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ · %lld"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rate service"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ · %lld"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Service bewerten"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ · %lld"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Оцінити обслуговування"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ · %lld"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ohodnotit obsluhu"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ · %lld"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ohodnotiť obsluhu"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ · %lld"
           }
         }
       }
     },
-    "Otwiera formularz oceny obsługi": {
-      "comment": "Accessibility hint for the feedback button.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otwiera formularz oceny obsługi"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Opens the service rating form"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Öffnet das Formular zur Servicebewertung"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Відкриває форму оцінки обслуговування"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otevře formulář hodnocení obsluhy"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otvorí formulár hodnotenia obsluhy"
+    "%@ %@" : {
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
           }
         }
       }
     },
-    "Zamknij": {
-      "comment": "Dismiss button on feedback sheet.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zamknij"
+    "%lld" : {
+
+    },
+    "%lld z 5 gwiazdek" : {
+      "comment" : "Accessibility label for an individual star. The first variable is the star value.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld z 5 hvězdiček"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Close"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld von 5 Sternen"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Schließen"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld of 5 stars"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Закрити"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld z 5 gwiazdek"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zavřít"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld z 5 hviezdičiek"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zavrieť"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld з 5 зірок"
           }
         }
       }
     },
-    "Dziękujemy!": {
-      "comment": "Feedback success title.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dziękujemy!"
+    "%lld z 1000 znaków" : {
+      "comment" : "Character counter accessibility label. The first variable is the current character count.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld z 1000 znaků"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Thank you!"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld von 1000 Zeichen"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vielen Dank!"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld of 1000 characters"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Дякуємо!"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld z 1000 znaków"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Děkujeme!"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld z 1000 znakov"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ďakujeme!"
-          }
-        }
-      }
-    },
-    "Twoja opinia została wysłana.": {
-      "comment": "Feedback success message.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Twoja opinia została wysłana."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Your feedback has been sent."
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dein Feedback wurde gesendet."
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ваш відгук надіслано."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vaše hodnocení bylo odesláno."
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Váš názor bol odoslaný."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld з 1000 символів"
           }
         }
       }
     },
-    "Wybierz kelnera": {
-      "comment": "Feedback form section header for waiter selection.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wybierz kelnera"
+    "Alergeny: %@" : {
+      "comment" : "Menu item allergens row. The first variable is the formatted allergens list.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alergeny: %@"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choose a waiter"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allergene: %@"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kellner wählen"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allergens: %@"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Оберіть офіціанта"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alergeny: %@"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vyberte číšníka"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alergény: %@"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vyberte čašníka"
-          }
-        }
-      }
-    },
-    "Wybrany": {
-      "comment": "Accessibility label for selected waiter checkmark.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wybrany"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Selected"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ausgewählt"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вибрано"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vybráno"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vybrané"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Алергени: %@"
           }
         }
       }
     },
-    "Kelner %@": {
-      "comment": "Accessibility label for a waiter row. The first variable is the waiter name.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kelner %@"
+    "Błąd: %@" : {
+      "comment" : "Accessibility label for a feedback form error. The first variable is the error message.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chyba: %@"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Waiter %@"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehler: %@"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kellner %@"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error: %@"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Офіціант %@"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Błąd: %@"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Číšník %@"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chyba: %@"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Čašník %@"
-          }
-        }
-      }
-    },
-    "Ocena": {
-      "comment": "Feedback form section header for star rating.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ocena"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rating"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bewertung"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Оцінка"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hodnocení"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hodnotenie"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Помилка: %@"
           }
         }
       }
     },
-    "%lld z 5 gwiazdek": {
-      "comment": "Accessibility label for an individual star. The first variable is the star value.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld z 5 gwiazdek"
+    "Brak oceny" : {
+      "comment" : "Accessibility label when no star rating is selected.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez hodnocení"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld of 5 stars"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Bewertung"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld von 5 Sternen"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No rating"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld з 5 зірок"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak oceny"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld z 5 hvězdiček"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez hodnotenia"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld z 5 hviezdičiek"
-          }
-        }
-      }
-    },
-    "Dwukrotnie stuknij, aby wyczyścić ocenę": {
-      "comment": "Accessibility hint when the current star rating can be cleared.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dwukrotnie stuknij, aby wyczyścić ocenę"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Double tap to clear the rating"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Doppeltippen, um die Bewertung zu löschen"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Двічі торкніться, щоб скинути оцінку"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dvojitým klepnutím hodnocení vymažete"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dvojitým klepnutím hodnotenie vymažete"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає оцінки"
           }
         }
       }
     },
-    "Ustaw ocenę na %lld": {
-      "comment": "Accessibility hint to set the star rating. The first variable is the star value.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ustaw ocenę na %lld"
+    "Brak połączenia z internetem. Sprawdź sieć i spróbuj ponownie." : {
+      "comment" : "Network error message.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žádné připojení k internetu. Zkontrolujte síť a zkuste to znovu."
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Set rating to %lld"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Internetverbindung. Prüfe das Netzwerk und versuche es erneut."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bewertung auf %lld setzen"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No internet connection. Check your network and try again."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Встановити оцінку %lld"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak połączenia z internetem. Sprawdź sieć i spróbuj ponownie."
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nastavit hodnocení na %lld"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žiadne pripojenie na internet. Skontrolujte sieť a skúste to znova."
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nastaviť hodnotenie na %lld"
-          }
-        }
-      }
-    },
-    "Ocena %lld z 5 gwiazdek": {
-      "comment": "Accessibility label for the current rating. The first variable is the selected rating.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ocena %lld z 5 gwiazdek"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rating %lld of 5 stars"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bewertung %lld von 5 Sternen"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Оцінка %lld з 5 зірок"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hodnocení %lld z 5 hvězdiček"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hodnotenie %lld z 5 hviezdičiek"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає з’єднання з інтернетом. Перевірте мережу та спробуйте знову."
           }
         }
       }
     },
-    "Brak oceny": {
-      "comment": "Accessibility label when no star rating is selected.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Brak oceny"
+    "Brak wyników" : {
+      "comment" : "Empty search results title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žádné výsledky"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No rating"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Ergebnisse"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keine Bewertung"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No results"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Немає оцінки"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak wyników"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bez hodnocení"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Žiadne výsledky"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bez hodnotenia"
-          }
-        }
-      }
-    },
-    "Komentarz (opcjonalnie)": {
-      "comment": "Feedback form section header for optional comment.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komentarz (opcjonalnie)"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Comment (optional)"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kommentar (optional)"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Коментар (необов’язково)"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komentář (volitelné)"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komentár (voliteľné)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає результатів"
           }
         }
       }
     },
-    "Dodaj komentarz": {
-      "comment": "Placeholder for the feedback comment field.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dodaj komentarz"
+    "Ciemny" : {
+      "comment" : "Dark theme preference option.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tmavý"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add a comment"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dunkel"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kommentar hinzufügen"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Додати коментар"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ciemny"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Přidat komentář"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tmavý"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pridať komentár"
-          }
-        }
-      }
-    },
-    "Komentarz do opinii": {
-      "comment": "Accessibility label for the feedback comment field.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komentarz do opinii"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Feedback comment"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Feedback-Kommentar"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Коментар до відгуку"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komentář k hodnocení"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Komentár k hodnoteniu"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Темна"
           }
         }
       }
     },
-    "%lld z 1000 znaków": {
-      "comment": "Character counter accessibility label. The first variable is the current character count.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld z 1000 znaków"
+    "Dieta" : {
+      "comment" : "Dietary filter picker title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Strava"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld of 1000 characters"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ernährung"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld von 1000 Zeichen"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diet"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld з 1000 символів"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieta"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld z 1000 znaků"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Strava"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld z 1000 znakov"
-          }
-        }
-      }
-    },
-    "Błąd: %@": {
-      "comment": "Accessibility label for a feedback form error. The first variable is the error message.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Błąd: %@"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Error: %@"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fehler: %@"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Помилка: %@"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chyba: %@"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chyba: %@"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дієта"
           }
         }
       }
     },
-    "Wyślij opinię": {
-      "comment": "Submit button on the feedback form.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wyślij opinię"
+    "Dodaj" : {
+      "comment" : "Adds a menu item to the local order list.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přidat"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Submit feedback"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hinzufügen"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Feedback senden"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Надіслати відгук"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Odeslat hodnocení"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridať"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Odoslať hodnotenie"
-          }
-        }
-      }
-    },
-    "Filtry": {
-      "comment": "Search sheet filters section header.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filtry"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filters"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filter"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Фільтри"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filtry"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filtre"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати"
           }
         }
       }
     },
-    "Dieta": {
-      "comment": "Dietary filter picker title.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dieta"
+    "Dodaj %@" : {
+      "comment" : "Accessibility label for adding an item. The first variable is the item or variant name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přidat %@"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Diet"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ hinzufügen"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ernährung"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add %@"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Дієта"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj %@"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Strava"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridať %@"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Strava"
-          }
-        }
-      }
-    },
-    "Wszystkie": {
-      "comment": "Picker option meaning no filter is applied.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wszystkie"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "All"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alle"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Усі"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vše"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Všetky"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати %@"
           }
         }
       }
     },
-    "Wegetariańskie": {
-      "comment": "Vegetarian dietary label and filter option.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wegetariańskie"
+    "Dodaj komentarz" : {
+      "comment" : "Placeholder for the feedback comment field.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přidat komentář"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vegetarian"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kommentar hinzufügen"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vegetarisch"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add a comment"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вегетаріанське"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj komentarz"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vegetariánské"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridať komentár"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vegetariánske"
-          }
-        }
-      }
-    },
-    "Wegańskie": {
-      "comment": "Vegan dietary label and filter option.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wegańskie"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vegan"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vegan"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Веганське"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Veganské"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vegánske"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати коментар"
           }
         }
       }
     },
-    "Filtr dietetyczny": {
-      "comment": "Accessibility label for the dietary filter picker.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filtr dietetyczny"
+    "Dodaj pozycje z menu, aby utworzyć listę dla kelnera." : {
+      "comment" : "Empty order list helper text.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přidejte položky z menu a vytvořte seznam pro obsluhu."
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dietary filter"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Füge Positionen aus dem Menü hinzu, um eine Liste für den Service zu erstellen."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ernährungsfilter"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add items from the menu to build a list for your waiter."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Дієтичний фільтр"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dodaj pozycje z menu, aby utworzyć listę dla kelnera."
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filtr stravy"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pridajte položky z menu a vytvorte zoznam pre obsluhu."
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filter stravy"
-          }
-        }
-      }
-    },
-    "Kategoria": {
-      "comment": "Category filter picker title.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kategoria"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Category"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kategorie"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Категорія"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kategorie"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Kategória"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додайте позиції з меню, щоб створити список для офіціанта."
           }
         }
       }
     },
-    "Subkategoria": {
-      "comment": "Subcategory filter picker title.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Subkategoria"
+    "Dwukrotnie stuknij, aby wyczyścić ocenę" : {
+      "comment" : "Accessibility hint when the current star rating can be cleared.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dvojitým klepnutím hodnocení vymažete"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Subcategory"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doppeltippen, um die Bewertung zu löschen"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unterkategorie"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double tap to clear the rating"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Підкатегорія"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dwukrotnie stuknij, aby wyczyścić ocenę"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Podkategorie"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dvojitým klepnutím hodnotenie vymažete"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Podkategória"
-          }
-        }
-      }
-    },
-    "Wyniki: %lld": {
-      "comment": "Search results section header. The first variable is the result count.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wyniki: %lld"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Results: %lld"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ergebnisse: %lld"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Результати: %lld"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Výsledky: %lld"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Výsledky: %lld"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Двічі торкніться, щоб скинути оцінку"
           }
         }
       }
     },
-    "Brak wyników": {
-      "comment": "Empty search results title.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Brak wyników"
+    "Dziękujemy!" : {
+      "comment" : "Feedback success title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Děkujeme!"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No results"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vielen Dank!"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keine Ergebnisse"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thank you!"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Немає результатів"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dziękujemy!"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Žádné výsledky"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ďakujeme!"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Žiadne výsledky"
-          }
-        }
-      }
-    },
-    "Spróbuj zmienić frazę lub filtry.": {
-      "comment": "Empty search results description.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Spróbuj zmienić frazę lub filtry."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Try a different search or filters."
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Versuche einen anderen Suchbegriff oder Filter."
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Спробуйте змінити фразу або фільтри."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zkuste změnit frázi nebo filtry."
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skúste zmeniť frázu alebo filtre."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дякуємо!"
           }
         }
       }
     },
-    "%@ · %lld": {
-      "comment": "Search result category header. The first variable is the category name, the second is the item count.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ · %lld"
+    "Filtr dietetyczny" : {
+      "comment" : "Accessibility label for the dietary filter picker.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtr stravy"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ · %lld"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ernährungsfilter"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ · %lld"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dietary filter"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ · %lld"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtr dietetyczny"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ · %lld"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter stravy"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ · %lld"
-          }
-        }
-      }
-    },
-    "Szukaj w menu": {
-      "comment": "Search sheet navigation title.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Szukaj w menu"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Search menu"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Menü durchsuchen"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Пошук у меню"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hledat v menu"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hľadať v menu"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дієтичний фільтр"
           }
         }
       }
     },
-    "Szukaj po nazwie dania": {
-      "comment": "Search field prompt.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Szukaj po nazwie dania"
+    "Filtry" : {
+      "comment" : "Search sheet filters section header.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtry"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Search by dish name"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nach Gerichtenamen suchen"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filters"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Шукати за назвою страви"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtry"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hledat podle názvu jídla"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtre"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hľadať podľa názvu jedla"
-          }
-        }
-      }
-    },
-    "Gotowe": {
-      "comment": "Done button that dismisses the search sheet.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Gotowe"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Done"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fertig"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Готово"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hotovo"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hotovo"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фільтри"
           }
         }
       }
     },
-    "Wyniki wyszukiwania: %lld": {
-      "comment": "Accessibility label for search results. The first variable is the result count.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wyniki wyszukiwania: %lld"
+    "Gotowe" : {
+      "comment" : "Done button that dismisses the search sheet.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotovo"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Search results: %lld"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertig"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Suchergebnisse: %lld"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Результати пошуку: %lld"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gotowe"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Výsledky hledání: %lld"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotovo"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Výsledky vyhľadávania: %lld"
-          }
-        }
-      }
-    },
-    "Przeglądaj i wyszukaj menu": {
-      "comment": "Search floating action button accessibility label.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Przeglądaj i wyszukaj menu"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Browse and search the menu"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Menü durchsuchen und filtern"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Переглянути та шукати в меню"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Procházet a hledat v menu"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Prehliadať a hľadať v menu"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Готово"
           }
         }
       }
     },
-    "Otwiera natywne wyszukiwanie i filtry": {
-      "comment": "Search floating action button accessibility hint.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otwiera natywne wyszukiwanie i filtry"
+    "Jasny" : {
+      "comment" : "Light theme preference option.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Světlý"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Opens search and filters"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hell"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Öffnet Suche und Filter"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Відкриває пошук і фільтри"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jasny"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otevře hledání a filtry"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Svetlý"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Otvorí vyhľadávanie a filtre"
-          }
-        }
-      }
-    },
-    "Nie udało się wczytać menu": {
-      "comment": "Menu error screen title.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nie udało się wczytać menu"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Couldn't load the menu"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Menü konnte nicht geladen werden"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Не вдалося завантажити меню"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Menu se nepodařilo načíst"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Menu sa nepodarilo načítať"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Світла"
           }
         }
       }
     },
-    "Spróbuj ponownie": {
-      "comment": "Retry button on the menu error screen.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Spróbuj ponownie"
+    "Kategoria" : {
+      "comment" : "Category filter picker title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategorie"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Try again"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategorie"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Erneut versuchen"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Спробувати знову"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategoria"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zkusit znovu"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategória"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Skúsiť znova"
-          }
-        }
-      }
-    },
-    "Menu jest puste": {
-      "comment": "Empty menu screen title.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Menu jest puste"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Menu is empty"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Das Menü ist leer"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Меню порожнє"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Menu je prázdné"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Menu je prázdne"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Категорія"
           }
         }
       }
     },
-    "Ta restauracja nie ma jeszcze dostępnych pozycji.": {
-      "comment": "Empty menu screen description.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ta restauracja nie ma jeszcze dostępnych pozycji."
+    "Kelner %@" : {
+      "comment" : "Accessibility label for a waiter row. The first variable is the waiter name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Číšník %@"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "This restaurant doesn't have any items yet."
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kellner %@"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dieses Restaurant hat noch keine Gerichte."
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waiter %@"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "У цьому ресторані ще немає доступних позицій."
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kelner %@"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tato restaurace zatím nemá žádné položky."
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Čašník %@"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Táto reštaurácia zatiaľ nemá žiadne položky."
-          }
-        }
-      }
-    },
-    "Nie znaleziono restauracji.": {
-      "comment": "Restaurant not found error message.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nie znaleziono restauracji."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restaurant not found."
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restaurant nicht gefunden."
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ресторан не знайдено."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restaurace nebyla nalezena."
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Reštaurácia nebola nájdená."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Офіціант %@"
           }
         }
       }
     },
-    "Nieprawidłowy link": {
-      "comment": "Invalid invocation URL title.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nieprawidłowy link"
+    "KlikMenu" : {
+      "comment" : "Spoken brand name for accessibility.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Invalid link"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ungültiger Link"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Недійсне посилання"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Neplatný odkaz"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Neplatný odkaz"
-          }
-        }
-      }
-    },
-    "Link musi mieć postać https://app.klikmenu.pl/menu/{slug}.": {
-      "comment": "Invalid invocation URL description.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Link musi mieć postać https://app.klikmenu.pl/menu/{slug}."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The link must look like https://app.klikmenu.pl/menu/{slug}."
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Der Link muss dem Format https://app.klikmenu.pl/menu/{slug} entsprechen."
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Посилання має мати вигляд https://app.klikmenu.pl/menu/{slug}."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Odkaz musí mít tvar https://app.klikmenu.pl/menu/{slug}."
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Odkaz musí mať tvar https://app.klikmenu.pl/menu/{slug}."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KlikMenu"
           }
         }
       }
     },
-    "KLIKMENU": {
-      "comment": "Brand eyebrow shown in the menu hero and loading screen.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KLIKMENU"
+    "KLIKMENU" : {
+      "comment" : "Brand eyebrow shown in the menu hero and loading screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KLIKMENU"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KLIKMENU"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KLIKMENU"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KLIKMENU"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KLIKMENU"
-          }
-        }
-      }
-    },
-    "KlikMenu": {
-      "comment": "Spoken brand name for accessibility.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "KlikMenu"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "KLIKMENU"
           }
         }
       }
     },
-    "Ładujemy menu…": {
-      "comment": "Loading screen title.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ładujemy menu…"
+    "Komentarz (opcjonalnie)" : {
+      "comment" : "Feedback form section header for optional comment.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komentář (volitelné)"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Loading menu…"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kommentar (optional)"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Menü wird geladen…"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment (optional)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Завантажуємо меню…"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komentarz (opcjonalnie)"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Načítáme menu…"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komentár (voliteľné)"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Načítavame menu…"
-          }
-        }
-      }
-    },
-    "Przygotowujemy kartę dań restauracji.": {
-      "comment": "Loading screen subtitle.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Przygotowujemy kartę dań restauracji."
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preparing the restaurant menu."
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wir bereiten die Speisekarte vor."
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Готуємо меню ресторану."
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Připravujeme jídelní lístek."
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pripravujeme jedálny lístok."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Коментар (необов’язково)"
           }
         }
       }
     },
-    "Składniki: %@": {
-      "comment": "Menu item ingredients row. The first variable is the ingredients list.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Składniki: %@"
+    "Komentarz do opinii" : {
+      "comment" : "Accessibility label for the feedback comment field.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komentář k hodnocení"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ingredients: %@"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback-Kommentar"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zutaten: %@"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback comment"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Інгредієнти: %@"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komentarz do opinii"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Složky: %@"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komentár k hodnoteniu"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zložky: %@"
-          }
-        }
-      }
-    },
-    "Alergeny: %@": {
-      "comment": "Menu item allergens row. The first variable is the formatted allergens list.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alergeny: %@"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Allergens: %@"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Allergene: %@"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Алергени: %@"
-          }
-        },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alergeny: %@"
-          }
-        },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Alergény: %@"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Коментар до відгуку"
           }
         }
       }
     },
-    "Motyw aplikacji": {
-      "comment": "Theme switcher menu title and accessibility label.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Motyw aplikacji"
+    "Ładujemy menu…" : {
+      "comment" : "Loading screen title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Načítáme menu…"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "App theme"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü wird geladen…"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "App-Design"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading menu…"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Тема програми"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ładujemy menu…"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Motiv aplikace"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Načítavame menu…"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Motív aplikácie"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завантажуємо меню…"
           }
         }
       }
     },
-    "Motyw": {
-      "comment": "Theme preference picker title.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Motyw"
+    "Link musi mieć postać https://app.klikmenu.pl/menu/{slug}." : {
+      "comment" : "Invalid invocation URL description.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odkaz musí mít tvar https://app.klikmenu.pl/menu/{slug}."
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Theme"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Link muss dem Format https://app.klikmenu.pl/menu/{slug} entsprechen."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Design"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The link must look like https://app.klikmenu.pl/menu/{slug}."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Тема"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Link musi mieć postać https://app.klikmenu.pl/menu/{slug}."
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Motiv"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odkaz musí mať tvar https://app.klikmenu.pl/menu/{slug}."
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Motív"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Посилання має мати вигляд https://app.klikmenu.pl/menu/{slug}."
           }
         }
       }
     },
-    "Systemowy": {
-      "comment": "System theme preference option.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Systemowy"
+    "Menu jest puste" : {
+      "comment" : "Empty menu screen title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu je prázdné"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "System"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Menü ist leer"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "System"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu is empty"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Системна"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu jest puste"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Systémový"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu je prázdne"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Systémový"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Меню порожнє"
           }
         }
       }
     },
-    "Jasny": {
-      "comment": "Light theme preference option.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Jasny"
+    "Motyw" : {
+      "comment" : "Theme preference picker title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motiv"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Light"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Design"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hell"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Theme"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Світла"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motyw"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Světlý"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motív"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Svetlý"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тема"
           }
         }
       }
     },
-    "Ciemny": {
-      "comment": "Dark theme preference option.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ciemny"
+    "Motyw aplikacji" : {
+      "comment" : "Theme switcher menu title and accessibility label.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motiv aplikace"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dark"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App-Design"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Dunkel"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App theme"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Темна"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motyw aplikacji"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tmavý"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Motív aplikácie"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tmavý"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тема програми"
           }
         }
       }
     },
-    "Wybierz motyw jasny, ciemny lub systemowy": {
-      "comment": "Theme switcher accessibility hint.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wybierz motyw jasny, ciemny lub systemowy"
+    "Nie udało się odczytać odpowiedzi serwera." : {
+      "comment" : "Decoding error message.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odpověď serveru se nepodařilo načíst."
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Choose light, dark, or system theme"
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serverantwort konnte nicht gelesen werden."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hell-, Dunkel- oder Systemdesign wählen"
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't read the server response."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Оберіть світлу, темну або системну тему"
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie udało się odczytać odpowiedzi serwera."
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vyberte světlý, tmavý nebo systémový motiv"
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odpoveď servera sa nepodarilo načítať."
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Vyberte svetlý, tmavý alebo systémový motív"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося прочитати відповідь сервера."
           }
         }
       }
     },
-    "Brak połączenia z internetem. Sprawdź sieć i spróbuj ponownie.": {
-      "comment": "Network error message.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Brak połączenia z internetem. Sprawdź sieć i spróbuj ponownie."
+    "Nie udało się wczytać menu" : {
+      "comment" : "Menu error screen title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu se nepodařilo načíst"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No internet connection. Check your network and try again."
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü konnte nicht geladen werden"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Keine Internetverbindung. Prüfe das Netzwerk und versuche es erneut."
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't load the menu"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Немає з’єднання з інтернетом. Перевірте мережу та спробуйте знову."
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie udało się wczytać menu"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Žádné připojení k internetu. Zkontrolujte síť a zkuste to znovu."
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu sa nepodarilo načítať"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Žiadne pripojenie na internet. Skontrolujte sieť a skúste to znova."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося завантажити меню"
           }
         }
       }
     },
-    "Żądanie zostało anulowane.": {
-      "comment": "Cancelled request error message.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Żądanie zostało anulowane."
+    "Nie znaleziono restauracji." : {
+      "comment" : "Restaurant not found error message.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurace nebyla nalezena."
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The request was cancelled."
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurant nicht gefunden."
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Die Anfrage wurde abgebrochen."
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurant not found."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Запит скасовано."
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie znaleziono restauracji."
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Požadavek byl zrušen."
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reštaurácia nebola nájdená."
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Požiadavka bola zrušená."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ресторан не знайдено."
           }
         }
       }
     },
-    "Nie udało się odczytać odpowiedzi serwera.": {
-      "comment": "Decoding error message.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nie udało się odczytać odpowiedzi serwera."
+    "Nieprawidłowy link" : {
+      "comment" : "Invalid invocation URL title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neplatný odkaz"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Couldn't read the server response."
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ungültiger Link"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Serverantwort konnte nicht gelesen werden."
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invalid link"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Не вдалося прочитати відповідь сервера."
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieprawidłowy link"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Odpověď serveru se nepodařilo načíst."
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neplatný odkaz"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Odpoveď servera sa nepodarilo načítať."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Недійсне посилання"
           }
         }
       }
     },
-    "Wysłano zbyt wiele opinii. Spróbuj ponownie za chwilę.": {
-      "comment": "Rate limit error message for feedback.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wysłano zbyt wiele opinii. Spróbuj ponownie za chwilę."
+    "Oceń obsługę" : {
+      "comment" : "Feedback button title and sheet navigation title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ohodnotit obsluhu"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Too many reviews sent. Please try again shortly."
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Service bewerten"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Zu viele Bewertungen gesendet. Bitte versuche es gleich erneut."
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate service"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Надіслано забагато відгуків. Спробуйте знову за мить."
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oceń obsługę"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bylo odesláno příliš mnoho hodnocení. Zkuste to znovu za chvíli."
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ohodnotiť obsluhu"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bolo odoslaných príliš veľa hodnotení. Skúste to znova o chvíľu."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оцінити обслуговування"
           }
         }
       }
     },
-    "Serwer jest tymczasowo niedostępny. Spróbuj ponownie.": {
-      "comment": "Server unavailable error message.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Serwer jest tymczasowo niedostępny. Spróbuj ponownie."
+    "Ocena" : {
+      "comment" : "Feedback form section header for star rating.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hodnocení"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The server is temporarily unavailable. Please try again."
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewertung"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Der Server ist vorübergehend nicht verfügbar. Bitte erneut versuchen."
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rating"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сервер тимчасово недоступний. Спробуйте знову."
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocena"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Server je dočasně nedostupný. Zkuste to znovu."
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hodnotenie"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Server je dočasne nedostupný. Skúste to znova."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оцінка"
           }
         }
       }
     },
-    "Wystąpił błąd serwera (%lld).": {
-      "comment": "Generic HTTP error. The first variable is the status code.",
-      "extractionState": "manual",
-      "localizations": {
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Wystąpił błąd serwera (%lld)."
+    "Ocena %lld z 5 gwiazdek" : {
+      "comment" : "Accessibility label for the current rating. The first variable is the selected rating.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hodnocení %lld z 5 hvězdiček"
           }
         },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "A server error occurred (%lld)."
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewertung %lld von 5 Sternen"
           }
         },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Es ist ein Serverfehler aufgetreten (%lld)."
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rating %lld of 5 stars"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сталася помилка сервера (%lld)."
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ocena %lld z 5 gwiazdek"
           }
         },
-        "cs": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Došlo k chybě serveru (%lld)."
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hodnotenie %lld z 5 hviezdičiek"
           }
         },
-        "sk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Došlo k chybe servera (%lld)."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оцінка %lld з 5 зірок"
+          }
+        }
+      }
+    },
+    "Otwiera formularz oceny obsługi" : {
+      "comment" : "Accessibility hint for the feedback button.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevře formulář hodnocení obsluhy"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öffnet das Formular zur Servicebewertung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opens the service rating form"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwiera formularz oceny obsługi"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otvorí formulár hodnotenia obsluhy"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відкриває форму оцінки обслуговування"
+          }
+        }
+      }
+    },
+    "Otwiera natywne wyszukiwanie i filtry" : {
+      "comment" : "Search floating action button accessibility hint.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevře hledání a filtry"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öffnet Suche und Filter"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opens search and filters"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwiera natywne wyszukiwanie i filtry"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otvorí vyhľadávanie a filtre"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відкриває пошук і фільтри"
+          }
+        }
+      }
+    },
+    "Pokaż tę listę kelnerowi, aby łatwiej złożyć zamówienie." : {
+      "comment" : "Hint shown in the order list sheet.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukažte tento seznam obsluze, aby bylo objednání jednodušší."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeige diese Liste dem Servicepersonal, um die Bestellung zu erleichtern."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show this list to your waiter to make ordering easier."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż tę listę kelnerowi, aby łatwiej złożyć zamówienie."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukážte tento zoznam obsluhe, aby ste si objednávku uľahčili."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Покажіть цей список офіціанту, щоб було легше зробити замовлення."
+          }
+        }
+      }
+    },
+    "Przeglądaj i wyszukaj menu" : {
+      "comment" : "Search floating action button accessibility label.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procházet a hledat v menu"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü durchsuchen und filtern"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Browse and search the menu"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przeglądaj i wyszukaj menu"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prehliadať a hľadať v menu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переглянути та шукати в меню"
+          }
+        }
+      }
+    },
+    "Przygotowujemy kartę dań restauracji." : {
+      "comment" : "Loading screen subtitle.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Připravujeme jídelní lístek."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wir bereiten die Speisekarte vor."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparing the restaurant menu."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przygotowujemy kartę dań restauracji."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pripravujeme jedálny lístok."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Готуємо меню ресторану."
+          }
+        }
+      }
+    },
+    "Razem" : {
+      "comment" : "Final total label in order summary.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Celkem"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gesamt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Razem"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spolu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Разом"
+          }
+        }
+      }
+    },
+    "Serwer jest tymczasowo niedostępny. Spróbuj ponownie." : {
+      "comment" : "Server unavailable error message.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server je dočasně nedostupný. Zkuste to znovu."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Server ist vorübergehend nicht verfügbar. Bitte erneut versuchen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The server is temporarily unavailable. Please try again."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serwer jest tymczasowo niedostępny. Spróbuj ponownie."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Server je dočasne nedostupný. Skúste to znova."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сервер тимчасово недоступний. Спробуйте знову."
+          }
+        }
+      }
+    },
+    "Składniki: %@" : {
+      "comment" : "Menu item ingredients row. The first variable is the ingredients list.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Složky: %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zutaten: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingredients: %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Składniki: %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zložky: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Інгредієнти: %@"
+          }
+        }
+      }
+    },
+    "Spróbuj ponownie" : {
+      "comment" : "Retry button on the menu error screen.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zkusit znovu"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erneut versuchen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try again"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spróbuj ponownie"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skúsiť znova"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спробувати знову"
+          }
+        }
+      }
+    },
+    "Spróbuj zmienić frazę lub filtry." : {
+      "comment" : "Empty search results description.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zkuste změnit frázi nebo filtry."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versuche einen anderen Suchbegriff oder Filter."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try a different search or filters."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spróbuj zmienić frazę lub filtry."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skúste zmeniť frázu alebo filtre."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спробуйте змінити фразу або фільтри."
+          }
+        }
+      }
+    },
+    "Subkategoria" : {
+      "comment" : "Subcategory filter picker title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podkategorie"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unterkategorie"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subcategory"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subkategoria"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podkategória"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підкатегорія"
+          }
+        }
+      }
+    },
+    "Suma produktów" : {
+      "comment" : "Products subtotal label in order summary.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mezisoučet"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zwischensumme"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Items subtotal"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suma produktów"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medzisúčet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сума товарів"
+          }
+        }
+      }
+    },
+    "Systemowy" : {
+      "comment" : "System theme preference option.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systémový"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systemowy"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systémový"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Системна"
+          }
+        }
+      }
+    },
+    "Szukaj po nazwie dania" : {
+      "comment" : "Search field prompt.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hledat podle názvu jídla"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nach Gerichtenamen suchen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search by dish name"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szukaj po nazwie dania"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hľadať podľa názvu jedla"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шукати за назвою страви"
+          }
+        }
+      }
+    },
+    "Szukaj w menu" : {
+      "comment" : "Search sheet navigation title.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hledat v menu"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü durchsuchen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search menu"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szukaj w menu"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hľadať v menu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пошук у меню"
+          }
+        }
+      }
+    },
+    "Ta restauracja nie ma jeszcze dostępnych pozycji." : {
+      "comment" : "Empty menu screen description.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tato restaurace zatím nemá žádné položky."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dieses Restaurant hat noch keine Gerichte."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This restaurant doesn't have any items yet."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta restauracja nie ma jeszcze dostępnych pozycji."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Táto reštaurácia zatiaľ nemá žiadne položky."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У цьому ресторані ще немає доступних позицій."
+          }
+        }
+      }
+    },
+    "Twoja opinia została wysłana." : {
+      "comment" : "Feedback success message.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaše hodnocení bylo odesláno."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dein Feedback wurde gesendet."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your feedback has been sent."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoja opinia została wysłana."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Váš názor bol odoslaný."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваш відгук надіслано."
+          }
+        }
+      }
+    },
+    "Twoje zamówienie" : {
+      "comment" : "Order list title and floating bar label.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaše objednávka"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Bestellung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your order"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje zamówienie"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaša objednávka"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваше замовлення"
+          }
+        }
+      }
+    },
+    "Twoje zamówienie jest puste" : {
+      "comment" : "Title shown when local order list has no items.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaše objednávka je prázdná"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Bestellung ist leer"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your order is empty"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje zamówienie jest puste"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaša objednávka je prázdna"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваше замовлення порожнє"
+          }
+        }
+      }
+    },
+    "Twoje zamówienie, %lld, %@" : {
+      "comment" : "Accessibility label for the floating order bar. Variables are quantity and formatted total.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaše objednávka, %lld, %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Bestellung, %lld, %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your order, %lld, %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje zamówienie, %lld, %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaša objednávka, %lld, %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваше замовлення, %lld, %@"
+          }
+        }
+      }
+    },
+    "Ustaw ocenę na %lld" : {
+      "comment" : "Accessibility hint to set the star rating. The first variable is the star value.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavit hodnocení na %lld"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewertung auf %lld setzen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set rating to %lld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ustaw ocenę na %lld"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastaviť hodnotenie na %lld"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Встановити оцінку %lld"
+          }
+        }
+      }
+    },
+    "Usuń" : {
+      "comment" : "Removes a line from the local order list.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odstranit"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entfernen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odstrániť"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Видалити"
+          }
+        }
+      }
+    },
+    "Usuń %@" : {
+      "comment" : "Accessibility label for removing an item. The first variable is the item or variant name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odstranit %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ entfernen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odstrániť %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Видалити %@"
+          }
+        }
+      }
+    },
+    "Wegańskie" : {
+      "comment" : "Vegan dietary label and filter option.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veganské"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegan"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wegańskie"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegánske"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Веганське"
+          }
+        }
+      }
+    },
+    "Wegetariańskie" : {
+      "comment" : "Vegetarian dietary label and filter option.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegetariánské"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegetarisch"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegetarian"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wegetariańskie"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegetariánske"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вегетаріанське"
+          }
+        }
+      }
+    },
+    "Wszystkie" : {
+      "comment" : "Picker option meaning no filter is applied.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vše"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wszystkie"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Všetky"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Усі"
+          }
+        }
+      }
+    },
+    "Wybierz kelnera" : {
+      "comment" : "Feedback form section header for waiter selection.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyberte číšníka"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kellner wählen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose a waiter"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz kelnera"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyberte čašníka"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оберіть офіціанта"
+          }
+        }
+      }
+    },
+    "Wybierz motyw jasny, ciemny lub systemowy" : {
+      "comment" : "Theme switcher accessibility hint.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyberte světlý, tmavý nebo systémový motiv"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hell-, Dunkel- oder Systemdesign wählen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose light, dark, or system theme"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz motyw jasny, ciemny lub systemowy"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyberte svetlý, tmavý alebo systémový motív"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оберіть світлу, темну або системну тему"
+          }
+        }
+      }
+    },
+    "Wybrany" : {
+      "comment" : "Accessibility label for selected waiter checkmark.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybráno"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ausgewählt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selected"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybrany"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybrané"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибрано"
+          }
+        }
+      }
+    },
+    "Wyczyść" : {
+      "comment" : "Clears the local order list.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vymazat"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leeren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyczyść"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vymazať"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очистити"
+          }
+        }
+      }
+    },
+    "Wyniki wyszukiwania: %lld" : {
+      "comment" : "Accessibility label for search results. The first variable is the result count.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Výsledky hledání: %lld"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suchergebnisse: %lld"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search results: %lld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyniki wyszukiwania: %lld"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Výsledky vyhľadávania: %lld"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Результати пошуку: %lld"
+          }
+        }
+      }
+    },
+    "Wyniki: %lld" : {
+      "comment" : "Search results section header. The first variable is the result count.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Výsledky: %lld"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ergebnisse: %lld"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Results: %lld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyniki: %lld"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Výsledky: %lld"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Результати: %lld"
+          }
+        }
+      }
+    },
+    "Wysłano zbyt wiele opinii. Spróbuj ponownie za chwilę." : {
+      "comment" : "Rate limit error message for feedback.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bylo odesláno příliš mnoho hodnocení. Zkuste to znovu za chvíli."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zu viele Bewertungen gesendet. Bitte versuche es gleich erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Too many reviews sent. Please try again shortly."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wysłano zbyt wiele opinii. Spróbuj ponownie za chwilę."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bolo odoslaných príliš veľa hodnotení. Skúste to znova o chvíľu."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Надіслано забагато відгуків. Спробуйте знову за мить."
+          }
+        }
+      }
+    },
+    "Wyślij opinię" : {
+      "comment" : "Submit button on the feedback form.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odeslat hodnocení"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback senden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Submit feedback"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyślij opinię"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odoslať hodnotenie"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Надіслати відгук"
+          }
+        }
+      }
+    },
+    "Wystąpił błąd serwera (%lld)." : {
+      "comment" : "Generic HTTP error. The first variable is the status code.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Došlo k chybě serveru (%lld)."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es ist ein Serverfehler aufgetreten (%lld)."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A server error occurred (%lld)."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wystąpił błąd serwera (%lld)."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Došlo k chybe servera (%lld)."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сталася помилка сервера (%lld)."
+          }
+        }
+      }
+    },
+    "Żądanie zostało anulowane." : {
+      "comment" : "Cancelled request error message.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Požadavek byl zrušen."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Anfrage wurde abgebrochen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The request was cancelled."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Żądanie zostało anulowane."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Požiadavka bola zrušená."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запит скасовано."
+          }
+        }
+      }
+    },
+    "Zamknij" : {
+      "comment" : "Dismiss button on feedback sheet.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zavřít"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schließen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamknij"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zavrieť"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрити"
+          }
+        }
+      }
+    },
+    "Zmniejsz ilość %@" : {
+      "comment" : "Accessibility label for decreasing quantity. The first variable is the item or variant name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Snížit množství %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menge verringern %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Decrease quantity %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmniejsz ilość %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Znížiť množstvo %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зменшити кількість %@"
+          }
+        }
+      }
+    },
+    "Zwiększ ilość %@" : {
+      "comment" : "Accessibility label for increasing quantity. The first variable is the item or variant name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zvýšit množství %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menge erhöhen %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Increase quantity %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zwiększ ilość %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zvýšiť množstvo %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Збільшити кількість %@"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }
