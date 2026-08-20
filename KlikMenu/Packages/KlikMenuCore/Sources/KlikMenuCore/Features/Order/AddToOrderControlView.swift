@@ -36,6 +36,10 @@ struct AddToOrderControlView: View {
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel(Text("Dodaj \(accessibilityName)", bundle: #bundle))
+                .accessibilityInputLabels([
+                    Text("Dodaj \(accessibilityName)", bundle: #bundle),
+                    Text(accessibilityName)
+                ])
             }
         }
     }
@@ -84,6 +88,24 @@ struct OrderQuantityStepperView: View {
             .buttonStyle(.plain)
             .accessibilityLabel(Text("Zwiększ ilość \(accessibilityName)", bundle: #bundle))
         }
-        .accessibilityElement(children: .contain)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text("Ilość \(accessibilityName)", bundle: #bundle))
+        .accessibilityValue(Text("\(quantity)", bundle: #bundle))
+        .accessibilityHint(Text("Przesuń w górę lub w dół, aby zmienić ilość.", bundle: #bundle))
+        .accessibilityInputLabels([
+            Text("Ilość \(accessibilityName)", bundle: #bundle),
+            Text("Zmień ilość \(accessibilityName)", bundle: #bundle),
+            Text(accessibilityName)
+        ])
+        .accessibilityAdjustableAction { direction in
+            switch direction {
+            case .increment:
+                onIncrease()
+            case .decrement:
+                onDecrease()
+            @unknown default:
+                break
+            }
+        }
     }
 }

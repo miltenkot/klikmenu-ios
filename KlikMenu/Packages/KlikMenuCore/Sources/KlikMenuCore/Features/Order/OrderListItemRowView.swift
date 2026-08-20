@@ -31,6 +31,8 @@ struct OrderListItemRowView: View {
                         .foregroundStyle(Color.klikMuted)
                         .monospacedDigit()
                 }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(Text(itemAccessibilityLabel))
 
                 Spacer(minLength: 8)
 
@@ -39,6 +41,7 @@ struct OrderListItemRowView: View {
                         .font(.subheadline.weight(.bold))
                         .monospacedDigit()
                         .foregroundStyle(Color.klikAccent)
+                        .accessibilityLabel(Text("Suma pozycji \(lineSubtotalText)", bundle: #bundle))
 
                     OrderQuantityStepperView(
                         quantity: item.quantity,
@@ -61,5 +64,17 @@ struct OrderListItemRowView: View {
             return "\(item.menuItemName), \(variantLabel)"
         }
         return item.menuItemName
+    }
+
+    private var itemAccessibilityLabel: String {
+        var parts = [accessibilityName]
+        parts.append("Cena jednostkowa \(PriceFormatter.string(price: item.unitPrice, currency: item.currency))")
+        parts.append("Ilość \(item.quantity)")
+        parts.append("Suma pozycji \(lineSubtotalText)")
+        return parts.joined(separator: ", ")
+    }
+
+    private var lineSubtotalText: String {
+        PriceFormatter.string(decimal: item.lineSubtotal, currency: item.currency)
     }
 }

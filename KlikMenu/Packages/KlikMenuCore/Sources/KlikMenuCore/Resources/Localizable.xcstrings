@@ -185,6 +185,90 @@
         }
       }
     },
+    "Bardzo ostry" : {
+      "comment" : "Spiciness badge label for very spicy menu items.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Velmi pikantní"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sehr scharf"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Very spicy"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bardzo ostry"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veľmi pikantné"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дуже гостре"
+          }
+        }
+      }
+    },
+    "Bardzo ostry, poziom ostrości 3 z 3" : {
+      "comment" : "Accessibility label for very spicy badge with explicit 3 of 3 level.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Velmi pikantní, úroveň pálivosti 3 ze 3"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sehr scharf, Schärfegrad 3 von 3"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Very spicy, spiciness level 3 of 3"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bardzo ostry, poziom ostrości 3 z 3"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veľmi pikantné, úroveň pikantnosti 3 z 3"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дуже гостре, рівень гостроти 3 з 3"
+          }
+        }
+      }
+    },
     "Błąd: %@" : {
       "comment" : "Accessibility label for a feedback form error. The first variable is the error message.",
       "extractionState" : "manual",
@@ -814,6 +898,9 @@
           }
         }
       }
+    },
+    "Ilość %@" : {
+
     },
     "Jasny" : {
       "comment" : "Light theme preference option.",
@@ -1613,6 +1700,90 @@
         }
       }
     },
+    "Ostry" : {
+      "comment" : "Spiciness badge label for spicy menu items.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pikantní"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scharf"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spicy"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostry"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pikantné"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Гостре"
+          }
+        }
+      }
+    },
+    "Ostry, poziom ostrości 1 z 3" : {
+      "comment" : "Accessibility label for spicy badge with explicit 1 of 3 level.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pikantní, úroveň pálivosti 1 ze 3"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scharf, Schärfegrad 1 von 3"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spicy, spiciness level 1 of 3"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostry, poziom ostrości 1 z 3"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pikantné, úroveň pikantnosti 1 z 3"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Гостре, рівень гостроти 1 з 3"
+          }
+        }
+      }
+    },
     "Otwiera formularz oceny obsługi" : {
       "comment" : "Accessibility hint for the feedback button.",
       "extractionState" : "manual",
@@ -1780,6 +1951,9 @@
           }
         }
       }
+    },
+    "Przesuń w górę lub w dół, aby zmienić ilość." : {
+
     },
     "Przygotowujemy kartę dań restauracji." : {
       "comment" : "Loading screen subtitle.",
@@ -2033,6 +2207,90 @@
         }
       }
     },
+    "Średnio ostry" : {
+      "comment" : "Spiciness badge label for medium spicy menu items.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Středně pikantní"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mittelscharf"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medium spicy"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Średnio ostry"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stredne pikantné"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Середньо гостре"
+          }
+        }
+      }
+    },
+    "Średnio ostry, poziom ostrości 2 z 3" : {
+      "comment" : "Accessibility label for medium spicy badge with explicit 2 of 3 level.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Středně pikantní, úroveň pálivosti 2 ze 3"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mittelscharf, Schärfegrad 2 von 3"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medium spicy, spiciness level 2 of 3"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Średnio ostry, poziom ostrości 2 z 3"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stredne pikantné, úroveň pikantnosti 2 z 3"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Середньо гостре, рівень гостроти 2 з 3"
+          }
+        }
+      }
+    },
     "Subkategoria" : {
       "comment" : "Subcategory filter picker title.",
       "extractionState" : "manual",
@@ -2074,6 +2332,9 @@
           }
         }
       }
+    },
+    "Suma pozycji %@" : {
+
     },
     "Suma produktów" : {
       "comment" : "Products subtotal label in order summary.",
@@ -2575,258 +2836,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Видалити %@"
-          }
-        }
-      }
-    },
-    "Bardzo ostry" : {
-      "comment" : "Spiciness badge label for very spicy menu items.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Velmi pikantní"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sehr scharf"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Very spicy"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bardzo ostry"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Veľmi pikantné"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Дуже гостре"
-          }
-        }
-      }
-    },
-    "Bardzo ostry, poziom ostrości 3 z 3" : {
-      "comment" : "Accessibility label for very spicy badge with explicit 3 of 3 level.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Velmi pikantní, úroveň pálivosti 3 ze 3"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sehr scharf, Schärfegrad 3 von 3"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Very spicy, spiciness level 3 of 3"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bardzo ostry, poziom ostrości 3 z 3"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Veľmi pikantné, úroveň pikantnosti 3 z 3"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Дуже гостре, рівень гостроти 3 з 3"
-          }
-        }
-      }
-    },
-    "Ostry" : {
-      "comment" : "Spiciness badge label for spicy menu items.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pikantní"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scharf"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spicy"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ostry"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pikantné"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Гостре"
-          }
-        }
-      }
-    },
-    "Ostry, poziom ostrości 1 z 3" : {
-      "comment" : "Accessibility label for spicy badge with explicit 1 of 3 level.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pikantní, úroveň pálivosti 1 ze 3"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scharf, Schärfegrad 1 von 3"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spicy, spiciness level 1 of 3"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ostry, poziom ostrości 1 z 3"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pikantné, úroveň pikantnosti 1 z 3"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Гостре, рівень гостроти 1 з 3"
-          }
-        }
-      }
-    },
-    "Średnio ostry" : {
-      "comment" : "Spiciness badge label for medium spicy menu items.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Středně pikantní"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mittelscharf"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Medium spicy"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Średnio ostry"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stredne pikantné"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Середньо гостре"
-          }
-        }
-      }
-    },
-    "Średnio ostry, poziom ostrości 2 z 3" : {
-      "comment" : "Accessibility label for medium spicy badge with explicit 2 of 3 level.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Středně pikantní, úroveň pálivosti 2 ze 3"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mittelscharf, Schärfegrad 2 von 3"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Medium spicy, spiciness level 2 of 3"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Średnio ostry, poziom ostrości 2 z 3"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stredne pikantné, úroveň pikantnosti 2 z 3"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Середньо гостре, рівень гостроти 2 з 3"
           }
         }
       }
@@ -3418,6 +3427,9 @@
           }
         }
       }
+    },
+    "Zmień ilość %@" : {
+
     },
     "Zmniejsz ilość %@" : {
       "comment" : "Accessibility label for decreasing quantity. The first variable is the item or variant name.",
