@@ -7,6 +7,7 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
     private let session = AVCaptureSession()
     private var previewLayer: AVCaptureVideoPreviewLayer?
     private var hasHandledCode = false
+    private var isSessionConfigured = false
     /// AVCaptureSession start/stop must run off the main thread.
     private let sessionQueue = DispatchQueue(label: "pl.klikmenu.qr.session")
 
@@ -58,18 +59,19 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         preview.frame = view.bounds
         view.layer.insertSublayer(preview, at: 0)
         previewLayer = preview
+        isSessionConfigured = true
     }
 
     private func startSessionIfNeeded() {
         sessionQueue.async { [weak self] in
-            guard let self, !self.session.isRunning else { return }
+            guard let self, self.isSessionConfigured, !self.session.isRunning else { return }
             self.session.startRunning()
         }
     }
 
     private func stopSession() {
         sessionQueue.async { [weak self] in
-            guard let self, self.session.isRunning else { return }
+            guard let self, self.isSessionConfigured, self.session.isRunning else { return }
             self.session.stopRunning()
         }
     }

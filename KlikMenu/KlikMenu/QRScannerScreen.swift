@@ -4,6 +4,8 @@ import SwiftUI
 import UIKit
 
 struct QRScannerScreen: View {
+    @Environment(\.scenePhase) private var scenePhase
+
     @Binding var route: RestaurantMenuRoute?
     @Binding var scannerResetID: UUID
     @Binding var lastRejectedCode: String?
@@ -60,7 +62,13 @@ struct QRScannerScreen: View {
         .accessibilityElement(children: .contain)
         .accessibilityLabel(Text("Skaner kodów QR menu KlikMenu"))
         .task {
-            await requestCameraAccess()
+            await updateCameraAccess(requestIfNeeded: true)
+        }
+        .onChange(of: scenePhase) { _, phase in
+            guard phase == .active else { return }
+            Task {
+                await updateCameraAccess(requestIfNeeded: false)
+            }
         }
         .onChange(of: permissionDenied) { _, isDenied in
             if isDenied {
@@ -90,13 +98,20 @@ struct QRScannerScreen: View {
         }
     }
 
-    private func requestCameraAccess() async {
+    private func updateCameraAccess(requestIfNeeded: Bool) async {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
             cameraAuthorized = true
             permissionDenied = false
             isResolvingCode = false
+            scannerResetID = UUID()
         case .notDetermined:
+            guard requestIfNeeded else {
+                cameraAuthorized = false
+                permissionDenied = false
+                isResolvingCode = false
+                return
+            }
             let granted = await AVCaptureDevice.requestAccess(for: .video)
             cameraAuthorized = granted
             permissionDenied = !granted
