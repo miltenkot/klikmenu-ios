@@ -68,10 +68,14 @@ struct OrderListItemRowView: View {
 
     private var itemAccessibilityLabel: String {
         var parts = [accessibilityName]
-        parts.append("Cena jednostkowa \(PriceFormatter.string(price: item.unitPrice, currency: item.currency))")
-        parts.append("Ilość \(item.quantity)")
-        parts.append("Suma pozycji \(lineSubtotalText)")
+        parts.append(String(localized: "Cena jednostkowa \(unitPriceText)", bundle: #bundle))
+        parts.append(String(localized: "Ilość \(item.quantity)", bundle: #bundle))
+        parts.append(String(localized: "Suma pozycji \(lineSubtotalText)", bundle: #bundle))
         return parts.joined(separator: ", ")
+    }
+
+    private var unitPriceText: String {
+        PriceFormatter.string(price: item.unitPrice, currency: item.currency)
     }
 
     private var lineSubtotalText: String {

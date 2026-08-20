@@ -1,6 +1,7 @@
 import AVFoundation
 import KlikMenuCore
 import SwiftUI
+import UIKit
 
 struct QRScannerScreen: View {
     @Binding var route: RestaurantMenuRoute?
@@ -17,6 +18,7 @@ struct QRScannerScreen: View {
                 QRScannerView(onCode: handleScannedCode)
                     .id(scannerResetID)
                     .ignoresSafeArea()
+                    .accessibilityHidden(true)
             } else {
                 Color.black.ignoresSafeArea()
             }
@@ -41,6 +43,7 @@ struct QRScannerScreen: View {
                     .foregroundStyle(.white)
                     .multilineTextAlignment(.center)
                     .padding()
+                    .accessibilityAddTraits(.isHeader)
 
                 if permissionDenied {
                     CameraPermissionPrompt(openSettings: openSettings)
@@ -59,6 +62,11 @@ struct QRScannerScreen: View {
         .task {
             await requestCameraAccess()
         }
+        .onChange(of: permissionDenied) { _, isDenied in
+            if isDenied {
+                announce("Brak dostępu do kamery. Otwórz Ustawienia, aby włączyć skanowanie kodów QR.")
+            }
+        }
     }
 
     private func handleScannedCode(_ code: String) {
@@ -70,6 +78,7 @@ struct QRScannerScreen: View {
 
         if let parsed = RestaurantMenuInvocation.route(from: code) {
             isResolvingCode = true
+            announce("Wykryto kod QR. Wczytywanie menu.")
             DispatchQueue.main.async {
                 route = parsed
             }
@@ -77,6 +86,7 @@ struct QRScannerScreen: View {
             isResolvingCode = false
             lastRejectedCode = code
             scannerResetID = UUID()
+            announce("Nie rozpoznano kodu QR. Spróbuj ponownie.")
         }
     }
 
@@ -103,6 +113,13 @@ struct QRScannerScreen: View {
     private func openSettings() {
         guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
         UIApplication.shared.open(url)
+    }
+
+    private func announce(_ message: String.LocalizationValue) {
+        UIAccessibility.post(
+            notification: .announcement,
+            argument: String(localized: message)
+        )
     }
 }
 
@@ -143,5 +160,7 @@ private struct CameraPermissionPrompt: View {
                 .frame(minHeight: 44)
         }
         .padding()
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(Text("Brak dostępu do kamery"))
     }
 }

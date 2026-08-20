@@ -185,6 +185,48 @@
         }
       }
     },
+    "Cena jednostkowa %@" : {
+      "comment" : "Accessibility text for an order item unit price. The first variable is the formatted price.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jednotková cena %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einzelpreis %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unit price %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cena jednostkowa %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jednotková cena %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ціна за одиницю %@"
+          }
+        }
+      }
+    },
     "Bardzo ostry" : {
       "comment" : "Spiciness badge label for very spicy menu items.",
       "extractionState" : "manual",
@@ -900,7 +942,88 @@
       }
     },
     "Ilość %@" : {
-
+      "comment" : "Accessibility label for the quantity control. The first variable is the item or variant name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Množství %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menge %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quantity %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ilość %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Množstvo %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кількість %@"
+          }
+        }
+      }
+    },
+    "Ilość %lld" : {
+      "comment" : "Accessibility text for an order item quantity. The first variable is the quantity.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Množství %lld"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menge %lld"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quantity %lld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ilość %lld"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Množstvo %lld"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кількість %lld"
+          }
+        }
+      }
     },
     "Jasny" : {
       "comment" : "Light theme preference option.",
@@ -1953,7 +2076,46 @@
       }
     },
     "Przesuń w górę lub w dół, aby zmienić ilość." : {
-
+      "comment" : "Accessibility hint for the quantity stepper.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přejetím nahoru nebo dolů změňte množství."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Streiche nach oben oder unten, um die Menge zu ändern."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe up or down to change the quantity."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przesuń w górę lub w dół, aby zmienić ilość."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potiahnutím nahor alebo nadol zmeníte množstvo."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проведіть угору або вниз, щоб змінити кількість."
+          }
+        }
+      }
     },
     "Przygotowujemy kartę dań restauracji." : {
       "comment" : "Loading screen subtitle.",
@@ -2334,7 +2496,46 @@
       }
     },
     "Suma pozycji %@" : {
-
+      "comment" : "Accessibility text for an order item line subtotal. The first variable is the formatted subtotal.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Součet položky %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Positionssumme %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Item subtotal %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suma pozycji %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Súčet položky %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сума позиції %@"
+          }
+        }
+      }
     },
     "Suma produktów" : {
       "comment" : "Products subtotal label in order summary.",
@@ -2841,7 +3042,46 @@
       }
     },
     "Uwaga, alergeny: %@" : {
-
+      "comment" : "Accessibility label for allergens warning. The first variable is the formatted allergens list.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozor, alergeny: %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Achtung, Allergene: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warning, allergens: %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uwaga, alergeny: %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozor, alergény: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увага, алергени: %@"
+          }
+        }
+      }
     },
     "Wegańskie" : {
       "comment" : "Vegan dietary label and filter option.",
@@ -3432,7 +3672,46 @@
       }
     },
     "Zmień ilość %@" : {
-
+      "comment" : "Accessibility input label for changing quantity. The first variable is the item or variant name.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Změnit množství %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menge ändern %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change quantity %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmień ilość %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmeniť množstvo %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Змінити кількість %@"
+          }
+        }
+      }
     },
     "Zmniejsz ilość %@" : {
       "comment" : "Accessibility label for decreasing quantity. The first variable is the item or variant name.",

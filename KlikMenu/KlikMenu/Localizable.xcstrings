@@ -1,6 +1,90 @@
 {
   "sourceLanguage" : "pl",
   "strings" : {
+    "Brak dostępu do kamery" : {
+      "comment" : "Accessibility label for the camera permission prompt.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chybí přístup ke kameře"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Kamerazugriff"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No camera access"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak dostępu do kamery"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chýba prístup ku kamere"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає доступу до камери"
+          }
+        }
+      }
+    },
+    "Brak dostępu do kamery. Otwórz Ustawienia, aby włączyć skanowanie kodów QR." : {
+      "comment" : "VoiceOver announcement when camera permission is denied.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chybí přístup ke kameře. Otevřete Nastavení a zapněte skenování QR kódů."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Kamerazugriff. Öffne die Einstellungen, um das Scannen von QR-Codes zu aktivieren."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No camera access. Open Settings to enable QR code scanning."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak dostępu do kamery. Otwórz Ustawienia, aby włączyć skanowanie kodów QR."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chýba prístup ku kamere. Otvorte Nastavenia a zapnite skenovanie QR kódov."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає доступу до камери. Відкрийте Параметри, щоб увімкнути сканування QR-кодів."
+          }
+        }
+      }
+    },
     "Brak dostępu do kamery. Włącz go w Ustawieniach, aby skanować kody QR." : {
       "comment" : "Camera permission denied message on the scanner screen.",
       "extractionState" : "manual",
@@ -123,6 +207,48 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "KLIKMENU"
+          }
+        }
+      }
+    },
+    "Nie rozpoznano kodu QR. Spróbuj ponownie." : {
+      "comment" : "VoiceOver announcement when the scanner rejects a QR code.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR kód nebyl rozpoznán. Zkuste to znovu."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR-Code wurde nicht erkannt. Versuche es erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR code not recognized. Try again."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie rozpoznano kodu QR. Spróbuj ponownie."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR kód sa nepodarilo rozpoznať. Skúste to znova."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR-код не розпізнано. Спробуйте ще раз."
           }
         }
       }
@@ -291,6 +417,48 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Завантаження меню…"
+          }
+        }
+      }
+    },
+    "Wykryto kod QR. Wczytywanie menu." : {
+      "comment" : "VoiceOver announcement when a QR code is detected.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR kód byl rozpoznán. Načítá se menu."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR-Code erkannt. Menü wird geladen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR code detected. Loading menu."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wykryto kod QR. Wczytywanie menu."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR kód bol rozpoznaný. Načítava sa menu."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR-код виявлено. Завантаження меню."
           }
         }
       }
