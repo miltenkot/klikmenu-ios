@@ -29,6 +29,7 @@ public struct RemoteImageView: View {
                 }
             }
             .clipped()
+            .allowsHitTesting(false)
             .accessibilityHidden(true)
     }
 

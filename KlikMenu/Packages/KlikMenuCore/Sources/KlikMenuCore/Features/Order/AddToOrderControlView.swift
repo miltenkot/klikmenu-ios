@@ -27,12 +27,14 @@ struct AddToOrderControlView: View {
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Color.klikHeroText)
                         .padding(.horizontal, 16)
-                        .frame(height: 44)
+                        .frame(minWidth: 72, minHeight: 44)
                         .background(Color.klikAccent, in: Capsule())
                         .overlay {
                             Capsule()
                                 .stroke(Color.klikHeroText, lineWidth: 2)
+                                .allowsHitTesting(false)
                         }
+                        .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel(Text("Dodaj \(accessibilityName)", bundle: #bundle))

@@ -96,7 +96,10 @@ private struct MenuCategoryCardChrome: ViewModifier {
             .padding(.bottom, padsBottom ? 18 : 0)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background { backgroundShape.fill(Color.klikSurface) }
-            .overlay { edgeStroke }
+            .overlay {
+                edgeStroke
+                    .allowsHitTesting(false)
+            }
             .shadow(
                 color: showsShadow ? Color.black.opacity(0.04) : .clear,
                 radius: showsShadow ? 8 : 0,
@@ -125,7 +128,6 @@ private struct MenuCategoryCardChrome: ViewModifier {
                 Spacer(minLength: 0)
                 Color.klikBorder.frame(width: 1)
             }
-            .allowsHitTesting(false)
         case .top, .bottom, .single:
             backgroundShape.stroke(Color.klikBorder, lineWidth: 1)
         }
