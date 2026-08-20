@@ -24,10 +24,21 @@ struct MenuItemMetadataSectionsView: View {
         }
 
         if !item.allergens.isEmpty {
-            Text("Alergeny: \(item.allergens.formatted())", bundle: #bundle)
-                .font(.footnote)
-                .foregroundStyle(textColor)
-                .fixedSize(horizontal: false, vertical: true)
+            Label {
+                Text("Alergeny: \(allergensText)", bundle: #bundle)
+            } icon: {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .accessibilityHidden(true)
+            }
+            .font(.footnote)
+            .foregroundStyle(Color.klikAccent)
+            .fixedSize(horizontal: false, vertical: true)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(Text("Uwaga, alergeny: \(allergensText)", bundle: #bundle))
         }
+    }
+
+    private var allergensText: String {
+        item.allergens.formatted()
     }
 }

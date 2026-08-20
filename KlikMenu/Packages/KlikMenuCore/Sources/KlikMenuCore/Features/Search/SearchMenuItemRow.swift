@@ -36,6 +36,7 @@ private struct SearchMenuItemHeaderView: View {
                     .font(.body.weight(.semibold))
                     .foregroundStyle(Color.klikText)
                     .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityAddTraits(.isHeader)
 
                 MenuItemBadgesView(dietaryType: item.dietaryType, spicinessLevel: item.spicinessLevel)
             }

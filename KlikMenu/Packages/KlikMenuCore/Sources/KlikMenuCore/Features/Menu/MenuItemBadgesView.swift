@@ -24,7 +24,12 @@ private struct DietaryBadgeView: View {
 
     var body: some View {
         if let dietaryLabel = dietaryType.displayLabel {
-            Text(dietaryLabel)
+            Label {
+                Text(dietaryLabel)
+            } icon: {
+                Image(systemName: dietaryType.symbolName)
+                    .accessibilityHidden(true)
+            }
                 .font(.caption.weight(.bold))
                 .padding(.horizontal, 10)
                 .padding(.vertical, 4)
@@ -33,6 +38,7 @@ private struct DietaryBadgeView: View {
                     Capsule().stroke(Color.klikDietaryBorder, lineWidth: 1)
                 }
                 .foregroundStyle(Color.klikDietaryText)
+                .labelStyle(.titleAndIcon)
                 .accessibilityLabel(Text(dietaryLabel))
         }
     }
@@ -70,5 +76,18 @@ struct ChiliIconView: View {
     var body: some View {
         Image(systemName: "flame.fill")
             .font(.caption2.weight(.bold))
+    }
+}
+
+private extension DietaryType {
+    var symbolName: String {
+        switch self {
+        case .none:
+            "circle"
+        case .vegetarian:
+            "leaf"
+        case .vegan:
+            "leaf.fill"
+        }
     }
 }

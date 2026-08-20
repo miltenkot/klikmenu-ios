@@ -2840,6 +2840,9 @@
         }
       }
     },
+    "Uwaga, alergeny: %@" : {
+
+    },
     "Wegańskie" : {
       "comment" : "Vegan dietary label and filter option.",
       "extractionState" : "manual",

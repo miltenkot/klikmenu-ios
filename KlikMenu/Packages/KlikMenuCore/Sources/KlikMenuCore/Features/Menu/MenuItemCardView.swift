@@ -36,7 +36,7 @@ public struct MenuItemCardView: View {
             }
         }
         .padding(.vertical, 14)
-        .accessibilityElement(children: .combine)
+        .accessibilityElement(children: .contain)
     }
 }
 
@@ -55,6 +55,7 @@ private struct MenuItemCardHeaderView: View {
                     .font(.headline)
                     .foregroundStyle(Color.klikText)
                     .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityAddTraits(.isHeader)
 
                 MenuItemBadgesView(dietaryType: item.dietaryType, spicinessLevel: item.spicinessLevel)
             }
@@ -97,12 +98,23 @@ private struct MenuItemCardMetadataSectionsView: View {
         }
 
         if !item.allergens.isEmpty {
-            Text("Alergeny: \(item.allergens.formatted())", bundle: #bundle)
-                .font(.footnote)
-                .foregroundStyle(Color.klikMuted)
-                .padding(.top, hasVariants && item.description == nil && item.ingredients == nil
-                    ? MenuItemCardLayout.postVariantsSpacing - 8
-                    : 0)
+            Label {
+                Text("Alergeny: \(allergensText)", bundle: #bundle)
+            } icon: {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .accessibilityHidden(true)
+            }
+            .font(.footnote)
+            .foregroundStyle(Color.klikAccent)
+            .padding(.top, hasVariants && item.description == nil && item.ingredients == nil
+                ? MenuItemCardLayout.postVariantsSpacing - 8
+                : 0)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(Text("Uwaga, alergeny: \(allergensText)", bundle: #bundle))
         }
+    }
+
+    private var allergensText: String {
+        item.allergens.formatted()
     }
 }
