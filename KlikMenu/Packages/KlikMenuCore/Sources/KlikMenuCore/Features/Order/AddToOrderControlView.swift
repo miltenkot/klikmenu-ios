@@ -62,10 +62,11 @@ struct OrderQuantityStepperView: View {
             Button(action: onDecrease) {
                 Image(systemName: "minus")
                     .font(.subheadline.weight(.bold))
+                    .foregroundStyle(Color.klikAccent)
                     .frame(width: 44, height: 44)
+                    .background(Color.klikAccent.opacity(0.16), in: Circle())
             }
-            .buttonStyle(.bordered)
-            .tint(Color.klikAccent)
+            .buttonStyle(.plain)
             .accessibilityLabel(Text("Zmniejsz ilość \(accessibilityName)", bundle: #bundle))
 
             Text("\(quantity)")
@@ -76,10 +77,11 @@ struct OrderQuantityStepperView: View {
             Button(action: onIncrease) {
                 Image(systemName: "plus")
                     .font(.subheadline.weight(.bold))
+                    .foregroundStyle(Color.klikHeroText)
                     .frame(width: 44, height: 44)
+                    .background(Color.klikAccent, in: Circle())
             }
-            .buttonStyle(.borderedProminent)
-            .tint(Color.klikAccent)
+            .buttonStyle(.plain)
             .accessibilityLabel(Text("Zwiększ ilość \(accessibilityName)", bundle: #bundle))
         }
         .accessibilityElement(children: .contain)

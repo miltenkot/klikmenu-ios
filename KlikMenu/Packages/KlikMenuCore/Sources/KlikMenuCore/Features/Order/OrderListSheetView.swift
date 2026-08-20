@@ -47,7 +47,7 @@ public struct OrderListSheetView: View {
             }
             .navigationTitle(Text("Twoje zamówienie", bundle: #bundle))
             #if os(iOS)
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.large)
             #endif
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
