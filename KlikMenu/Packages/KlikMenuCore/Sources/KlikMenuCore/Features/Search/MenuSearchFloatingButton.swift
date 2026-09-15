@@ -22,6 +22,11 @@ struct MenuSearchFloatingButton: View {
             .shadow(color: Color.black.opacity(0.22), radius: 12, y: 6)
             .buttonStyle(.plain)
             .frame(minWidth: 44, minHeight: 44)
+            .accessibilityInputLabels([
+                String(localized: "Szukaj w menu", bundle: #bundle),
+                String(localized: "Przeglądaj i wyszukaj menu", bundle: #bundle)
+            ])
             .accessibilityHint(Text("Otwiera natywne wyszukiwanie i filtry", bundle: #bundle))
+            .accessibilityRespondsToUserInteraction(true)
     }
 }

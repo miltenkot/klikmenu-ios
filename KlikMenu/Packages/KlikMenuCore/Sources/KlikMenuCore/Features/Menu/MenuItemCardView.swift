@@ -109,8 +109,6 @@ private struct MenuItemCardMetadataSectionsView: View {
             .padding(.top, hasVariants && item.description == nil && item.ingredients == nil
                 ? MenuItemCardLayout.postVariantsSpacing - 8
                 : 0)
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel(Text("Uwaga, alergeny: \(allergensText)", bundle: #bundle))
         }
     }
 

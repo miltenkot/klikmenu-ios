@@ -185,48 +185,6 @@
         }
       }
     },
-    "Cena jednostkowa %@" : {
-      "comment" : "Accessibility text for an order item unit price. The first variable is the formatted price.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jednotková cena %@"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Einzelpreis %@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unit price %@"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cena jednostkowa %@"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jednotková cena %@"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ціна за одиницю %@"
-          }
-        }
-      }
-    },
     "Bardzo ostry" : {
       "comment" : "Spiciness badge label for very spicy menu items.",
       "extractionState" : "manual",
@@ -475,6 +433,48 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Немає результатів"
+          }
+        }
+      }
+    },
+    "Cena jednostkowa %@" : {
+      "comment" : "Accessibility text for an order item unit price. The first variable is the formatted price.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jednotková cena %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einzelpreis %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unit price %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cena jednostkowa %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jednotková cena %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ціна за одиницю %@"
           }
         }
       }
@@ -2681,8 +2681,8 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Search menu"
+            "state" : "machine_translated",
+            "value" : "Search the menu"
           }
         },
         "pl" : {
@@ -2699,8 +2699,8 @@
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Пошук у меню"
+            "state" : "machine_translated",
+            "value" : "Шукати в меню"
           }
         }
       }
@@ -3798,5 +3798,5 @@
       }
     }
   },
-  "version" : "1.0"
+  "version" : "1.3"
 }

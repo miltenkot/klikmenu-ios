@@ -5,36 +5,32 @@ struct FeedbackActionButton: View {
     let action: () -> Void
 
     var body: some View {
-        Button(LocalizedStringResource("Oceń obsługę", bundle: #bundle), systemImage: "star.fill", action: action)
-            .labelStyle(FeedbackStarLabelStyle(compact: compact))
-            .buttonStyle(.plain)
-            .accessibilityHint(Text("Otwiera formularz oceny obsługi", bundle: #bundle))
-    }
-}
+        Button(action: action) {
+            HStack(spacing: 8) {
+                Image(systemName: "star.fill")
+                    .foregroundStyle(Color(red: 183 / 255, green: 121 / 255, blue: 0))
+                    .accessibilityHidden(true)
 
-private struct FeedbackStarLabelStyle: LabelStyle {
-    let compact: Bool
-
-    func makeBody(configuration: Configuration) -> some View {
-        HStack(spacing: 8) {
-            configuration.icon
-                .foregroundStyle(Color(red: 183 / 255, green: 121 / 255, blue: 0))
-                .accessibilityHidden(true)
-
-            if !compact {
-                configuration.title
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(Color.klikText)
-                    .lineLimit(1)
+                if !compact {
+                    Text("Oceń obsługę", bundle: #bundle)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(Color.klikText)
+                }
             }
+            .padding(.horizontal, compact ? 0 : 14)
+            .padding(.vertical, compact ? 0 : 10)
+            .frame(width: compact ? 44 : nil)
+            .frame(minHeight: 44)
+            .background(Color.klikSurface, in: Capsule())
+            .overlay {
+                Capsule()
+                    .stroke(Color.klikBorder, lineWidth: 1)
+            }
+            .contentShape(.capsule)
+            .shadow(color: Color.black.opacity(0.12), radius: 10, y: 4)
         }
-        .padding(.horizontal, compact ? 0 : 14)
-        .frame(width: compact ? 44 : nil, height: 44)
-        .background(Color.klikSurface, in: Capsule())
-        .overlay {
-            Capsule()
-                .stroke(Color.klikBorder, lineWidth: 1)
-        }
-        .shadow(color: Color.black.opacity(0.12), radius: 10, y: 4)
+            .buttonStyle(.plain)
+            .accessibilityLabel(Text("Oceń obsługę", bundle: #bundle))
+            .accessibilityHint(Text("Otwiera formularz oceny obsługi", bundle: #bundle))
     }
 }

@@ -79,6 +79,5 @@ struct FeedbackThankYouView: View {
         .padding(24)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background { Color.klikPageBackground.ignoresSafeArea() }
-        .accessibilityElement(children: .combine)
     }
 }

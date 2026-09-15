@@ -172,6 +172,8 @@ private struct RestaurantMenuLoadedView: View {
                 onOpenOrderList: { showOrderList = true },
                 onOpenSearch: openSearch
             )
+            .zIndex(1)
+            .accessibilitySortPriority(1)
         }
     }
 

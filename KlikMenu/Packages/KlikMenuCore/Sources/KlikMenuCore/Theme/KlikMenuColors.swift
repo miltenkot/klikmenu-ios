@@ -30,7 +30,7 @@ extension Color {
         dark: Color(red: 16 / 255, green: 47 / 255, blue: 39 / 255)
     )
     public static let klikAccent = Color(
-        light: Color(red: 215 / 255, green: 82 / 255, blue: 42 / 255),
+        light: Color(red: 191 / 255, green: 69 / 255, blue: 33 / 255),
         dark: Color(red: 237 / 255, green: 116 / 255, blue: 76 / 255)
     )
     public static let klikBorder = Color(

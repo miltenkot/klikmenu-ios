@@ -33,8 +33,6 @@ struct MenuItemMetadataSectionsView: View {
             .font(.footnote)
             .foregroundStyle(Color.klikAccent)
             .fixedSize(horizontal: false, vertical: true)
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel(Text("Uwaga, alergeny: \(allergensText)", bundle: #bundle))
         }
     }
 
