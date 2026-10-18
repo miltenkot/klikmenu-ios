@@ -217,3 +217,24 @@ private struct RestaurantMenuBottomActionsView: View {
         .safeAreaPadding(.bottom, 16)
     }
 }
+
+#Preview("Loaded") {
+    RestaurantMenuView(
+        slug: PreviewRestaurantMenu.slug,
+        viewModel: RestaurantMenuViewModel(api: PreviewKlikMenuAPIClient())
+    )
+}
+
+#Preview("Loading") {
+    RestaurantMenuView(
+        slug: PreviewRestaurantMenu.slug,
+        viewModel: RestaurantMenuViewModel(api: PreviewKlikMenuAPIClient(delayNanoseconds: 60_000_000_000))
+    )
+}
+
+#Preview("Not found") {
+    RestaurantMenuView(
+        slug: "missing",
+        viewModel: RestaurantMenuViewModel(api: PreviewKlikMenuAPIClient(shouldFailAsNotFound: true))
+    )
+}
