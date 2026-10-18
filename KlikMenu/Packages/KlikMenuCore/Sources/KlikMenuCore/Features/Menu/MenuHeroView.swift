@@ -25,6 +25,7 @@ public struct MenuHeroView: View {
                 MenuHeroOverlay(showsGradient: menu.heroImageURL != nil)
             }
             .stretchy()
+            .ignoresSafeArea(.container, edges: .horizontal)
 
             MenuHeroContent(
                 name: menu.name,

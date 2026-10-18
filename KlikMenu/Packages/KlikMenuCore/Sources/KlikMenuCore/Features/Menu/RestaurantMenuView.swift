@@ -162,6 +162,7 @@ private struct RestaurantMenuLoadedView: View {
                 .padding(.bottom, scrollBottomPadding)
             }
             .scrollIndicators(.hidden)
+            .scrollClipDisabled()
             .ignoresSafeArea(edges: .top)
             .safeAreaPadding(.bottom, 8)
 

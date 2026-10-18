@@ -20,8 +20,13 @@ struct MenuLoadingSkeletonCard: View {
         }
         .padding(24)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background { Color.klikSurface }
-        .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .padding(.horizontal, 16)
+        .background {
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .fill(Color.klikSurface)
+                .padding(.horizontal, 16)
+                .ignoresSafeArea(.container, edges: .horizontal)
+        }
         .opacity(isPulsing ? 1 : 0.55)
     }
 }

@@ -23,7 +23,6 @@ struct MenuFeedRowView: View {
                 .menuCategoryCardChrome(edge: edge)
             }
         }
-        .padding(.horizontal, 16)
     }
 }
 
@@ -95,10 +94,15 @@ private struct MenuCategoryCardChrome: ViewModifier {
             .padding(.top, padsTop ? 18 : 0)
             .padding(.bottom, padsBottom ? 18 : 0)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background { backgroundShape.fill(Color.klikSurface) }
-            .overlay {
-                edgeStroke
-                    .allowsHitTesting(false)
+            .padding(.horizontal, 16)
+            .background {
+                backgroundShape.fill(Color.klikSurface)
+                    .overlay {
+                        edgeStroke
+                            .allowsHitTesting(false)
+                    }
+                    .padding(.horizontal, 16)
+                    .ignoresSafeArea(.container, edges: .horizontal)
             }
             .shadow(
                 color: showsShadow ? Color.black.opacity(0.04) : .clear,

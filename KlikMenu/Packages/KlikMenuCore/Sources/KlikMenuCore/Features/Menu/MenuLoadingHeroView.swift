@@ -7,6 +7,7 @@ struct MenuLoadingHeroView: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             Color.klikHero
+                .ignoresSafeArea(.container, edges: .horizontal)
 
             VStack(alignment: .leading, spacing: 0) {
                 Text("KLIKMENU", bundle: #bundle)

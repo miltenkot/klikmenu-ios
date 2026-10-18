@@ -16,7 +16,6 @@ public struct MenuLoadingView: View {
                 showsProgress: !reduceMotion
             )
             MenuLoadingSkeletonCard(isPulsing: reduceMotion ? true : pulse)
-                .padding(.horizontal, 16)
                 .offset(y: -28)
             Spacer(minLength: 0)
         }
