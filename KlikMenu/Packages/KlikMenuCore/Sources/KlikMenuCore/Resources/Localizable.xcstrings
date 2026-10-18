@@ -2,7 +2,15 @@
   "sourceLanguage" : "pl",
   "strings" : {
     "·" : {
-
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "·"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "%@ · %lld" : {
       "comment" : "Search result category header. The first variable is the category name, the second is the item count.",
@@ -54,10 +62,11 @@
             "value" : "%1$@ %2$@"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "%lld" : {
-
+      "shouldTranslate" : false
     },
     "%lld z 5 gwiazdek" : {
       "comment" : "Accessibility label for an individual star. The first variable is the star value.",
