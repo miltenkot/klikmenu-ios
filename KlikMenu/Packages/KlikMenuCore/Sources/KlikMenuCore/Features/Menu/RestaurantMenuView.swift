@@ -4,6 +4,7 @@ import SwiftUI
 public struct RestaurantMenuView: View {
     private let slug: String
     private let onOrderBarVisibilityChanged: ((Bool) -> Void)?
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.scenePhase) private var scenePhase
     @State private var viewModel: RestaurantMenuViewModel
     @State private var orderListStore = OrderListStore()
@@ -43,6 +44,7 @@ public struct RestaurantMenuView: View {
                     RestaurantMenuLoadedView(
                         menu: menu,
                         showFeedback: viewModel.showFeedbackButton,
+                        showsOrderPanel: showsOrderPanel,
                         topSafeAreaInset: topSafeAreaInset,
                         showSearch: $showSearch,
                         showOrderList: $showOrderList,
@@ -57,8 +59,14 @@ public struct RestaurantMenuView: View {
                 orderListStore.configure(menu: menu)
             }
         }
-        .onChange(of: orderListStore.showsOrderBar) { _, isVisible in
+        .onChange(of: showsFloatingOrderBar, initial: true) { _, isVisible in
             onOrderBarVisibilityChanged?(isVisible)
+        }
+        .onChange(of: showsOrderPanel) { _, isVisible in
+            if isVisible { showOrderList = false }
+        }
+        .onChange(of: viewModel.menu?.orderListEnabled) { _, isEnabled in
+            if isEnabled != true { showOrderList = false }
         }
         .background { Color.klikPageBackground.ignoresSafeArea() }
         .background {
@@ -97,6 +105,19 @@ public struct RestaurantMenuView: View {
         }
     }
 
+    private var showsOrderPanel: Bool {
+        #if os(iOS)
+        if #available(iOS 27.1, *) {
+            return horizontalSizeClass == .regular && viewModel.menu?.orderListEnabled == true
+        }
+        #endif
+        return false
+    }
+
+    private var showsFloatingOrderBar: Bool {
+        orderListStore.showsOrderBar && !showsOrderPanel
+    }
+
     private func retry() {
         Task { await viewModel.retry() }
     }
@@ -121,21 +142,25 @@ private struct RestaurantMenuLoadedView: View {
 
     let menu: RestaurantMenu
     let showFeedback: Bool
+    let showsOrderPanel: Bool
     let topSafeAreaInset: CGFloat
     @Binding var showSearch: Bool
     @Binding var showOrderList: Bool
     let onFeedback: () -> Void
+    @State private var menuScrollPosition = ScrollPosition()
     private let feedRows: [MenuFeedRow]
 
     init(
         menu: RestaurantMenu,
         showFeedback: Bool,
+        showsOrderPanel: Bool,
         topSafeAreaInset: CGFloat,
         showSearch: Binding<Bool>,
         showOrderList: Binding<Bool>,
         onFeedback: @escaping () -> Void
     ) {
         self.menu = menu
+        self.showsOrderPanel = showsOrderPanel
         self.showFeedback = showFeedback
         self.topSafeAreaInset = topSafeAreaInset
         _showSearch = showSearch
@@ -145,6 +170,27 @@ private struct RestaurantMenuLoadedView: View {
     }
 
     var body: some View {
+        #if os(iOS)
+        if #available(iOS 27.1, *), showsOrderPanel {
+            ArrangementView {
+                menuContent(showsFloatingSearch: true)
+            } secondary: {
+                OrderListPanelView()
+            }
+            .arrangementViewStyle(.split)
+        } else if #available(iOS 27.1, *) {
+            MenuSystemSearchContainer(onSearch: openSearch, onOpenOrderList: { showOrderList = true }) { showsFloatingSearch in
+                menuContent(showsFloatingSearch: showsFloatingSearch)
+            }
+        } else {
+            menuContent(showsFloatingSearch: true)
+        }
+        #else
+        menuContent(showsFloatingSearch: true)
+        #endif
+    }
+
+    private func menuContent(showsFloatingSearch: Bool) -> some View {
         ZStack(alignment: .bottom) {
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 0) {
@@ -152,7 +198,8 @@ private struct RestaurantMenuLoadedView: View {
                         menu: menu,
                         showFeedback: showFeedback,
                         onFeedback: onFeedback,
-                        topSafeAreaInset: topSafeAreaInset
+                        topSafeAreaInset: topSafeAreaInset,
+                        extendsBackgroundToScreenEdges: !showsOrderPanel
                     )
 
                     ForEach(feedRows) { row in
@@ -161,17 +208,19 @@ private struct RestaurantMenuLoadedView: View {
                 }
                 .padding(.bottom, scrollBottomPadding)
             }
+            .scrollPosition($menuScrollPosition)
             .scrollIndicators(.hidden)
             .scrollClipDisabled()
             .ignoresSafeArea(edges: .top)
             .safeAreaPadding(.bottom, 8)
 
             RestaurantMenuBottomActionsView(
-                showsOrderBar: orderListStore.showsOrderBar,
+                showsOrderBar: orderListStore.showsOrderBar && !showsOrderPanel && showsFloatingSearch,
                 orderQuantity: orderListStore.totalQuantity,
                 orderTotalText: PriceFormatter.string(decimal: orderListStore.total, currency: orderListStore.currency),
                 onOpenOrderList: { showOrderList = true },
-                onOpenSearch: openSearch
+                onOpenSearch: openSearch,
+                showsFloatingSearch: showsFloatingSearch
             )
             .zIndex(1)
             .accessibilitySortPriority(1)
@@ -179,7 +228,7 @@ private struct RestaurantMenuLoadedView: View {
     }
 
     private var scrollBottomPadding: CGFloat {
-        orderListStore.showsOrderBar ? 168 : 96
+        orderListStore.showsOrderBar && !showsOrderPanel ? 168 : 96
     }
 
     private func openSearch() {
@@ -193,6 +242,7 @@ private struct RestaurantMenuBottomActionsView: View {
     let orderTotalText: String
     let onOpenOrderList: () -> Void
     let onOpenSearch: () -> Void
+    let showsFloatingSearch: Bool
     private let controlHeight: CGFloat = 56
 
     var body: some View {
@@ -208,10 +258,12 @@ private struct RestaurantMenuBottomActionsView: View {
                 Spacer(minLength: 0)
             }
 
-            MenuSearchFloatingButton(
-                action: onOpenSearch,
-                size: controlHeight
-            )
+            if showsFloatingSearch {
+                MenuSearchFloatingButton(
+                    action: onOpenSearch,
+                    size: controlHeight
+                )
+            }
         }
         .padding(.horizontal, 16)
         .safeAreaPadding(.bottom, 16)

@@ -5,41 +5,45 @@ public struct MenuHeroView: View {
     public let showFeedback: Bool
     public let onFeedback: () -> Void
     public var topSafeAreaInset: CGFloat = 0
+    public var extendsBackgroundToScreenEdges: Bool = true
 
     public init(
         menu: RestaurantMenu,
         showFeedback: Bool,
         onFeedback: @escaping () -> Void,
-        topSafeAreaInset: CGFloat = 0
+        topSafeAreaInset: CGFloat = 0,
+        extendsBackgroundToScreenEdges: Bool = true
     ) {
         self.menu = menu
         self.showFeedback = showFeedback
         self.onFeedback = onFeedback
         self.topSafeAreaInset = topSafeAreaInset
+        self.extendsBackgroundToScreenEdges = extendsBackgroundToScreenEdges
     }
 
     public var body: some View {
-        ZStack(alignment: .topLeading) {
+        MenuHeroContent(
+            name: menu.name,
+            description: menu.description,
+            hasHeroImage: menu.heroImageURL != nil,
+            showFeedback: showFeedback,
+            onFeedback: onFeedback,
+            topSafeAreaInset: topSafeAreaInset
+        )
+        .frame(maxWidth: .infinity)
+        // Photo heroes keep a tall canvas; solid-color heroes hug content so
+        // missing restaurant description doesn't leave a large empty gap (web parity).
+        .frame(minHeight: menu.heroImageURL == nil ? nil : 300, alignment: .topLeading)
+        .background {
+            // Size the image from the complete hero, including its minimum height.
+            // Flexible backgrounds inside a lazy stack can otherwise collapse to the text height.
             ZStack {
                 MenuHeroBackground(heroImageURL: menu.heroImageURL, heroImageKey: menu.heroImageKey)
                 MenuHeroOverlay(showsGradient: menu.heroImageURL != nil)
             }
             .stretchy()
-            .ignoresSafeArea(.container, edges: .horizontal)
-
-            MenuHeroContent(
-                name: menu.name,
-                description: menu.description,
-                hasHeroImage: menu.heroImageURL != nil,
-                showFeedback: showFeedback,
-                onFeedback: onFeedback,
-                topSafeAreaInset: topSafeAreaInset
-            )
+            .ignoresSafeArea(.container, edges: extendsBackgroundToScreenEdges ? .horizontal : [])
         }
-        .frame(maxWidth: .infinity)
-        // Photo heroes keep a tall canvas; solid-color heroes hug content so
-        // missing restaurant description doesn't leave a large empty gap (web parity).
-        .frame(minHeight: menu.heroImageURL == nil ? nil : 300)
         .accessibilityElement(children: .contain)
     }
 }
