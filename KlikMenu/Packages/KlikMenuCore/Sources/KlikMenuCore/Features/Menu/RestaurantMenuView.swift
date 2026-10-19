@@ -3,7 +3,6 @@ import SwiftUI
 
 public struct RestaurantMenuView: View {
     private let slug: String
-    private let onOrderBarVisibilityChanged: ((Bool) -> Void)?
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.scenePhase) private var scenePhase
     @State private var viewModel: RestaurantMenuViewModel
@@ -16,11 +15,9 @@ public struct RestaurantMenuView: View {
 
     public init(
         slug: String,
-        viewModel: RestaurantMenuViewModel? = nil,
-        onOrderBarVisibilityChanged: ((Bool) -> Void)? = nil
+        viewModel: RestaurantMenuViewModel? = nil
     ) {
         self.slug = slug
-        self.onOrderBarVisibilityChanged = onOrderBarVisibilityChanged
         _viewModel = State(initialValue: viewModel ?? RestaurantMenuViewModel(api: LiveKlikMenuAPIClient()))
     }
 
@@ -58,9 +55,6 @@ public struct RestaurantMenuView: View {
             if let menu = viewModel.menu {
                 orderListStore.configure(menu: menu)
             }
-        }
-        .onChange(of: showsFloatingOrderBar, initial: true) { _, isVisible in
-            onOrderBarVisibilityChanged?(isVisible)
         }
         .onChange(of: showsOrderPanel) { _, isVisible in
             if isVisible { showOrderList = false }
@@ -100,9 +94,6 @@ public struct RestaurantMenuView: View {
             guard phase == .active else { return }
             Task { await viewModel.reloadIfLanguageChanged() }
         }
-        .onDisappear {
-            onOrderBarVisibilityChanged?(false)
-        }
     }
 
     private var showsOrderPanel: Bool {
@@ -112,11 +103,6 @@ public struct RestaurantMenuView: View {
         }
         #endif
         return false
-    }
-
-    private var showsFloatingOrderBar: Bool {
-        // Circular controls no longer occupy the bottom-leading rescan button's space.
-        false
     }
 
     private func retry() {
