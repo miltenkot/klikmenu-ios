@@ -12,15 +12,10 @@ struct MenuSearchFloatingButton: View {
         )
             .labelStyle(.iconOnly)
             .font(.title3.weight(.semibold))
-            .foregroundStyle(Color.klikHeroText)
+            .foregroundStyle(Color.klikAccent)
             .frame(width: size, height: size)
-            .background(Color.klikAccent, in: Circle())
-            .overlay {
-                Circle()
-                    .stroke(Color.klikHeroText, lineWidth: 2)
-            }
-            .shadow(color: Color.black.opacity(0.22), radius: 12, y: 6)
             .buttonStyle(.plain)
+            .modifier(MenuCircleButtonBackground())
             .frame(minWidth: 44, minHeight: 44)
             .accessibilityInputLabels([
                 String(localized: "Szukaj w menu", bundle: #bundle),

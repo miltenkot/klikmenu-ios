@@ -115,7 +115,8 @@ public struct RestaurantMenuView: View {
     }
 
     private var showsFloatingOrderBar: Bool {
-        orderListStore.showsOrderBar && !showsOrderPanel
+        // Circular controls no longer occupy the bottom-leading rescan button's space.
+        false
     }
 
     private func retry() {
@@ -216,8 +217,6 @@ private struct RestaurantMenuLoadedView: View {
 
             RestaurantMenuBottomActionsView(
                 showsOrderBar: orderListStore.showsOrderBar && !showsOrderPanel && showsFloatingSearch,
-                orderQuantity: orderListStore.totalQuantity,
-                orderTotalText: PriceFormatter.string(decimal: orderListStore.total, currency: orderListStore.currency),
                 onOpenOrderList: { showOrderList = true },
                 onOpenSearch: openSearch,
                 showsFloatingSearch: showsFloatingSearch
@@ -238,33 +237,22 @@ private struct RestaurantMenuLoadedView: View {
 
 private struct RestaurantMenuBottomActionsView: View {
     let showsOrderBar: Bool
-    let orderQuantity: Int
-    let orderTotalText: String
     let onOpenOrderList: () -> Void
     let onOpenSearch: () -> Void
     let showsFloatingSearch: Bool
-    private let controlHeight: CGFloat = 56
 
     var body: some View {
-        HStack(spacing: 12) {
+        VStack(spacing: 8) {
             if showsOrderBar {
-                OrderListBarButton(
-                    quantity: orderQuantity,
-                    totalText: orderTotalText,
-                    action: onOpenOrderList,
-                    height: controlHeight
-                )
-            } else {
-                Spacer(minLength: 0)
+                OrderListCircleButton(action: onOpenOrderList)
             }
 
             if showsFloatingSearch {
-                MenuSearchFloatingButton(
-                    action: onOpenSearch,
-                    size: controlHeight
-                )
+                MenuSearchFloatingButton(action: onOpenSearch, size: 44)
+                    .padding(6)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .trailing)
         .padding(.horizontal, 16)
         .safeAreaPadding(.bottom, 16)
     }

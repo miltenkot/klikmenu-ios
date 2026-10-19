@@ -1,7 +1,5 @@
 import SwiftUI
 
-#if os(iOS)
-@available(iOS 27.1, *)
 struct OrderListCircleButton: View {
     @Environment(OrderListStore.self) private var orderListStore
     let action: () -> Void
@@ -17,7 +15,7 @@ struct OrderListCircleButton: View {
                     .contentShape(Circle())
             }
             .buttonStyle(.plain)
-            .glassEffect(.regular.interactive(), in: Circle())
+            .modifier(MenuCircleButtonBackground())
             .padding(6)
             .accessibilityLabel(Text(
                 "Twoje zamówienie, \(orderListStore.totalQuantity), \(PriceFormatter.string(decimal: orderListStore.total, currency: orderListStore.currency))",
@@ -43,4 +41,3 @@ struct OrderListCircleButton: View {
         .fixedSize()
     }
 }
-#endif
