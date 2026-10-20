@@ -2,12 +2,17 @@ import SwiftUI
 
 struct OrderListItemRowView: View {
     @Environment(OrderListStore.self) private var orderListStore
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     let item: OrderListItem
 
     var body: some View {
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 12))
+            : AnyLayout(HStackLayout(alignment: .top, spacing: 12))
+
         VStack(alignment: .leading, spacing: 10) {
-            HStack(alignment: .top, spacing: 12) {
+            layout {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(item.menuItemName)
                         .font(.body.weight(.semibold))
@@ -34,13 +39,16 @@ struct OrderListItemRowView: View {
                 .accessibilityElement(children: .ignore)
                 .accessibilityLabel(Text(itemAccessibilityLabel))
 
-                Spacer(minLength: 8)
+                if !dynamicTypeSize.isAccessibilitySize {
+                    Spacer(minLength: 8)
+                }
 
-                VStack(alignment: .trailing, spacing: 8) {
+                VStack(alignment: dynamicTypeSize.isAccessibilitySize ? .leading : .trailing, spacing: 8) {
                     Text(PriceFormatter.string(decimal: item.lineSubtotal, currency: item.currency))
                         .font(.subheadline.weight(.bold))
                         .monospacedDigit()
                         .foregroundStyle(Color.klikAccent)
+                        .fixedSize(horizontal: false, vertical: true)
                         .accessibilityLabel(Text("Suma pozycji \(lineSubtotalText)", bundle: #bundle))
 
                     OrderQuantityStepperView(

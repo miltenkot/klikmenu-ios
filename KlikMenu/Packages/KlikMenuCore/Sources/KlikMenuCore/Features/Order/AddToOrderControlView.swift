@@ -58,6 +58,9 @@ struct AddToOrderControlView: View {
 }
 
 struct OrderQuantityStepperView: View {
+    @ScaledMetric(relativeTo: .subheadline) private var scaledButtonSize: CGFloat = 44
+
+    private var buttonSize: CGFloat { max(44, scaledButtonSize) }
     let quantity: Int
     let accessibilityName: String
     let onDecrease: () -> Void
@@ -69,7 +72,7 @@ struct OrderQuantityStepperView: View {
                 Image(systemName: "minus")
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(Color.klikAccent)
-                    .frame(width: 44, height: 44)
+                    .frame(width: buttonSize, height: buttonSize)
                     .background(Color.klikAccent.opacity(0.16), in: Circle())
             }
             .buttonStyle(.plain)
@@ -84,7 +87,7 @@ struct OrderQuantityStepperView: View {
                 Image(systemName: "plus")
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(Color.klikHeroText)
-                    .frame(width: 44, height: 44)
+                    .frame(width: buttonSize, height: buttonSize)
                     .background(Color.klikAccent, in: Circle())
             }
             .buttonStyle(.plain)

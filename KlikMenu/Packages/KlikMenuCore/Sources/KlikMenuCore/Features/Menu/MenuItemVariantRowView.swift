@@ -16,12 +16,17 @@ struct MenuItemVariantsListView: View {
 }
 
 struct MenuItemVariantRowView: View {
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     let item: MenuItem
     let variant: MenuItemVariant
     let currency: String
 
     var body: some View {
-        HStack(alignment: .top, spacing: 12) {
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 12))
+            : AnyLayout(HStackLayout(alignment: .top, spacing: 12))
+
+        layout {
             VStack(alignment: .leading, spacing: 4) {
                 Text(variant.label)
                     .font(.subheadline)
@@ -35,9 +40,11 @@ struct MenuItemVariantRowView: View {
                 }
             }
 
-            Spacer(minLength: 8)
+            if !dynamicTypeSize.isAccessibilitySize {
+                Spacer(minLength: 8)
+            }
 
-            VStack(alignment: .trailing, spacing: 8) {
+            VStack(alignment: dynamicTypeSize.isAccessibilitySize ? .leading : .trailing, spacing: 8) {
                 MenuItemPriceText(price: variant.price, currency: currency)
                     .font(.subheadline.weight(.bold))
                     .monospacedDigit()

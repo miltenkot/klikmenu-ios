@@ -2,7 +2,12 @@ import SwiftUI
 
 struct OrderListCircleButton: View {
     @Environment(OrderListStore.self) private var orderListStore
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @ScaledMetric(relativeTo: .title3) private var scaledButtonSize: CGFloat = 44
+    @ScaledMetric(relativeTo: .caption2) private var badgeTopInset: CGFloat = 10
     let action: () -> Void
+
+    private var buttonSize: CGFloat { max(44, scaledButtonSize) }
 
     var body: some View {
         Button(action: action) {
@@ -10,9 +15,12 @@ struct OrderListCircleButton: View {
                 Image(systemName: "list.bullet.clipboard")
                     .font(.title3)
                     .foregroundStyle(Color.klikAccent)
-                    .frame(width: 44, height: 44)
+                    .frame(width: buttonSize, height: buttonSize)
                     .modifier(MenuCircleButtonBackground())
                     .padding(6)
+                    // Reserve space above the circle for a fully scaled counter.
+                    .padding(.top, dynamicTypeSize.isAccessibilitySize && orderListStore.totalQuantity > 0
+                        ? badgeTopInset : 0)
 
                 if orderListStore.totalQuantity > 0 {
                     Text(orderListStore.totalQuantity, format: .number)

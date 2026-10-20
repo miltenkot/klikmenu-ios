@@ -40,21 +40,29 @@ struct OrderSummaryView: View {
 }
 
 struct OrderSummaryRowView: View {
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     let title: Text
     let amount: String
     var isTotal: Bool = false
 
     var body: some View {
-        HStack(alignment: .firstTextBaseline) {
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4))
+            : AnyLayout(HStackLayout(alignment: .firstTextBaseline))
+
+        layout {
             title
                 .font(isTotal ? .headline : .subheadline)
                 .foregroundStyle(Color.klikText)
                 .fixedSize(horizontal: false, vertical: true)
-            Spacer(minLength: 12)
+            if !dynamicTypeSize.isAccessibilitySize {
+                Spacer(minLength: 12)
+            }
             Text(amount)
                 .font(isTotal ? .headline.weight(.bold) : .subheadline.weight(.semibold))
                 .monospacedDigit()
                 .foregroundStyle(isTotal ? Color.klikAccent : Color.klikText)
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
 }

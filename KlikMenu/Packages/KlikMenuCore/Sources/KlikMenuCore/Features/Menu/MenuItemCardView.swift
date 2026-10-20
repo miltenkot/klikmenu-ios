@@ -46,11 +46,16 @@ private enum MenuItemCardLayout {
 }
 
 private struct MenuItemCardHeaderView: View {
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     let item: MenuItem
     let currency: String
 
     var body: some View {
-        HStack(alignment: .firstTextBaseline, spacing: 12) {
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 12))
+            : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 12))
+
+        layout {
             VStack(alignment: .leading, spacing: 6) {
                 Text(item.name)
                     .font(.headline)
@@ -62,9 +67,11 @@ private struct MenuItemCardHeaderView: View {
             }
 
             if item.variants.isEmpty {
-                Spacer(minLength: 8)
+                if !dynamicTypeSize.isAccessibilitySize {
+                    Spacer(minLength: 8)
+                }
 
-                VStack(alignment: .trailing, spacing: 8) {
+                VStack(alignment: dynamicTypeSize.isAccessibilitySize ? .leading : .trailing, spacing: 8) {
                     MenuItemPriceText(price: item.price, currency: currency)
                         .font(.subheadline.weight(.bold))
                         .monospacedDigit()
