@@ -99,6 +99,7 @@ public struct MenuSearchSheet: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button(LocalizedStringResource("Gotowe", bundle: #bundle), action: dismiss.callAsFunction)
                         .frame(minHeight: 44)
+                        .tint(doneButtonTint)
                 }
             }
             .onAppear(perform: refreshResults)
@@ -111,6 +112,17 @@ public struct MenuSearchSheet: View {
             .accessibilityLabel(Text("Wyniki wyszukiwania: \(resultCount)", bundle: #bundle))
         }
         .presentationDetents([.large])
+    }
+
+    private var doneButtonTint: Color? {
+        #if os(iOS)
+        if #available(iOS 26.0, *) {
+            return nil
+        }
+        return Color.klikAccent
+        #else
+        return nil
+        #endif
     }
 
     private func refreshResults() {
