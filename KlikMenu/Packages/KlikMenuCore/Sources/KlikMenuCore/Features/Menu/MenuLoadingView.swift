@@ -1,36 +1,38 @@
 import SwiftUI
 
 public struct MenuLoadingView: View {
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @State private var pulse = false
-    public var topSafeAreaInset: CGFloat
-
-    public init(topSafeAreaInset: CGFloat? = nil) {
-        self.topSafeAreaInset = topSafeAreaInset ?? LayoutMetrics.fallbackTopSafeAreaInset
-    }
+    public init() {}
 
     public var body: some View {
-        VStack(spacing: 0) {
-            MenuLoadingHeroView(
-                topSafeAreaInset: topSafeAreaInset,
-                showsProgress: !reduceMotion
-            )
-            MenuLoadingSkeletonCard(isPulsing: reduceMotion ? true : pulse)
-                .offset(y: -28)
-            Spacer(minLength: 0)
+        ProgressView {
+            Text("Ładujemy menu…", bundle: #bundle)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(.top, 8)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background { Color.klikPageBackground.ignoresSafeArea() }
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(Text("Ładujemy menu…", bundle: #bundle))
-        .task(id: reduceMotion) {
-            guard !reduceMotion else {
-                pulse = false
-                return
-            }
-            withAnimation(.easeInOut(duration: 1.05).repeatForever(autoreverses: true)) {
-                pulse = true
-            }
-        }
+        .progressViewStyle(.circular)
+        .controlSize(.regular)
+        .tint(.secondary)
+        .padding(24)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.background, ignoresSafeAreaEdges: .all)
     }
+}
+
+#Preview("Light") {
+    MenuLoadingView()
+        .preferredColorScheme(.light)
+}
+
+#Preview("Dark") {
+    MenuLoadingView()
+        .preferredColorScheme(.dark)
+}
+
+#Preview("Accessibility") {
+    MenuLoadingView()
+        .environment(\.dynamicTypeSize, .accessibility5)
+        .environment(\.locale, Locale(identifier: "pl"))
 }

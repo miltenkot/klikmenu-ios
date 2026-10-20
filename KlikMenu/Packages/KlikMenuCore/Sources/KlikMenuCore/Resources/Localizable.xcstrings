@@ -2127,48 +2127,6 @@
         }
       }
     },
-    "Przygotowujemy kartę dań restauracji." : {
-      "comment" : "Loading screen subtitle.",
-      "extractionState" : "manual",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Připravujeme jídelní lístek."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wir bereiten die Speisekarte vor."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preparing the restaurant menu."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Przygotowujemy kartę dań restauracji."
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pripravujeme jedálny lístok."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Готуємо меню ресторану."
-          }
-        }
-      }
-    },
     "Razem" : {
       "comment" : "Final total label in order summary.",
       "extractionState" : "manual",
