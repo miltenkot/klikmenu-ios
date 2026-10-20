@@ -37,6 +37,7 @@ public struct MenuItemCardView: View {
         }
         .padding(.vertical, 14)
         .accessibilityElement(children: .contain)
+        .modifier(MenuItemDetailPresentation(item: item, currency: currency))
     }
 }
 

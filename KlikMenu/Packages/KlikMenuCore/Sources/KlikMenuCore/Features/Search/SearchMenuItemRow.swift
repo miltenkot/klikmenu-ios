@@ -22,6 +22,7 @@ struct SearchMenuItemRow: View {
             }
         }
         .accessibilityElement(children: .contain)
+        .modifier(MenuItemDetailPresentation(item: item, currency: currency))
     }
 }
 
