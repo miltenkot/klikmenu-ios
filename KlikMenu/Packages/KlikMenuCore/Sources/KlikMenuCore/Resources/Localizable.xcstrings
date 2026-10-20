@@ -1,18 +1,6 @@
 {
   "sourceLanguage" : "pl",
   "strings" : {
-    "·" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "·"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "%@ · %lld" : {
       "comment" : "Search result category header. The first variable is the category name, the second is the item count.",
       "extractionState" : "manual",

@@ -65,5 +65,6 @@ struct MenuItemDetailSheet: View {
         .presentationBackground(Color.klikPageBackground)
         .presentationCornerRadius(28)
         .presentationDragIndicator(.hidden)
+        .interactiveDismissDisabled()
     }
 }
