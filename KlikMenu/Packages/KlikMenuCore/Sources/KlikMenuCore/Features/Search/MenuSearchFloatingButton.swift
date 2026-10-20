@@ -5,18 +5,23 @@ struct MenuSearchFloatingButton: View {
     var size: CGFloat = 60
 
     var body: some View {
-        Button(
-            LocalizedStringResource("Przeglądaj i wyszukaj menu", bundle: #bundle),
-            systemImage: "magnifyingglass",
-            action: action
-        )
+        Button(action: action) {
+            Label {
+                Text("Przeglądaj i wyszukaj menu", bundle: #bundle)
+            } icon: {
+                Image(systemName: "magnifyingglass")
+            }
             .labelStyle(.iconOnly)
             .font(.title3.weight(.semibold))
             .foregroundStyle(Color.klikAccent)
             .frame(width: size, height: size)
-            .buttonStyle(.plain)
             .modifier(MenuCircleButtonBackground())
-            .frame(minWidth: 44, minHeight: 44)
+            .padding(6)
+            // Include the transparent margin in the button's touch target.
+            .contentShape(.interaction, Rectangle())
+        }
+            .buttonStyle(.plain)
+            .accessibilityIdentifier("menuSearchFloatingButton")
             .accessibilityInputLabels([
                 String(localized: "Szukaj w menu", bundle: #bundle),
                 String(localized: "Przeglądaj i wyszukaj menu", bundle: #bundle)

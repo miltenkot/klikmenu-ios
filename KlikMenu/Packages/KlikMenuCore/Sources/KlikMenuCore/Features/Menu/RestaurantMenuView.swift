@@ -235,7 +235,6 @@ private struct RestaurantMenuBottomActionsView: View {
 
             if showsFloatingSearch {
                 MenuSearchFloatingButton(action: onOpenSearch, size: 44)
-                    .padding(6)
             }
         }
         .frame(maxWidth: .infinity, alignment: .trailing)
