@@ -22,7 +22,6 @@ struct SearchMenuItemRow: View {
             }
         }
         .accessibilityElement(children: .contain)
-        .modifier(MenuItemDetailPresentation(item: item, currency: currency))
     }
 }
 
@@ -42,7 +41,7 @@ private struct SearchMenuItemHeaderView: View {
                     .font(.body.weight(.semibold))
                     .foregroundStyle(Color.klikText)
                     .fixedSize(horizontal: false, vertical: true)
-                    .accessibilityAddTraits(.isHeader)
+                    .modifier(MenuItemDetailPresentation(item: item, currency: currency))
 
                 MenuItemBadgesView(dietaryType: item.dietaryType, spicinessLevel: item.spicinessLevel)
             }

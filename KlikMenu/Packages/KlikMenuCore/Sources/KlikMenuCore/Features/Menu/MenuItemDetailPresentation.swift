@@ -7,23 +7,16 @@ struct MenuItemDetailPresentation: ViewModifier {
     let currency: String
 
     func body(content: Content) -> some View {
-        content
-            .background {
-                // A sibling button handles the card's unoccupied area without
-                // turning each text fragment or the order controls into a button.
-                Button {
-                    isPresented = true
-                } label: {
-                    Color.clear
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel(Text(item.name))
-                .accessibilityInputLabels([Text(item.name)])
-                .accessibilityIdentifier("menuItemDetailsButton")
-            }
-            .accessibilityElement(children: .contain)
+        Button {
+            isPresented = true
+        } label: {
+            content
+                .contentShape(Rectangle())
+        }
+            .buttonStyle(.plain)
+            .accessibilityLabel(Text(item.name))
+            .accessibilityInputLabels([Text(item.name)])
+            .accessibilityIdentifier("menuItemDetailsButton")
             .sheet(isPresented: $isPresented) {
                 MenuItemDetailSheet(item: item, currency: currency)
                     .environment(orderListStore)

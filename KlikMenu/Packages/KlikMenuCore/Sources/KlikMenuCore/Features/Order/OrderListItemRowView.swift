@@ -38,6 +38,8 @@ struct OrderListItemRowView: View {
                 }
                 .accessibilityElement(children: .ignore)
                 .accessibilityLabel(Text(itemAccessibilityLabel))
+                .accessibilityAddTraits(.isStaticText)
+                .accessibilityRespondsToUserInteraction(false)
 
                 if !dynamicTypeSize.isAccessibilitySize {
                     Spacer(minLength: 8)

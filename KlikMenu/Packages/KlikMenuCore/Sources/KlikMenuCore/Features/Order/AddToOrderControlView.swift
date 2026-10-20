@@ -77,6 +77,7 @@ struct OrderQuantityStepperView: View {
             }
             .buttonStyle(.plain)
             .accessibilityLabel(Text("Zmniejsz ilość \(accessibilityName)", bundle: #bundle))
+            .accessibilityIdentifier("orderQuantityDecrease")
 
             Text("\(quantity)")
                 .font(.subheadline.weight(.semibold))
@@ -92,25 +93,9 @@ struct OrderQuantityStepperView: View {
             }
             .buttonStyle(.plain)
             .accessibilityLabel(Text("Zwiększ ilość \(accessibilityName)", bundle: #bundle))
+            .accessibilityIdentifier("orderQuantityIncrease")
         }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("Ilość \(accessibilityName)", bundle: #bundle))
-        .accessibilityValue(Text("\(quantity)", bundle: #bundle))
-        .accessibilityHint(Text("Przesuń w górę lub w dół, aby zmienić ilość.", bundle: #bundle))
-        .accessibilityInputLabels([
-            Text("Ilość \(accessibilityName)", bundle: #bundle),
-            Text("Zmień ilość \(accessibilityName)", bundle: #bundle),
-            Text(accessibilityName)
-        ])
-        .accessibilityAdjustableAction { direction in
-            switch direction {
-            case .increment:
-                onIncrease()
-            case .decrement:
-                onDecrease()
-            @unknown default:
-                break
-            }
-        }
+        // Keep both actions available to Voice Control as separate buttons.
+        .accessibilityElement(children: .contain)
     }
 }

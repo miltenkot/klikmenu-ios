@@ -195,6 +195,9 @@ private struct RestaurantMenuLoadedView: View {
                 }
                 .padding(.bottom, scrollBottomPadding)
             }
+            // Keep scrolling cards in their own accessibility container so their
+            // large frames do not compete with the persistent overlay controls.
+            .accessibilityElement(children: .contain)
             .scrollPosition($menuScrollPosition)
             .scrollIndicators(.hidden)
             .scrollClipDisabled()
@@ -208,7 +211,6 @@ private struct RestaurantMenuLoadedView: View {
                 showsFloatingSearch: showsFloatingSearch
             )
             .zIndex(1)
-            .accessibilitySortPriority(1)
         }
     }
 
@@ -237,6 +239,7 @@ private struct RestaurantMenuBottomActionsView: View {
                 MenuSearchFloatingButton(action: onOpenSearch, size: 44)
             }
         }
+        .fixedSize()
         .frame(maxWidth: .infinity, alignment: .trailing)
         .padding(.horizontal, 16)
         .safeAreaPadding(.bottom, 16)

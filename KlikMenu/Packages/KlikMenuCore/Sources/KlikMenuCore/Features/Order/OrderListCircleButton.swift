@@ -16,7 +16,14 @@ struct OrderListCircleButton: View {
                     .font(.title3)
                     .foregroundStyle(Color.klikAccent)
                     .frame(width: buttonSize, height: buttonSize)
-                    .modifier(MenuCircleButtonBackground())
+                    .background {
+                        // Glass is decoration; the enclosing Button owns accessibility.
+                        Circle()
+                            .fill(.clear)
+                            .modifier(MenuCircleButtonBackground())
+                            .allowsHitTesting(false)
+                            .accessibilityHidden(true)
+                    }
                     .padding(6)
                     // Reserve space above the circle for a fully scaled counter.
                     .padding(.top, dynamicTypeSize.isAccessibilitySize && orderListStore.totalQuantity > 0
@@ -41,6 +48,9 @@ struct OrderListCircleButton: View {
             .contentShape(.interaction, Rectangle())
         }
         .buttonStyle(.plain)
+        .accessibilityRespondsToUserInteraction(true)
+        .accessibilitySortPriority(1)
+        .accessibilityInputLabels([Text("Twoje zamówienie", bundle: #bundle)])
         .accessibilityLabel(Text(
             "Twoje zamówienie, \(orderListStore.totalQuantity), \(PriceFormatter.string(decimal: orderListStore.total, currency: orderListStore.currency))",
             bundle: #bundle

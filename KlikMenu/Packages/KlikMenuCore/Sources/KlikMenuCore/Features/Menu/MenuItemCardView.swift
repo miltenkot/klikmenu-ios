@@ -16,7 +16,7 @@ public struct MenuItemCardView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 180)
                     .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .accessibilityHidden(true)
+                    .modifier(MenuItemDetailPresentation(item: item, currency: currency))
             }
 
             VStack(alignment: .leading, spacing: 8) {
@@ -37,7 +37,6 @@ public struct MenuItemCardView: View {
         }
         .padding(.vertical, 14)
         .accessibilityElement(children: .contain)
-        .modifier(MenuItemDetailPresentation(item: item, currency: currency))
     }
 }
 
@@ -50,6 +49,13 @@ private struct MenuItemCardHeaderView: View {
     let item: MenuItem
     let currency: String
 
+    private var itemTitle: some View {
+        Text(item.name)
+            .font(.headline)
+            .foregroundStyle(Color.klikText)
+            .fixedSize(horizontal: false, vertical: true)
+    }
+
     var body: some View {
         let layout = dynamicTypeSize.isAccessibilitySize
             ? AnyLayout(VStackLayout(alignment: .leading, spacing: 12))
@@ -57,11 +63,13 @@ private struct MenuItemCardHeaderView: View {
 
         layout {
             VStack(alignment: .leading, spacing: 6) {
-                Text(item.name)
-                    .font(.headline)
-                    .foregroundStyle(Color.klikText)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .accessibilityAddTraits(.isHeader)
+                if item.imageURL == nil {
+                    itemTitle
+                        .modifier(MenuItemDetailPresentation(item: item, currency: currency))
+                } else {
+                    itemTitle
+                        .accessibilityAddTraits(.isHeader)
+                }
 
                 MenuItemBadgesView(dietaryType: item.dietaryType, spicinessLevel: item.spicinessLevel)
             }
