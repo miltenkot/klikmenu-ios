@@ -163,6 +163,7 @@ private struct RestaurantMenuLoadedView: View {
                 menuContent(showsFloatingSearch: true)
             } secondary: {
                 OrderListPanelView()
+                    .splitArrangementLayoutRatio(idealHorizontal: 0.4)
             }
             .arrangementViewStyle(.split)
         } else if #available(iOS 27.1, *) {
