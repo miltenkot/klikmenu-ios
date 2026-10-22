@@ -16,6 +16,7 @@
     ],
   },
   "files": [
+    { "path": "KlikMenu.xctestplan", "target-membership": [ "KlikMenu/resources" ] },
     { "path": "Resources/OpenAPI/openapi.json" },
     { "kind": "folder", "path": "KlikMenu", "target-membership": [ "KlikMenu" ] },
     { "kind": "folder", "path": "KlikMenuTests", "target-membership": [ "KlikMenuTests" ] },

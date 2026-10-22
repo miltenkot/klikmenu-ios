@@ -1,0 +1,42 @@
+{
+  "configurations" : [
+    {
+      "id" : "3688C278-B142-4385-8152-DDD41EC09435",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testInteropMode" : "complete",
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:KlikMenu.xcodeproj",
+        "identifier" : "2A82584F3010F1A7003FB5CC",
+        "name" : "KlikMenuTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:KlikMenu.xcodeproj",
+        "identifier" : "2A82587E3010F221003FB5CC",
+        "name" : "KlikMenuClipTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:KlikMenu.xcodeproj",
+        "identifier" : "2A9C20033017C00100E956B9",
+        "name" : "KlikMenuCoreTests"
+      }
+    }
+  ],
+  "version" : 1
+}
