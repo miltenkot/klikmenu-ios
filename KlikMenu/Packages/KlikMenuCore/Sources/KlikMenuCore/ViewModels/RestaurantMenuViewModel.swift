@@ -91,8 +91,9 @@ public final class RestaurantMenuViewModel {
             menu = loadedMenu
             loadedLocale = resolvedLocale
             lastAttemptedAppLanguage = locale
-            feedbackConfig = await feedbackTask
+            let loadedFeedbackConfig = await feedbackTask
             guard generation == loadGeneration, !Task.isCancelled else { return }
+            feedbackConfig = loadedFeedbackConfig
             state = loadedMenu.hasMenuItems ? .loaded : .empty
         } catch is CancellationError {
             return

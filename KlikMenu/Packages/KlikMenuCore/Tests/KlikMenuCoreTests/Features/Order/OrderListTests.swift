@@ -313,6 +313,8 @@ import Testing
             .deletingLastPathComponent()
             .deletingLastPathComponent()
             .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
             .appending(path: "Sources/KlikMenuCore/Resources/Localizable.xcstrings")
 
         guard

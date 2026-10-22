@@ -107,6 +107,7 @@ private func localizedValue(key: String, locale: String) -> String? {
         .deletingLastPathComponent()
         .deletingLastPathComponent()
         .deletingLastPathComponent()
+        .deletingLastPathComponent()
         .appending(path: "Sources/KlikMenuCore/Resources/Localizable.xcstrings")
 
     guard let data = try? Data(contentsOf: resourceURL),
