@@ -35,16 +35,19 @@ public struct ServiceFeedbackSheet: View {
             .navigationBarTitleDisplayMode(.inline)
             #endif
             .toolbar {
+                if isCommentFocused {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button(LocalizedStringResource("Gotowe", bundle: #bundle)) {
+                            isCommentFocused = false
+                        }
+                        .tint(Color.klikAccent)
+                    }
+                }
                 if showsCloseToolbarButton {
                     ToolbarItem(placement: .cancellationAction) {
                         Button(LocalizedStringResource("Zamknij", bundle: #bundle)) { dismiss() }
+                            .tint(Color.klikAccent)
                             .frame(minHeight: 44)
-                    }
-                }
-                ToolbarItemGroup(placement: .keyboard) {
-                    Spacer()
-                    Button(LocalizedStringResource("Gotowe", bundle: #bundle)) {
-                        isCommentFocused = false
                     }
                 }
             }
