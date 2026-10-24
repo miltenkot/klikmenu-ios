@@ -19,13 +19,13 @@ public struct OrderListSheetView: View {
                         Button(LocalizedStringResource("Wyczyść", bundle: #bundle)) {
                             orderListStore.clear()
                         }
-                        .orderSheetToolbarButtonTint()
+                        .tint(Color.klikAccent)
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button(LocalizedStringResource("Gotowe", bundle: #bundle), action: dismiss.callAsFunction)
                         .frame(minHeight: 44)
-                        .orderSheetToolbarButtonTint()
+                        .tint(Color.klikAccent)
                 }
             }
         }
@@ -33,17 +33,4 @@ public struct OrderListSheetView: View {
     }
 }
 
-private extension View {
-    @ViewBuilder
-    func orderSheetToolbarButtonTint() -> some View {
-        #if os(iOS)
-        if #available(iOS 26.0, *) {
-            self
-        } else {
-            self.tint(Color.klikAccent)
-        }
-        #else
-        self
-        #endif
-    }
-}
+
