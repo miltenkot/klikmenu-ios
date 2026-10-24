@@ -16,7 +16,6 @@ public struct MenuItemCardView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 180)
                     .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .modifier(MenuItemDetailPresentation(item: item, currency: currency))
             }
 
             VStack(alignment: .leading, spacing: 8) {
@@ -35,8 +34,10 @@ public struct MenuItemCardView: View {
                 MenuItemCardMetadataSectionsView(item: item)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 14)
         .accessibilityElement(children: .contain)
+        .modifier(MenuItemDetailPresentation(item: item, currency: currency, isCardContainer: true))
     }
 }
 
@@ -63,13 +64,8 @@ private struct MenuItemCardHeaderView: View {
 
         layout {
             VStack(alignment: .leading, spacing: 6) {
-                if item.imageURL == nil {
-                    itemTitle
-                        .modifier(MenuItemDetailPresentation(item: item, currency: currency))
-                } else {
-                    itemTitle
-                        .accessibilityAddTraits(.isHeader)
-                }
+                itemTitle
+                    .modifier(MenuItemDetailPresentation(item: item, currency: currency))
 
                 MenuItemBadgesView(dietaryType: item.dietaryType, spicinessLevel: item.spicinessLevel)
             }

@@ -21,7 +21,9 @@ struct SearchMenuItemRow: View {
                 SearchMenuItemMetadataView(item: item)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .accessibilityElement(children: .contain)
+        .modifier(MenuItemDetailPresentation(item: item, currency: currency, isCardContainer: true))
     }
 }
 
