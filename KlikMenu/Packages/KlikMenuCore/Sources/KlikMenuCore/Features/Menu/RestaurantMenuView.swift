@@ -82,10 +82,15 @@ public struct RestaurantMenuView: View {
         }
         .sheet(item: $presentedFeedback) { presentation in
             ServiceFeedbackSheet(
-                slug: slug,
+                slug: presentation.slug,
                 config: presentation.config,
                 viewModel: presentation.viewModel
             )
+        }
+        .onChange(of: slug) { _, _ in
+            presentedFeedback = nil
+            showSearch = false
+            showOrderList = false
         }
         .task(id: slug) {
             await viewModel.load(slug: slug)
@@ -110,8 +115,11 @@ public struct RestaurantMenuView: View {
     }
 
     private func openFeedback() {
-        guard let config = viewModel.feedbackConfig else { return }
+        guard viewModel.state == .loaded,
+              viewModel.menu?.slug == slug,
+              let config = viewModel.feedbackConfig else { return }
         presentedFeedback = FeedbackPresentation(
+            slug: slug,
             config: config,
             viewModel: viewModel.makeFeedbackViewModel()
         )
@@ -119,7 +127,9 @@ public struct RestaurantMenuView: View {
 }
 
 private struct FeedbackPresentation: Identifiable {
-    var id: String { config.id }
+    let id = UUID()
+    // Keep the destination paired with its configuration while the sheet is presented or dismissing.
+    let slug: String
     let config: FeedbackConfig
     let viewModel: FeedbackViewModel
 }
