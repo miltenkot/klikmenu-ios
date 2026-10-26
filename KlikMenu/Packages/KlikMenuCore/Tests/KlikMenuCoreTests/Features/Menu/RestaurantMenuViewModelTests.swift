@@ -49,6 +49,48 @@ struct RestaurantMenuViewModelTests {
         #expect(model.state == .notFound)
     }
 
+    @Test(arguments: [false, true])
+    func displaysMenuBeforeFeedbackArrives(hasItems: Bool) async {
+        let item = MenuItem(
+            id: "soup", categoryID: "food", subcategoryID: nil, name: "Soup",
+            description: nil, ingredients: nil, servingSize: nil, allergens: [],
+            price: "10", dietaryType: .none, position: 0, isAvailable: true, imageURL: nil
+        )
+        let categories = hasItems ? [
+            MenuCategory(
+                id: "food", name: "Food", description: nil, position: 0,
+                items: [item], subcategories: []
+            )
+        ] : []
+        let api = DelayedFeedbackAPI(categories: categories)
+        let model = RestaurantMenuViewModel(
+            api: api, languageResolver: AppLanguageResolver(preferredLocalizations: ["pl"])
+        )
+        // A completed previous load must not leave its feedback visible while reloading.
+        await model.load(slug: "new")
+        #expect(model.feedbackConfig != nil)
+        let load = Task { await model.load(slug: "old") }
+
+        let deadline = ContinuousClock.now.advanced(by: .seconds(5))
+        while ContinuousClock.now < deadline {
+            if model.menu?.slug == "old", await api.isFeedbackPending { break }
+            await Task.yield()
+        }
+
+        #expect(await api.isFeedbackPending)
+        #expect(model.menu?.slug == "old")
+        #expect(model.state == (hasItems ? .loaded : .empty))
+        #expect(model.feedbackConfig == nil)
+        #expect(!model.showFeedbackButton)
+
+        await api.releaseFeedback()
+        await load.value
+
+        #expect(model.state == (hasItems ? .loaded : .empty))
+        #expect(model.feedbackConfig?.restaurantName == "old")
+        #expect(model.showFeedbackButton)
+    }
+
     @Test
     func staleFeedbackDoesNotOverwriteNewRestaurant() async {
         let api = DelayedFeedbackAPI()
@@ -63,7 +105,7 @@ struct RestaurantMenuViewModelTests {
             if model.menu?.slug == "old", await api.isFeedbackPending { break }
             await Task.yield()
         }
-        let reachedPendingFeedback = model.menu?.slug == "old" && model.state == .loading
+        let reachedPendingFeedback = model.menu?.slug == "old" && model.state == .empty
         #expect(reachedPendingFeedback)
         #expect(await api.isFeedbackPending)
 

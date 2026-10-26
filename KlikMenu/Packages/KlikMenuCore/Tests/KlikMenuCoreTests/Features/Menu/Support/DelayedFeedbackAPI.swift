@@ -2,9 +2,17 @@ import KlikMenuCore
 
 actor DelayedFeedbackAPI: KlikMenuAPIClient {
     private var pendingFeedback: CheckedContinuation<FeedbackConfig, Never>?
+    private let categories: [MenuCategory]
+
+    init(categories: [MenuCategory] = []) {
+        self.categories = categories
+    }
 
     func fetchMenu(slug: String, locale: SupportedLocale) async throws -> RestaurantMenu {
-        emptyMenu(slug: slug)
+        RestaurantMenu(
+            id: slug, name: slug, slug: slug, description: nil, address: nil,
+            phone: nil, currency: "PLN", heroImageURL: nil, categories: categories
+        )
     }
 
     func fetchFeedbackConfig(slug: String) async throws -> FeedbackConfig {

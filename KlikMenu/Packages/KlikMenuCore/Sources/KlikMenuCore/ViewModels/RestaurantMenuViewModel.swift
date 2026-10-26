@@ -65,10 +65,10 @@ public final class RestaurantMenuViewModel {
 
         self.slug = slug
         state = .loading
+        feedbackConfig = nil
         // Avoid showing a previous language while the new locale loads.
         if loadedLocale != locale {
             menu = nil
-            feedbackConfig = nil
         }
         loadedLocale = nil
 
@@ -91,10 +91,12 @@ public final class RestaurantMenuViewModel {
             menu = loadedMenu
             loadedLocale = resolvedLocale
             lastAttemptedAppLanguage = locale
+            // Optional feedback must not delay displaying the menu.
+            state = loadedMenu.hasMenuItems ? .loaded : .empty
+
             let loadedFeedbackConfig = await feedbackTask
             guard generation == loadGeneration, !Task.isCancelled else { return }
             feedbackConfig = loadedFeedbackConfig
-            state = loadedMenu.hasMenuItems ? .loaded : .empty
         } catch is CancellationError {
             return
         } catch let error as APIError where error == .cancelled {
