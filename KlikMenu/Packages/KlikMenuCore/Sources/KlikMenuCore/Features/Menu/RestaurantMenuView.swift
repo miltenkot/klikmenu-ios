@@ -134,7 +134,9 @@ private struct RestaurantMenuLoadedView: View {
     @Binding var showSearch: Bool
     @Binding var showOrderList: Bool
     let onFeedback: () -> Void
+    #if os(iOS)
     @State private var menuScrollPosition = ScrollPosition()
+    #endif
     private let feedRows: [MenuFeedRow]
 
     init(
@@ -199,7 +201,9 @@ private struct RestaurantMenuLoadedView: View {
             // Keep scrolling cards in their own accessibility container so their
             // large frames do not compete with the persistent overlay controls.
             .accessibilityElement(children: .contain)
+            #if os(iOS)
             .scrollPosition($menuScrollPosition)
+            #endif
             .scrollIndicators(.hidden)
             .scrollClipDisabled()
             .ignoresSafeArea(edges: .top)
