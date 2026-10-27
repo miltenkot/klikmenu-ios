@@ -40,6 +40,7 @@ public struct RestaurantMenuView: View {
                 if let menu = viewModel.menu {
                     RestaurantMenuLoadedView(
                         menu: menu,
+                        feedRows: viewModel.feedRows,
                         showFeedback: viewModel.showFeedbackButton,
                         showsOrderPanel: showsOrderPanel,
                         topSafeAreaInset: topSafeAreaInset,
@@ -138,6 +139,7 @@ private struct RestaurantMenuLoadedView: View {
     @Environment(OrderListStore.self) private var orderListStore
 
     let menu: RestaurantMenu
+    let feedRows: [MenuFeedRow]
     let showFeedback: Bool
     let showsOrderPanel: Bool
     let topSafeAreaInset: CGFloat
@@ -147,26 +149,6 @@ private struct RestaurantMenuLoadedView: View {
     #if os(iOS)
     @State private var menuScrollPosition = ScrollPosition()
     #endif
-    private let feedRows: [MenuFeedRow]
-
-    init(
-        menu: RestaurantMenu,
-        showFeedback: Bool,
-        showsOrderPanel: Bool,
-        topSafeAreaInset: CGFloat,
-        showSearch: Binding<Bool>,
-        showOrderList: Binding<Bool>,
-        onFeedback: @escaping () -> Void
-    ) {
-        self.menu = menu
-        self.showsOrderPanel = showsOrderPanel
-        self.showFeedback = showFeedback
-        self.topSafeAreaInset = topSafeAreaInset
-        _showSearch = showSearch
-        _showOrderList = showOrderList
-        self.onFeedback = onFeedback
-        feedRows = MenuFeedRow.rows(categories: menu.categories, currency: menu.currency)
-    }
 
     var body: some View {
         #if os(iOS)

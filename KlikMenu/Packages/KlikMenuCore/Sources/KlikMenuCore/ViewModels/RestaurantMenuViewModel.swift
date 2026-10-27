@@ -13,7 +13,15 @@ public final class RestaurantMenuViewModel {
     }
 
     public private(set) var state: State = .loading
-    public private(set) var menu: RestaurantMenu?
+    public private(set) var menu: RestaurantMenu? {
+        didSet {
+            // Derive rows only when menu data changes, never during view initialization.
+            feedRows = menu.map {
+                MenuFeedRow.rows(categories: $0.categories, currency: $0.currency)
+            } ?? []
+        }
+    }
+    private(set) var feedRows: [MenuFeedRow] = []
     public private(set) var feedbackConfig: FeedbackConfig?
     /// Locale used for the successfully loaded menu content (may be Polish after fallback).
     public private(set) var loadedLocale: SupportedLocale?
