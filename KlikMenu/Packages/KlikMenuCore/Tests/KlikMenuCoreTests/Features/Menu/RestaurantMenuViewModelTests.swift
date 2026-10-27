@@ -42,6 +42,45 @@ struct RestaurantMenuViewModelTests {
         #expect(model.showFeedbackButton == false)
     }
 
+    @Test(arguments: [false, true])
+    func cancellingCallerCancelsPendingRequests(menuReturnsImmediately: Bool) async {
+        let api = CancellationMenuAPI(menuReturnsImmediately: menuReturnsImmediately)
+        let model = RestaurantMenuViewModel(api: api)
+        let load = Task { await model.load(slug: "cancelled") }
+
+        let deadline = ContinuousClock.now.advanced(by: .seconds(2))
+        while ContinuousClock.now < deadline {
+            if await api.menuStarted, await api.feedbackStarted,
+               !menuReturnsImmediately || model.state == .empty { break }
+            await Task.yield()
+        }
+        #expect(await api.menuStarted)
+        #expect(await api.feedbackStarted)
+
+        load.cancel()
+        await load.value
+
+        #expect(await api.feedbackCancelled)
+        #expect(await api.menuCancelled == !menuReturnsImmediately)
+        #expect(model.feedbackConfig == nil)
+        #expect(model.state == (menuReturnsImmediately ? .empty : .loading))
+    }
+
+    @Test
+    func alreadyCancelledCallerDoesNotStartRequests() async {
+        let api = CancellationMenuAPI(menuReturnsImmediately: true)
+        let model = RestaurantMenuViewModel(api: api)
+        let load = Task {
+            withUnsafeCurrentTask { $0?.cancel() }
+            await model.load(slug: "cancelled")
+        }
+        await load.value
+
+        #expect(await api.menuStarted == false)
+        #expect(await api.feedbackStarted == false)
+        #expect(model.state == .loading)
+    }
+
     @Test
     func showsNotFoundState() async {
         let model = RestaurantMenuViewModel(api: MissingMenuAPI())

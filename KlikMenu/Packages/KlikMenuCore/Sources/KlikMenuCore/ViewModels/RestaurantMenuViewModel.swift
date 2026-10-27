@@ -59,6 +59,7 @@ public final class RestaurantMenuViewModel {
     }
 
     private func load(slug: String, locale: SupportedLocale) async {
+        guard !Task.isCancelled else { return }
         loadTask?.cancel()
         loadGeneration += 1
         let generation = loadGeneration
@@ -76,11 +77,20 @@ public final class RestaurantMenuViewModel {
             await performLoad(slug: slug, locale: locale, generation: generation)
         }
         loadTask = task
-        await task.value
+        await withTaskCancellationHandler {
+            await task.value
+        } onCancel: {
+            // Cancel this invocation, never a newer request stored in loadTask.
+            task.cancel()
+        }
+        if generation == loadGeneration {
+            loadTask = nil
+        }
     }
 
     private func performLoad(slug: String, locale: SupportedLocale, generation: Int) async {
         do {
+            try Task.checkCancellation()
             async let feedbackTask = fetchFeedbackConfigIgnoringErrors(slug: slug)
             let (loadedMenu, resolvedLocale) = try await fetchMenuWithPolishFallback(
                 slug: slug,
@@ -102,12 +112,12 @@ public final class RestaurantMenuViewModel {
         } catch let error as APIError where error == .cancelled {
             return
         } catch let error as APIError {
-            guard generation == loadGeneration else { return }
+            guard generation == loadGeneration, !Task.isCancelled else { return }
             menu = nil
             loadedLocale = nil
             state = error == .notFound ? .notFound : .error(error.userFacingMessage)
         } catch {
-            guard generation == loadGeneration else { return }
+            guard generation == loadGeneration, !Task.isCancelled else { return }
             menu = nil
             loadedLocale = nil
             state = .error(APIError.network.userFacingMessage)
@@ -125,6 +135,7 @@ public final class RestaurantMenuViewModel {
         } catch let error as APIError where error.isUnsupportedLocale
             && preferredLocale != SupportedLocale.default
         {
+            try Task.checkCancellation()
             let menu = try await api.fetchMenu(slug: slug, locale: .default)
             return (menu, .default)
         }
