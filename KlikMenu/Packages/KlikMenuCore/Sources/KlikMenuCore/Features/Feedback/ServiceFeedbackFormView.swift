@@ -83,6 +83,7 @@ struct ServiceFeedbackFormView: View {
                                 .frame(maxWidth: .infinity)
                         }
                     }
+                    .tint(Color.klikAccent)
                     .disabled(!model.canSubmit)
                     .frame(minHeight: 44)
                 }
