@@ -13,6 +13,18 @@ struct QRScannerScreen: View {
     @State private var cameraAuthorized = false
     @State private var permissionDenied = false
     @State private var isResolvingCode = false
+    #if targetEnvironment(simulator)
+    @State private var simulatorMenuSlug = ""
+
+    private var simulatorMenuURL: URL? {
+        let slug = simulatorMenuSlug.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !slug.isEmpty else { return nil }
+        let url = URL(string: "https://app.klikmenu.pl/menu")?
+            .appendingPathComponent(slug)
+        guard let url, RestaurantMenuInvocation.route(from: url) != nil else { return nil }
+        return url
+    }
+    #endif
 
     var body: some View {
         ZStack {
@@ -35,10 +47,40 @@ struct QRScannerScreen: View {
 
                 Spacer()
 
-                RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .strokeBorder(.white.opacity(0.9), lineWidth: 3)
-                    .frame(width: 240, height: 240)
-                    .accessibilityHidden(true)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 24, style: .continuous)
+                        .strokeBorder(.white.opacity(0.9), lineWidth: 3)
+                        .accessibilityHidden(true)
+
+                    #if targetEnvironment(simulator)
+                    VStack(spacing: 16) {
+                        TextField(text: $simulatorMenuSlug) {
+                            Text(verbatim: "Slug menu")
+                        }
+                        .textFieldStyle(.roundedBorder)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                        .accessibilityLabel(Text(verbatim: "Slug menu"))
+                        .accessibilityIdentifier("simulatorMenuSlugField")
+
+                        Button {
+                            guard route == nil, let url = simulatorMenuURL else { return }
+                            handleScannedCode(url.absoluteString)
+                        } label: {
+                            Text(verbatim: "pobierz menu")
+                                .font(.headline)
+                                .padding(.horizontal, 12)
+                                .frame(minHeight: 44)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(Color.klikAccent)
+                        .disabled(isResolvingCode || simulatorMenuURL == nil)
+                        .accessibilityIdentifier("simulatorLoadMenuButton")
+                    }
+                    .padding(20)
+                    #endif
+                }
+                .frame(width: 240, height: 240)
 
                 Text("Wyceluj w kod QR")
                     .font(.headline)
@@ -61,6 +103,7 @@ struct QRScannerScreen: View {
         }
         .accessibilityElement(children: .contain)
         .accessibilityLabel(Text("Skaner kodów QR menu KlikMenu"))
+        #if !targetEnvironment(simulator)
         .task {
             await updateCameraAccess(requestIfNeeded: true)
         }
@@ -70,6 +113,7 @@ struct QRScannerScreen: View {
                 await updateCameraAccess(requestIfNeeded: false)
             }
         }
+        #endif
         .onChange(of: permissionDenied) { _, isDenied in
             if isDenied {
                 announce("Brak dostępu do kamery. Otwórz Ustawienia, aby włączyć skanowanie kodów QR.")
