@@ -26,6 +26,7 @@ struct MenuItemDetailPresentation: ViewModifier {
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel(Text(item.name))
+                .accessibilityHint(Text("Otwiera szczegóły dania", bundle: #bundle))
                 .accessibilityInputLabels([Text(item.name)])
                 .accessibilityIdentifier("menuItemDetailsButton")
             }

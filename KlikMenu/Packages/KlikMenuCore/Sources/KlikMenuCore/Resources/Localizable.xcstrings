@@ -1821,6 +1821,40 @@
         }
       }
     },
+    "Otwiera szczegóły dania" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Otevře podrobnosti jídla"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Öffnet Details zum Gericht"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Opens dish details"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Otvorí podrobnosti jedla"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "machine_translated",
+            "value" : "Відкриває подробиці страви"
+          }
+        }
+      }
+    },
     "Pokaż tę listę kelnerowi, aby łatwiej złożyć zamówienie." : {
       "comment" : "Hint shown in the order list sheet.",
       "extractionState" : "manual",
