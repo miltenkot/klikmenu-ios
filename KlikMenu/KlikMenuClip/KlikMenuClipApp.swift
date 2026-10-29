@@ -1,5 +1,6 @@
 import KlikMenuCore
 import SwiftUI
+import UIKit
 
 @main
 struct KlikMenuClipApp: App {
@@ -17,6 +18,16 @@ struct KlikMenuClipApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(initialURL: launchInvocationURL)
+                #if DEBUG
+                .task {
+                    for await _ in NotificationCenter.default.notifications(
+                        named: UIApplication.didReceiveMemoryWarningNotification
+                    ) {
+                        guard !Task.isCancelled else { return }
+                        print("⚠️ Memory warning received")
+                    }
+                }
+                #endif
         }
     }
 }
