@@ -5,14 +5,25 @@ struct MenuItemDetailSheet: View {
     let item: MenuItem
     let currency: String
 
+    @ViewBuilder
+    private var itemImage: some View {
+        let image = RemoteImageView(url: item.imageURL, cacheKey: item.imageKey, contentMode: .fill)
+            .aspectRatio(4 / 3, contentMode: .fit)
+
+        if #available(iOS 26.0, macOS 26.0, *) {
+            // Keep rounded corners when scrolling away from the sheet's corners.
+            image.clipShape(ConcentricRectangle(corners: .concentric(minimum: .fixed(12))))
+        } else {
+            image.clipShape(RoundedRectangle(cornerRadius: 20))
+        }
+    }
+
     var body: some View {
         ZStack(alignment: .topTrailing) {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     if item.imageURL != nil {
-                        RemoteImageView(url: item.imageURL, cacheKey: item.imageKey, contentMode: .fill)
-                            .aspectRatio(4 / 3, contentMode: .fit)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                        itemImage
                     }
 
                     Text(item.name)
