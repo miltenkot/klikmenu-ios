@@ -70,7 +70,6 @@ public struct RestaurantMenuView: View {
                 .allowsHitTesting(false)
                 .accessibilityHidden(true)
         }
-        .klikMenuPreferredColorScheme()
         .sheet(isPresented: $showSearch) {
             if let menu = viewModel.menu {
                 MenuSearchSheet(menu: menu)

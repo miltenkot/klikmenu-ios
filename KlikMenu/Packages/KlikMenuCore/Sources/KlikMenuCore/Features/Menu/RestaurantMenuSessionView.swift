@@ -43,7 +43,6 @@ public struct RestaurantMenuSessionView<Idle: View>: View {
                 idle
             }
         }
-        .klikMenuPreferredColorScheme()
         .task(id: initialURL?.absoluteString) {
             guard let initialURL else { return }
             apply(url: initialURL)

@@ -156,22 +156,13 @@ private struct MenuHeroTopBar: View {
 
             Spacer(minLength: 8)
 
-            HStack(spacing: 8) {
-                if showFeedback {
-                    ViewThatFits(in: .horizontal) {
-                        FeedbackActionButton(compact: false, action: onFeedback)
-                        FeedbackActionButton(compact: true, action: onFeedback)
-                    }
+            if showFeedback {
+                ViewThatFits(in: .horizontal) {
+                    FeedbackActionButton(compact: false, action: onFeedback)
+                    FeedbackActionButton(compact: true, action: onFeedback)
                 }
-
-                ThemeSwitcherControl()
-                    .foregroundStyle(Color.klikText)
-                    .background {
-                        Circle()
-                            .fill(Color.klikSurface.opacity(0.92))
-                    }
+                .layoutPriority(2)
             }
-            .layoutPriority(2)
         }
         .frame(maxWidth: .infinity)
     }
