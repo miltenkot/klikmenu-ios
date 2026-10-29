@@ -14,7 +14,7 @@ struct QRScannerScreen: View {
     @State private var permissionDenied = false
     @State private var isResolvingCode = false
     #if targetEnvironment(simulator)
-    @State private var simulatorMenuSlug = ""
+    @State private var simulatorMenuSlug = "burger-klik"
 
     private var simulatorMenuURL: URL? {
         let slug = simulatorMenuSlug.trimmingCharacters(in: .whitespacesAndNewlines)
