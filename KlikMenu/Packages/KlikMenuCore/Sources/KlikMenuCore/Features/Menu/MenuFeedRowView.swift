@@ -94,15 +94,14 @@ private struct MenuCategoryCardChrome: ViewModifier {
             .padding(.top, padsTop ? 18 : 0)
             .padding(.bottom, padsBottom ? 18 : 0)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 12)
             .background {
                 backgroundShape.fill(Color.klikSurface)
                     .overlay {
                         edgeStroke
                             .allowsHitTesting(false)
                     }
-                    .padding(.horizontal, 16)
-                    .ignoresSafeArea(.container, edges: .horizontal)
+                    .padding(.horizontal, 12)
             }
             .shadow(
                 color: showsShadow ? Color.black.opacity(0.04) : .clear,
