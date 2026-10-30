@@ -11,8 +11,8 @@ permissions:
 
 jobs:
   ci:
-    # macos-15 tops out at Xcode 26.3 / iOS 26.2; project targets iOS 26.4.
-    runs-on: macos-26
+    # project.xcproj (JSON) needs Xcode 27+; macos-26 only ships Xcode 26.x.
+    runs-on: xcode-27
     timeout-minutes: 45
 
     steps:
@@ -21,14 +21,15 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Select Xcode matching project deployment target
+      - name: Select Xcode matching local toolchain
         run: |
           set -euo pipefail
           for candidate in \
-            /Applications/Xcode_26.4.1.app \
-            /Applications/Xcode_26.4.app \
-            /Applications/Xcode_26.5.app \
-            /Applications/Xcode_26.6.app \
+            /Applications/Xcode_27.2.app \
+            /Applications/Xcode_27.2.0.app \
+            /Applications/Xcode_27.2_Release_Candidate.app \
+            /Applications/Xcode_27.1.app \
+            /Applications/Xcode_27.app \
             /Applications/Xcode.app
           do
             if [ -d "${candidate}" ]; then
@@ -50,8 +51,9 @@ jobs:
           set -euo pipefail
 
           # App scheme exposes real simulator destinations; framework-only schemes often do not on CI.
+          # Pin OS=27.0: xcode-27 image lists iPhone 18 Pro under iOS 27.0 (not under 27.2).
           xcodebuild test \
             -project KlikMenu.xcodeproj \
             -scheme KlikMenu \
-            -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=latest' \
+            -destination 'platform=iOS Simulator,name=iPhone 18 Pro,OS=27.0' \
             -only-testing:KlikMenuCoreTests
