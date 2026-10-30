@@ -1,5 +1,8 @@
 import Observation
 import SwiftUI
+#if os(iOS)
+import UIKit
+#endif
 
 public struct RestaurantMenuView: View {
     private let slug: String
@@ -7,6 +10,7 @@ public struct RestaurantMenuView: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var viewModel: RestaurantMenuViewModel
     @State private var orderListStore = OrderListStore()
+    @State private var hasLandscapeLayout = false
     @State private var showSearch = false
     @State private var showOrderList = false
     @State private var presentedFeedback: FeedbackPresentation?
@@ -50,6 +54,12 @@ public struct RestaurantMenuView: View {
                     )
                 }
             }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .onGeometryChange(for: Bool.self) { geometry in
+            geometry.size.width > geometry.size.height
+        } action: { isLandscape in
+            hasLandscapeLayout = isLandscape
         }
         .environment(orderListStore)
         .task(id: viewModel.menu?.id) {
@@ -104,7 +114,11 @@ public struct RestaurantMenuView: View {
     private var showsOrderPanel: Bool {
         #if os(iOS)
         if #available(iOS 27.1, *) {
-            return horizontalSizeClass == .regular && viewModel.menu?.orderListEnabled == true
+            // iPad keeps a regular size class in portrait, where the order uses a sheet.
+            let allowsOrderPanel = UIDevice.current.userInterfaceIdiom != .pad || hasLandscapeLayout
+            return allowsOrderPanel
+                && horizontalSizeClass == .regular
+                && viewModel.menu?.orderListEnabled == true
         }
         #endif
         return false
