@@ -21,15 +21,15 @@ import KlikMenuCore
     #expect(SpicinessLevel.none.accessibilityLabel == nil)
 }
 
-@Test func localizesSpicinessLabelsForPolishAndEnglish() {
-    #expect(localizedValue(key: "Ostry", locale: "pl") == "Ostry")
-    #expect(localizedValue(key: "Średnio ostry", locale: "en") == "Medium spicy")
-    #expect(localizedValue(key: "Bardzo ostry", locale: "en") == "Very spicy")
+@Test func localizesSpicinessLabelsForPolishAndEnglish() throws {
+    #expect(try localizedValue(SpicinessLevel.spicy.displayLabel, locale: "pl") == "Ostry")
+    #expect(try localizedValue(SpicinessLevel.mediumSpicy.displayLabel, locale: "en") == "Medium spicy")
+    #expect(try localizedValue(SpicinessLevel.verySpicy.displayLabel, locale: "en") == "Very spicy")
 }
 
-@Test func localizesSpicinessAccessibilityForPolishAndEnglish() {
-    #expect(localizedValue(key: "Ostry, poziom ostrości 1 z 3", locale: "pl") == "Ostry, poziom ostrości 1 z 3")
-    #expect(localizedValue(key: "Ostry, poziom ostrości 1 z 3", locale: "en") == "Spicy, spiciness level 1 of 3")
+@Test func localizesSpicinessAccessibilityForPolishAndEnglish() throws {
+    #expect(try localizedValue(SpicinessLevel.spicy.accessibilityLabel, locale: "pl") == "Ostry, poziom ostrości 1 z 3")
+    #expect(try localizedValue(SpicinessLevel.spicy.accessibilityLabel, locale: "en") == "Spicy, spiciness level 1 of 3")
 }
 
 @Test func menuItemCanBeVegetarianAndSpicyAtTheSameTime() {
@@ -102,23 +102,9 @@ import KlikMenuCore
     #expect(item.spicinessLevel == .spicy)
 }
 
-private func localizedValue(key: String, locale: String) -> String? {
-    let resourceURL = URL(filePath: #filePath)
-        .deletingLastPathComponent()
-        .deletingLastPathComponent()
-        .deletingLastPathComponent()
-        .deletingLastPathComponent()
-        .appending(path: "Sources/KlikMenuCore/Resources/Localizable.xcstrings")
-
-    guard let data = try? Data(contentsOf: resourceURL),
-          let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-          let strings = root["strings"] as? [String: Any],
-          let entry = strings[key] as? [String: Any],
-          let localizations = entry["localizations"] as? [String: Any],
-          let localeEntry = localizations[locale] as? [String: Any],
-          let stringUnit = localeEntry["stringUnit"] as? [String: Any],
-          let value = stringUnit["value"] as? String else {
-        return nil
-    }
-    return value
+// Resolve the same bundled resources as the app, without requiring the source checkout.
+private func localizedValue(_ resource: LocalizedStringResource?, locale: String) throws -> String {
+    var localizedResource = try #require(resource)
+    localizedResource.locale = Locale(identifier: locale)
+    return String(localized: localizedResource)
 }
