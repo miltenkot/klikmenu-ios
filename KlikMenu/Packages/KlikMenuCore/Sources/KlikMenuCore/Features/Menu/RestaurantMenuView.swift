@@ -1,8 +1,5 @@
 import Observation
 import SwiftUI
-#if os(iOS)
-import UIKit
-#endif
 
 public struct RestaurantMenuView: View {
     private let slug: String
@@ -114,9 +111,8 @@ public struct RestaurantMenuView: View {
     private var showsOrderPanel: Bool {
         #if os(iOS)
         if #available(iOS 27.1, *) {
-            // iPad keeps a regular size class in portrait, where the order uses a sheet.
-            let allowsOrderPanel = UIDevice.current.userInterfaceIdiom != .pad || hasLandscapeLayout
-            return allowsOrderPanel
+            // Regular-width layouts on iPad and iPhone Duo use a sheet when taller than wide.
+            return hasLandscapeLayout
                 && horizontalSizeClass == .regular
                 && viewModel.menu?.orderListEnabled == true
         }
