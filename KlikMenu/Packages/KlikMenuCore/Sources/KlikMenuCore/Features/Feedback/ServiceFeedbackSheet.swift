@@ -37,17 +37,30 @@ public struct ServiceFeedbackSheet: View {
             .toolbar {
                 if isCommentFocused {
                     ToolbarItem(placement: .confirmationAction) {
-                        Button(LocalizedStringResource("Gotowe", bundle: #bundle)) {
+                        Button {
                             isCommentFocused = false
+                        } label: {
+                            Label {
+                                Text("Gotowe", bundle: #bundle)
+                            } icon: {
+                                Image(systemName: "checkmark")
+                            }
                         }
                         .tint(Color.klikAccent)
                     }
                 }
                 if showsCloseToolbarButton {
                     ToolbarItem(placement: .cancellationAction) {
-                        Button(LocalizedStringResource("Zamknij", bundle: #bundle)) { dismiss() }
-                            .tint(Color.klikAccent)
-                            .frame(minHeight: 44)
+                        Button {
+                            dismiss()
+                        } label: {
+                            Label {
+                                Text("Zamknij", bundle: #bundle)
+                            } icon: {
+                                Image(systemName: "xmark")
+                            }
+                        }
+                        .tint(Color.klikAccent)
                     }
                 }
             }
