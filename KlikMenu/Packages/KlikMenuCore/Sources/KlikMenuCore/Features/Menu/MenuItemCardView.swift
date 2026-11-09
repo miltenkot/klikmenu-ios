@@ -1,6 +1,7 @@
 import SwiftUI
 
 public struct MenuItemCardView: View {
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     public let item: MenuItem
     public let currency: String
 
@@ -10,11 +11,9 @@ public struct MenuItemCardView: View {
     }
 
     public var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        MenuItemCardContentLayout(allowsHorizontalLayout: !dynamicTypeSize.isAccessibilitySize) {
             if item.imageURL != nil {
                 RemoteImageView(url: item.imageURL, cacheKey: item.imageKey)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 180)
                     .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
             }
 
@@ -38,6 +37,67 @@ public struct MenuItemCardView: View {
         .padding(.vertical, 14)
         .accessibilityElement(children: .contain)
         .modifier(MenuItemDetailPresentation(item: item, currency: currency, isCardContainer: true))
+    }
+}
+
+/// Uses the card's available width, including when the menu occupies only one pane.
+private struct MenuItemCardContentLayout: Layout {
+    let allowsHorizontalLayout: Bool
+
+    private func isHorizontal(width: CGFloat) -> Bool {
+        allowsHorizontalLayout && width >= 420
+    }
+
+    private func imageSize(width: CGFloat) -> CGSize {
+        let imageWidth = isHorizontal(width: width) ? min(220, width * 0.36) : min(width, 360)
+        return CGSize(width: imageWidth, height: imageWidth * 0.75)
+    }
+
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+        let width = max(0, proposal.width ?? 360)
+        guard subviews.count == 2 else {
+            let height = subviews.first?.sizeThatFits(ProposedViewSize(width: width, height: nil)).height ?? 0
+            return CGSize(width: width, height: height)
+        }
+
+        let image = imageSize(width: width)
+        let horizontal = isHorizontal(width: width)
+        let detailsWidth = horizontal ? width - image.width - 20 : width
+        let details = subviews[1].sizeThatFits(ProposedViewSize(width: detailsWidth, height: nil))
+        return CGSize(
+            width: width,
+            height: horizontal ? max(image.height, details.height) : image.height + 12 + details.height
+        )
+    }
+
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+        guard subviews.count == 2 else {
+            subviews.first?.place(
+                at: bounds.origin,
+                anchor: .topLeading,
+                proposal: ProposedViewSize(width: bounds.width, height: nil)
+            )
+            return
+        }
+
+        let image = imageSize(width: bounds.width)
+        let horizontal = isHorizontal(width: bounds.width)
+        subviews[0].place(
+            at: bounds.origin,
+            anchor: .topLeading,
+            proposal: ProposedViewSize(image)
+        )
+        subviews[1].place(
+            at: CGPoint(
+                x: bounds.minX + (horizontal ? image.width + 20 : 0),
+                y: bounds.minY + (horizontal ? 0 : image.height + 12)
+            ),
+            anchor: .topLeading,
+            proposal: ProposedViewSize(
+                width: horizontal ? bounds.width - image.width - 20 : bounds.width,
+                height: nil
+            )
+        )
     }
 }
 
